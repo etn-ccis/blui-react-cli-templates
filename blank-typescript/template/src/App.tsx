@@ -1,0 +1,137 @@
+import React from 'react';
+import {
+    AppBar,
+    Button,
+    Divider,
+    Grid,
+    Hidden,
+    IconButton,
+    Theme,
+    Toolbar,
+    Typography,
+    createStyles,
+    makeStyles,
+    useMediaQuery,
+    useTheme,
+} from '@material-ui/core';
+import MenuIcon from '@material-ui/icons/Menu';
+import { PXBlueSVG } from './Logo';
+
+const useStyles = makeStyles((theme: Theme) =>
+    createStyles({
+        pageBackground: {
+            backgroundColor: theme.palette.background.paper,
+            minHeight: '100vh',
+            position: 'relative',
+        },
+        body: {
+            minHeight: '100vh',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            padding: `${theme.spacing(8)}px ${theme.spacing(3)}px`,
+        },
+        divider: {
+            marginTop: theme.spacing(3),
+            marginBottom: theme.spacing(3),
+        },
+        rotate: {
+            animation: '2500ms $spin linear infinite',
+        },
+        '@keyframes spin': {
+            '100%': {
+                transform: 'rotate(360deg)',
+            },
+        },
+    })
+);
+
+export const App = (): JSX.Element => {
+    const theme = useTheme();
+    const classes = useStyles(theme);
+    const xs = useMediaQuery(theme.breakpoints.down('xs'));
+
+    return (
+        <div className={classes.pageBackground}>
+            <AppBar position={'fixed'}>
+                <Toolbar>
+                    <IconButton color={'inherit'} edge={'start'}>
+                        <MenuIcon />
+                    </IconButton>
+                    <Typography variant={'h6'} color={'inherit'}>
+                        PX Blue React
+                    </Typography>
+                </Toolbar>
+            </AppBar>
+            <div className={classes.body}>
+                <div style={{ maxWidth: 600, margin: '0 auto' }}>
+                    <div style={{ textAlign: 'center' }}>
+                        <PXBlueSVG
+                            className={classes.rotate}
+                            size={xs ? 100 : 160}
+                            color={theme.palette.primary.main}
+                        />
+                        <Typography variant={xs ? 'h4' : 'h2'} paragraph>
+                            Welcome to PX{' '}
+                            <Typography variant={'inherit'} color={'primary'}>
+                                Blue
+                            </Typography>
+                            .
+                        </Typography>
+                        <Typography variant={'body1'}>
+                            Edit <strong>src/App.tsx</strong> and save to reload.
+                        </Typography>
+                    </div>
+                    <Hidden xsDown>
+                        <Divider className={classes.divider} />
+                        <Grid container spacing={2}>
+                            <Grid item xs={12} sm={6}>
+                                <Button target={'_blank'} href={'https://pxblue.github.io/'}>
+                                    PX Blue Documentation
+                                </Button>
+                            </Grid>
+                            <Grid item xs={12} sm={6}>
+                                <Button
+                                    target={'_blank'}
+                                    href={'https://pxblue.github.io/development/frameworks-web/react'}
+                                >
+                                    React Getting Started Guide
+                                </Button>
+                            </Grid>
+                            <Grid item xs={12} sm={6}>
+                                <Button target={'_blank'} href={'https://pxblue.github.io/patterns'}>
+                                    Design Pattern Descriptions
+                                </Button>
+                            </Grid>
+                            <Grid item xs={12} sm={6}>
+                                <Button target={'_blank'} href={'https://pxblue-components.github.io/react/'}>
+                                    PX Blue React Component Library
+                                </Button>
+                            </Grid>
+                            <Grid item xs={12} sm={6}>
+                                <Button target={'_blank'} href={'https://github.com/pxblue'}>
+                                    Visit Us on GitHub
+                                </Button>
+                            </Grid>
+                            <Grid item xs={12} sm={6}>
+                                <Button target={'_blank'} href={'https://github.com/pxblue/react-design-patterns'}>
+                                    Design Pattern Source on GitHub
+                                </Button>
+                            </Grid>
+                            <Grid item xs={12} sm={6}>
+                                <Button target={'_blank'} href={'https://pxblue.github.io/roadmap'}>
+                                    Release Roadmap
+                                </Button>
+                            </Grid>
+                            <Grid item xs={12} sm={6}>
+                                <Button target={'_blank'} href={'https://pxblue.github.io/community/contactus'}>
+                                    Send Feedback or Suggestions
+                                </Button>
+                            </Grid>
+                        </Grid>
+                    </Hidden>
+                </div>
+            </div>
+        </div>
+    );
+};
