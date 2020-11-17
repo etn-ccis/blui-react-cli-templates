@@ -1,6 +1,6 @@
 {
-    "name": "@pxblue/cra-template-blank-typescript",
-    "version": "1.0.0",
+    "name": "@pxblue/cra-template-blank",
+    "version": "1.0.0-alpha.0",
     "keywords": [
         "react",
         "create-react-app",
