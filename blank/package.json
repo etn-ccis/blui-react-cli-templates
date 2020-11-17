@@ -12,7 +12,7 @@
     "description": "The base template for React projects created with the PX Blue CLI.",
     "repository": {
         "type": "git",
-        "url": "https://github.com/pxblue/react-templates.git",
+        "url": "https://github.com/pxblue/react-cli-templates.git",
         "directory": "blank"
     },
     "license": "BSD-3-Clause",
@@ -20,7 +20,7 @@
         "node": ">=10"
     },
     "bugs": {
-        "url": "https://github.com/pxblue/react-templates/issues"
+        "url": "https://github.com/pxblue/react-cli-templates/issues"
     },
     "files": [
         "template",

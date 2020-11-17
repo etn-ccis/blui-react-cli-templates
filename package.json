@@ -10,7 +10,7 @@
     "description": "This repository holds the different react templates used by the PX Blue CLI",
     "repository": {
         "type": "git",
-        "url": "https://github.com/pxblue/react-templates.git",
+        "url": "https://github.com/pxblue/react-cli-templates.git",
         "directory": "blank-typescript"
     },
     "license": "BSD-3-Clause",
@@ -24,7 +24,7 @@
     },
     "prettier": "@pxblue/prettier-config",
     "bugs": {
-        "url": "https://github.com/pxblue/react-templates/issues"
+        "url": "https://github.com/pxblue/react-cli-templates/issues"
     },
     "devDependencies": {
         "@pxblue/eslint-config": "^2.0.3",
