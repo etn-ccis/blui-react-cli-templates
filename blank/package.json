@@ -13,7 +13,7 @@
     "repository": {
         "type": "git",
         "url": "https://github.com/pxblue/react-templates.git",
-        "directory": "blank-typescript"
+        "directory": "blank"
     },
     "license": "BSD-3-Clause",
     "engines": {

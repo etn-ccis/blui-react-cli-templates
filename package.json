@@ -1,0 +1,42 @@
+{
+    "name": "pxblue-cli-templates-react",
+    "version": "1.0.0",
+    "keywords": [
+        "template",
+        "pxblue",
+        "px blue",
+        "cli"
+    ],
+    "description": "This repository holds the different react templates used by the PX Blue CLI",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/pxblue/react-templates.git",
+        "directory": "blank-typescript"
+    },
+    "license": "BSD-3-Clause",
+    "engines": {
+        "node": ">=10"
+    },
+    "scripts": {
+        "lint": "eslint '**/**.{tsx,ts}'",
+        "lint:fix": "eslint '**/**.{tsx,ts}' --fix",
+        "prettier": "prettier \"**/**.{ts,tsx,js,jsx,json,css,scss,html}\" --write"
+    },
+    "prettier": "@pxblue/prettier-config",
+    "bugs": {
+        "url": "https://github.com/pxblue/react-templates/issues"
+    },
+    "devDependencies": {
+        "@pxblue/eslint-config": "^2.0.3",
+        "@pxblue/prettier-config": "^1.0.2",
+        "@typescript-eslint/eslint-plugin": "^4.7.0",
+        "@typescript-eslint/parser": "^4.7.0",
+        "eslint": "^7.13.0",
+        "eslint-config-prettier": "^6.15.0",
+        "eslint-plugin-react": "^7.21.5",
+        "prettier": "^2.1.2"
+    },
+    "dependencies": {
+        "typescript": "^4.0.5"
+    }
+}
