@@ -1,6 +1,6 @@
 {
     "name": "pxblue-cli-templates-react",
-    "version": "1.0.0",
+    "version": "0.0.0",
     "keywords": [
         "template",
         "pxblue",
@@ -20,7 +20,9 @@
     "scripts": {
         "lint": "eslint '**/**.{tsx,ts}'",
         "lint:fix": "eslint '**/**.{tsx,ts}' --fix",
-        "prettier": "prettier \"**/**.{ts,tsx,js,jsx,json,css,scss,html}\" --write"
+        "prettier": "prettier \"**/**.{ts,tsx,js,jsx,json,css,scss,html}\" --write",
+        "prettier:check": "prettier \"**/**.{ts,tsx,js,jsx,json,css,scss,html}\"",
+        "precommit": "yarn prettier && yarn lint"
     },
     "prettier": "@pxblue/prettier-config",
     "bugs": {

@@ -1,0 +1,26 @@
+version: 2
+jobs:
+    build:
+        docker:
+            - image: circleci/node:12.9.1-browsers
+        working_directory: ~/react-cli-templates
+        steps:
+            - checkout
+            - restore_cache:
+                  keys:
+                      - v1-dependencies-{{ checksum "package.json" }}
+            - run:
+                  name: Install dependencies
+                  command: |
+                      yarn install
+            - save_cache:
+                  paths:
+                      - node_modules
+                  key: v1-dependencies-{{ checksum "package.json" }}
+            - run:
+                  name: Prettier Check
+                  command: |
+                      yarn prettier:check
+            - run:
+                  name: Lint
+                  command: yarn lint

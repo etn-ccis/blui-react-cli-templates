@@ -59,7 +59,7 @@ export const App = (): JSX.Element => {
         <div className={classes.pageBackground}>
             <AppBar position={'fixed'}>
                 <Toolbar className={classes.toolbar}>
-                    <IconButton color={'inherit'} edge={'start'} style={{ marginRight: theme.spacing(4) }}>
+                    <IconButton color={'inherit'} edge={'start'} style={{ marginRight: theme.spacing(3) }}>
                         <MenuIcon />
                     </IconButton>
                     <Typography variant={'h6'} color={'inherit'}>
