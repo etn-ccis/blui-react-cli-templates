@@ -6,7 +6,6 @@ import {
     Grid,
     Hidden,
     IconButton,
-    Theme,
     Toolbar,
     Typography,
     createStyles,
@@ -17,7 +16,7 @@ import {
 import MenuIcon from '@material-ui/icons/Menu';
 import { PXBlueSVG } from './Logo';
 
-const useStyles = makeStyles((theme: Theme) =>
+const useStyles = makeStyles((theme) =>
     createStyles({
         pageBackground: {
             backgroundColor: theme.palette.background.paper,
@@ -50,7 +49,7 @@ const useStyles = makeStyles((theme: Theme) =>
     })
 );
 
-export const App = (): JSX.Element => {
+export const App = () => {
     const theme = useTheme();
     const classes = useStyles(theme);
     const xs = useMediaQuery(theme.breakpoints.down('xs'));
@@ -83,7 +82,7 @@ export const App = (): JSX.Element => {
                             .
                         </Typography>
                         <Typography variant={'body1'}>
-                            Edit <strong>src/App.tsx</strong> and save to reload.
+                            Edit <strong>src/App.jsx</strong> and save to reload.
                         </Typography>
                     </div>
                     <Hidden xsDown>

@@ -12,16 +12,11 @@
             "@testing-library/user-event": "^12.1.10",
             "react-app-polyfill": "latest",
             "typeface-open-sans": "latest",
-            "typescript": "^4.0.3",
             "web-vitals": "^0.2.4"
         },
         "devDependencies": {
             "enzyme": "^3.11.0",
-            "enzyme-adapter-react-16": "^1.15.0",
-            "@types/node": "^12.0.0",
-            "@types/react": "^16.9.53",
-            "@types/react-dom": "^16.9.8",
-            "@types/jest": "^26.0.15"
+            "enzyme-adapter-react-16": "^1.15.0"
         },
         "eslintConfig": {
             "extends": ["react-app", "react-app/jest"]
