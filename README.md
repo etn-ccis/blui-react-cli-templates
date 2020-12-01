@@ -13,6 +13,7 @@ You can use these templates with the PX Blue CLI (recommended):
 ```sh
 npx -p @pxblue/cli pxb new react --template=blank
 npx -p @pxblue/cli pxb new react --template=routing
+npx -p @pxblue/cli pxb new react --template=login
 ```
 
 or with the Create React App CLI:
@@ -22,6 +23,8 @@ npx create-react-app app-name --template @pxblue/blank
 npx create-react-app app-name --template @pxblue/blank-typescript
 npx create-react-app app-name --template @pxblue/routing
 npx create-react-app app-name --template @pxblue/routing-typescript
+npx create-react-app app-name --template @pxblue/login
+npx create-react-app app-name --template @pxblue/login-typescript
 ```
 
 ## Testing Locally

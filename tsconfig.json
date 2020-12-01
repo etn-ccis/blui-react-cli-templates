@@ -16,5 +16,12 @@
         "noEmit": true,
         "jsx": "react"
     },
-    "include": ["blank/template", "blank-typescript/template", "routing/template", "routing-typescript/template"]
+    "include": [
+        "blank/template",
+        "blank-typescript/template",
+        "routing/template",
+        "routing-typescript/template",
+        "login/template",
+        "login-typescript/template"
+    ]
 }
