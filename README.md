@@ -7,6 +7,8 @@ We currently have templates for:
 -   [Blank (JavaScript)](https://www.npmjs.com/package/@pxblue/cra-template-blank)
 -   [Routing (TypeScript)](https://www.npmjs.com/package/@pxblue/cra-template-routing-typescript)
 -   [Routing (JavaScript)](https://www.npmjs.com/package/@pxblue/cra-template-routing)
+-   [Login (TypeScript)](https://www.npmjs.com/package/@pxblue/cra-template-login-typescript)
+-   [Login (JavaScript)](https://www.npmjs.com/package/@pxblue/cra-template-login)
 
 You can use these templates with the PX Blue CLI (recommended):
 
