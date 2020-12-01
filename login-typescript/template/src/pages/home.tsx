@@ -15,7 +15,7 @@ import {
     useMediaQuery,
     useTheme,
 } from '@material-ui/core';
-import { Menu as MenuIcon, ExitToApp } from '@material-ui/icons';
+import { Menu as MenuIcon, ExitToApp, Lock } from '@material-ui/icons';
 import { Spacer, UserMenu } from '@pxblue/react-components';
 import { useSecurityActions } from '@pxblue/react-auth-shared';
 import { LocalStorage } from '../store/local-storage';
@@ -95,6 +95,11 @@ export const HomePage = (): JSX.Element => {
                         menuGroups={[
                             {
                                 items: [
+                                    {
+                                        title: 'Change Password',
+                                        icon: <Lock />,
+                                        onClick: securityHelper.showChangePassword,
+                                    },
                                     {
                                         title: 'Log Out',
                                         icon: <ExitToApp />,

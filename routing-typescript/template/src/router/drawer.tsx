@@ -51,7 +51,7 @@ export const NavigationDrawer: React.FC = () => {
                             onClick: page.route
                                 ? (): void => {
                                       navigate(page.route);
-                                      setDrawerOpen(false);
+                                      if (isMobile) setDrawerOpen(false);
                                   }
                                 : undefined,
                         };
