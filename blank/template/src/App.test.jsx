@@ -2,8 +2,8 @@ import React from 'react';
 import { render, screen } from '@testing-library/react';
 import { App } from './App';
 
-test('renders learn react link', () => {
+test('renders welcome text', () => {
     render(<App />);
-    const pxbText = screen.getByText(/PX Blue/i);
+    const pxbText = screen.getByText(/Welcome to PX/i);
     expect(pxbText).toBeInTheDocument();
 });

@@ -1,5 +1,5 @@
 {
-    "name": "@pxblue/cra-template-routing",
+    "name": "@pxblue/cra-template-authentication",
     "version": "1.0.0",
     "keywords": [
         "react",
@@ -10,7 +10,7 @@
         "px blue",
         "cli"
     ],
-    "description": "A template with pre-configured routing for React projects created with the PX Blue CLI.",
+    "description": "A template with pre-configured login workflow and routing for React projects created with the PX Blue CLI.",
     "repository": {
         "type": "git",
         "url": "https://github.com/pxblue/react-cli-templates.git",
