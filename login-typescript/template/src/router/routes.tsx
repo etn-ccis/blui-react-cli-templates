@@ -1,5 +1,7 @@
 import { HomePage, PageOne, PageTwo } from '../pages';
-import { Home, LooksOne, LooksTwo } from '@material-ui/icons';
+import Home from '@material-ui/icons/Home';
+import LooksOne from '@material-ui/icons/LooksOne';
+import LooksTwo from '@material-ui/icons/LooksTwo';
 
 export const PAGES = [
     {

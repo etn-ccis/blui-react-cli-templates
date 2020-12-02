@@ -2,7 +2,7 @@ import React, { useState, useCallback } from 'react';
 import { useMediaQuery, useTheme } from '@material-ui/core';
 import { useHistory, useLocation } from 'react-router';
 import { useDrawer } from '../contexts/drawerContextProvider';
-import { Menu } from '@material-ui/icons';
+import Menu from '@material-ui/icons/Menu';
 import { Drawer, DrawerBody, DrawerHeader, DrawerNavGroup } from '@pxblue/react-components';
 import { PAGES } from './routes';
 

@@ -15,7 +15,9 @@ import {
     useMediaQuery,
     useTheme,
 } from '@material-ui/core';
-import { Menu as MenuIcon, ExitToApp, Lock } from '@material-ui/icons';
+import Lock from '@material-ui/icons/Lock';
+import Menu from '@material-ui/icons/Menu';
+import ExitToApp from '@material-ui/icons/ExitToApp';
 import { Spacer, UserMenu } from '@pxblue/react-components';
 import { useSecurityActions } from '@pxblue/react-auth-shared';
 import { LocalStorage } from '../store/local-storage';
@@ -83,7 +85,7 @@ export const HomePage = (): JSX.Element => {
                             edge={'start'}
                             style={{ marginRight: theme.spacing(3) }}
                         >
-                            <MenuIcon />
+                            <Menu />
                         </IconButton>
                     </Hidden>
                     <Typography variant={'h6'} color={'inherit'}>

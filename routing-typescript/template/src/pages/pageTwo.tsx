@@ -11,7 +11,8 @@ import {
     useTheme,
 } from '@material-ui/core';
 import { EmptyState } from '@pxblue/react-components';
-import { Menu, Event } from '@material-ui/icons';
+import Menu from '@material-ui/icons/Menu';
+import Event from '@material-ui/icons/Event';
 import { useDrawer } from '../contexts/drawerContextProvider';
 
 const useStyles = makeStyles((theme: Theme) =>
