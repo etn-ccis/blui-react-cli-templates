@@ -21,7 +21,7 @@
         "blank-typescript/template",
         "routing/template",
         "routing-typescript/template",
-        "login/template",
-        "login-typescript/template"
+        "authentication/template",
+        "authentication-typescript/template"
     ]
 }

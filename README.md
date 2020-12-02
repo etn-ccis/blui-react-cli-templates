@@ -7,15 +7,15 @@ We currently have templates for:
 -   [Blank (JavaScript)](https://www.npmjs.com/package/@pxblue/cra-template-blank)
 -   [Routing (TypeScript)](https://www.npmjs.com/package/@pxblue/cra-template-routing-typescript)
 -   [Routing (JavaScript)](https://www.npmjs.com/package/@pxblue/cra-template-routing)
--   [Login (TypeScript)](https://www.npmjs.com/package/@pxblue/cra-template-login-typescript)
--   [Login (JavaScript)](https://www.npmjs.com/package/@pxblue/cra-template-login)
+-   [Authentication (TypeScript)](https://www.npmjs.com/package/@pxblue/cra-template-authentication-typescript)
+-   [Authentication (JavaScript)](https://www.npmjs.com/package/@pxblue/cra-template-authentication)
 
 You can use these templates with the PX Blue CLI (recommended):
 
 ```sh
 npx -p @pxblue/cli pxb new react --template=blank
 npx -p @pxblue/cli pxb new react --template=routing
-npx -p @pxblue/cli pxb new react --template=login
+npx -p @pxblue/cli pxb new react --template=authentication
 ```
 
 or with the Create React App CLI:
@@ -25,8 +25,8 @@ npx create-react-app app-name --template @pxblue/blank
 npx create-react-app app-name --template @pxblue/blank-typescript
 npx create-react-app app-name --template @pxblue/routing
 npx create-react-app app-name --template @pxblue/routing-typescript
-npx create-react-app app-name --template @pxblue/login
-npx create-react-app app-name --template @pxblue/login-typescript
+npx create-react-app app-name --template @pxblue/authentication
+npx create-react-app app-name --template @pxblue/authentication-typescript
 ```
 
 ## Testing Locally
