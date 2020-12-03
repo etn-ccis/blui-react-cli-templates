@@ -14,6 +14,11 @@ The Routing template provides all of the essential PX Blue configuration as well
 The Authentication template includes everything from the Routing template and also installs and configures the PX Blue [react-auth-workflow](https://www.npmjs.com/package/@pxblue/react-auth-workflow) package to automatically wrap the main application with functions and screens for Login, Registration, Change Password, etc. This template is available in [TypeScript](https://www.npmjs.com/package/@pxblue/cra-template-authentication-typescript)(recommended) and [JavaScript](https://www.npmjs.com/package/@pxblue/cra-template-authentication).
 
 
+## Screenshots
+![Routing Template With Collapsed Drawer](./images/routing.png)
+![Routing Template With Expanded Drawer](./images/routing-expanded.png)
+![Routing Template With Collapsed Drawer](./images/authentication.png)
+
 ## Usage
 You can use these templates with the PX Blue CLI (recommended):
 
