@@ -4,7 +4,7 @@
 
 This is an official PX Blue template for use with the [Create React App](https://create-react-app.dev/) CLI. It is also used internally by the [PX Blue CLI](https://www.npmjs.com/package/@pxblue/cli).
 
-This template includes the installation and initial setup of routing using [React Router](https://reactrouter.com/). It includes several placeholder routes/screens and a Drawer navigator from the PX Blue [React Component Library](https://www.npmjs.com/package/@pxblue/react-components).
+This template includes the installation and initial setup of routing using [React Router](https://reactrouter.com/). It includes several placeholder routes/screens and a [Drawer](https://pxblue-components.github.io/react/?path=/info/components-drawer--get-read-me-story) navigator from the PX Blue [React Component Library](https://www.npmjs.com/package/@pxblue/react-components).
 
 ## Usage
 This template can be used with Create React App:
