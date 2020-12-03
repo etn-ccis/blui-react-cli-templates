@@ -2,14 +2,19 @@
 
 These are project templates that are used by Create React App when starting a new PX Blue project. They are used behind the scenes by the PX Blue CLI.
 
-We currently have templates for:
--   [Blank (TypeScript)](https://www.npmjs.com/package/@pxblue/cra-template-blank-typescript)
--   [Blank (JavaScript)](https://www.npmjs.com/package/@pxblue/cra-template-blank)
--   [Routing (TypeScript)](https://www.npmjs.com/package/@pxblue/cra-template-routing-typescript)
--   [Routing (JavaScript)](https://www.npmjs.com/package/@pxblue/cra-template-routing)
--   [Authentication (TypeScript)](https://www.npmjs.com/package/@pxblue/cra-template-authentication-typescript)
--   [Authentication (JavaScript)](https://www.npmjs.com/package/@pxblue/cra-template-authentication)
+## Available Templates
 
+### Blank
+The Blank template provides a bare-bones application with PX Blue components and themes automatically configured and ready to use. This template is available in [TypeScript](https://www.npmjs.com/package/@pxblue/cra-template-blank-typescript)(recommended) and [JavaScript](https://www.npmjs.com/package/@pxblue/cra-template-blank).
+
+### Routing
+The Routing template provides all of the essential PX Blue configuration as well as additional configuration for using using [React Router](https://reactrouter.com/). It also adds a navigation Drawer to switch between several sample screens. This template is available in [TypeScript](https://www.npmjs.com/package/@pxblue/cra-template-routing-typescript)(recommended) and [JavaScript](https://www.npmjs.com/package/@pxblue/cra-template-routing).
+
+### Authentication
+The Authentication template includes everything from the Routing template and also installs and configures the PX Blue [react-auth-workflow](https://www.npmjs.com/package/@pxblue/react-auth-workflow) package to automatically wrap the main application with functions and screens for Login, Registration, Change Password, etc. This template is available in [TypeScript](https://www.npmjs.com/package/@pxblue/cra-template-authentication-typescript)(recommended) and [JavaScript](https://www.npmjs.com/package/@pxblue/cra-template-authentication).
+
+
+## Usage
 You can use these templates with the PX Blue CLI (recommended):
 
 ```sh
