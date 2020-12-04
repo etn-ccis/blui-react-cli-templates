@@ -1,6 +1,6 @@
-# Authentication Template (TypeScript)
+# Authentication Template (JavaScript)
 
-![npm (scoped)](https://img.shields.io/npm/v/@pxblue/cra-template-authentication-typescript?color=%23007bc1&label=%40pxblue%2Fcra-template-authentication-typescript)
+![npm (scoped)](https://img.shields.io/npm/v/@pxblue/cra-template-authentication?color=%23007bc1&label=%40pxblue%2Fcra-template-authentication)
 
 This is an official PX Blue template for use with the [Create React App](https://create-react-app.dev/) CLI. It is also used internally by the [PX Blue CLI](https://www.npmjs.com/package/@pxblue/cli).
 
@@ -9,11 +9,11 @@ This template installs and configures the PX Blue [react-auth-workflow](https://
 ## Usage
 This template can be used with Create React App:
 ```sh
-npx create-react-app myapp --template @pxblue/authentication-typescript
+npx create-react-app myapp --template @pxblue/authentication
 ```
 or using the PX Blue CLI:
 ```sh
-npx -p @pxblue/cli pxb new react --name=myapp --language=ts --template=authentication
+npx -p @pxblue/cli pxb new react --name=myapp --language=js --template=authentication
 ```
 
 ## Project Structure
@@ -21,21 +21,21 @@ Projects created using this template will start out with the following file stru
 
 ```
 └── /src
-    |── index.tsx                           // the root file that renders the application (Theme Provider, Router, & CSS Baseline styles)
-    |── App.tsx                             // sets up the Authentication wrappers and DrawerLayout component
+    |── index.jsx                           // the root file that renders the application (Theme Provider, Router, & CSS Baseline styles)
+    |── App.jsx                             // sets up the Authentication wrappers and DrawerLayout component
     |── /components                           
-    │   └── Logo.tsx                        // PXB spinning logo graphic
+    │   └── Logo.jsx                        // PXB spinning logo graphic
     |── /constants                          // sample application pages
-    │   |── index.ts                        // constants used by the mock LocalStorage implementation
-    │   |── routing.ts                      // custom URLs to use for the auth-workflow
-    │   └── sampleEula.ts                   // sample end-user license agreement text
+    │   |── index.js                        // constants used by the mock LocalStorage implementation
+    │   |── routing.js                      // custom URLs to use for the auth-workflow
+    │   └── sampleEula.js                   // sample end-user license agreement text
     |── /contexts                           
-    │   └── drawerContextProvider.tsx       // creates a Context to allow pages to open/close the navigation drawer
+    │   └── drawerContextProvider.jsx       // creates a Context to allow pages to open/close the navigation drawer
     |── /pages                              // sample application pages
     └── /router
-    │   |── drawer.tsx                      // the contents of the navigation drawer
-    │   |── main.tsx                        // React Router route configuration
-    │   └── routes.tsx                      // route definitions for use in the Router
+    │   |── drawer.jsx                      // the contents of the navigation drawer
+    │   |── main.jsx                        // React Router route configuration
+    │   └── routes.jsx                      // route definitions for use in the Router
     └── /store
-        └── local-storage.ts                // mock implementation for storing/retrieving user authentication session data 
+        └── local-storage.js                // mock implementation for storing/retrieving user authentication session data 
 ```

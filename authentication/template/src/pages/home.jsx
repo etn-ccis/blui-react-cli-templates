@@ -1,12 +1,12 @@
 import React from 'react';
 import {
     AppBar,
+    Avatar,
     Button,
     Divider,
     Grid,
     Hidden,
     IconButton,
-    Theme,
     Toolbar,
     Typography,
     createStyles,
@@ -14,11 +14,16 @@ import {
     useMediaQuery,
     useTheme,
 } from '@material-ui/core';
-import MenuIcon from '@material-ui/icons/Menu';
+import Lock from '@material-ui/icons/Lock';
+import Menu from '@material-ui/icons/Menu';
+import ExitToApp from '@material-ui/icons/ExitToApp';
+import { Spacer, UserMenu } from '@pxblue/react-components';
+import { useSecurityActions } from '@pxblue/react-auth-shared';
+import { LocalStorage } from '../store/local-storage';
 import { PXBlueSVG } from '../components/Logo';
 import { useDrawer } from '../contexts/drawerContextProvider';
 
-const useStyles = makeStyles((theme: Theme) =>
+const useStyles = makeStyles((theme) =>
     createStyles({
         pageBackground: {
             backgroundColor: theme.palette.background.paper,
@@ -54,11 +59,17 @@ const useStyles = makeStyles((theme: Theme) =>
     })
 );
 
-export const HomePage = (): JSX.Element => {
+export const HomePage = () => {
     const theme = useTheme();
     const classes = useStyles(theme);
     const { setDrawerOpen } = useDrawer();
     const xs = useMediaQuery(theme.breakpoints.down('xs'));
+    const securityHelper = useSecurityActions();
+
+    const logOut = () => {
+        LocalStorage.clearAuthCredentials();
+        securityHelper.onUserNotAuthenticated();
+    };
 
     return (
         <div className={classes.pageBackground}>
@@ -67,18 +78,42 @@ export const HomePage = (): JSX.Element => {
                     <Hidden mdUp={true}>
                         <IconButton
                             color={'inherit'}
-                            onClick={(): void => {
+                            onClick={() => {
                                 setDrawerOpen(true);
                             }}
                             edge={'start'}
                             style={{ marginRight: theme.spacing(3) }}
                         >
-                            <MenuIcon />
+                            <Menu />
                         </IconButton>
                     </Hidden>
                     <Typography variant={'h6'} color={'inherit'}>
                         Home Page
                     </Typography>
+                    <Spacer />
+                    <UserMenu
+                        avatar={<Avatar>UN</Avatar>}
+                        menuGroups={[
+                            {
+                                items: [
+                                    {
+                                        title: 'Change Password',
+                                        icon: <Lock />,
+                                        onClick: securityHelper.showChangePassword,
+                                    },
+                                    {
+                                        title: 'Log Out',
+                                        icon: <ExitToApp />,
+                                        onClick: logOut,
+                                    },
+                                ],
+                            },
+                        ]}
+                        MenuProps={{
+                            anchorOrigin: { horizontal: 'right', vertical: 'bottom' },
+                            transformOrigin: { horizontal: 'right', vertical: 'top' },
+                        }}
+                    />
                 </Toolbar>
             </AppBar>
             <div className={classes.body}>
@@ -97,7 +132,7 @@ export const HomePage = (): JSX.Element => {
                             .
                         </Typography>
                         <Typography variant={'body1'}>
-                            Edit <strong>src/pages/home.tsx</strong> and save to reload.
+                            Edit <strong>src/App.tsx</strong> and save to reload.
                         </Typography>
                     </div>
                     <Hidden xsDown>

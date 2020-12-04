@@ -1,0 +1,31 @@
+{
+    "name": "@pxblue/cra-template-authentication",
+    "version": "1.0.0",
+    "keywords": [
+        "react",
+        "create-react-app",
+        "template",
+        "javascript",
+        "pxblue",
+        "px blue",
+        "cli"
+    ],
+    "description": "A template with pre-configured login workflow and routing for React projects created with the PX Blue CLI.",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/pxblue/react-cli-templates.git",
+        "directory": "routing-typescript"
+    },
+    "license": "BSD-3-Clause",
+    "engines": {
+        "node": ">=10"
+    },
+    "bugs": {
+        "url": "https://github.com/pxblue/react-cli-templates/issues"
+    },
+    "files": [
+        "template",
+        "template.json",
+        "CHANGELOG.md"
+    ]
+}

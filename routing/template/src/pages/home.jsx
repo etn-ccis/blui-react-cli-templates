@@ -6,7 +6,6 @@ import {
     Grid,
     Hidden,
     IconButton,
-    Theme,
     Toolbar,
     Typography,
     createStyles,
@@ -18,7 +17,7 @@ import MenuIcon from '@material-ui/icons/Menu';
 import { PXBlueSVG } from '../components/Logo';
 import { useDrawer } from '../contexts/drawerContextProvider';
 
-const useStyles = makeStyles((theme: Theme) =>
+const useStyles = makeStyles((theme) =>
     createStyles({
         pageBackground: {
             backgroundColor: theme.palette.background.paper,
@@ -54,7 +53,7 @@ const useStyles = makeStyles((theme: Theme) =>
     })
 );
 
-export const HomePage = (): JSX.Element => {
+export const HomePage = () => {
     const theme = useTheme();
     const classes = useStyles(theme);
     const { setDrawerOpen } = useDrawer();
@@ -67,7 +66,7 @@ export const HomePage = (): JSX.Element => {
                     <Hidden mdUp={true}>
                         <IconButton
                             color={'inherit'}
-                            onClick={(): void => {
+                            onClick={() => {
                                 setDrawerOpen(true);
                             }}
                             edge={'start'}
@@ -97,7 +96,7 @@ export const HomePage = (): JSX.Element => {
                             .
                         </Typography>
                         <Typography variant={'body1'}>
-                            Edit <strong>src/pages/home.tsx</strong> and save to reload.
+                            Edit <strong>src/pages/home.jsx</strong> and save to reload.
                         </Typography>
                     </div>
                     <Hidden xsDown>
