@@ -133,7 +133,7 @@ export const HomePage = (): JSX.Element => {
                             .
                         </Typography>
                         <Typography variant={'body1'}>
-                            Edit <strong>src/App.tsx</strong> and save to reload.
+                            Edit <strong>src/pages/home.tsx</strong> and save to reload.
                         </Typography>
                     </div>
                     <Hidden xsDown>
