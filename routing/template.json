@@ -7,9 +7,6 @@
             "@pxblue/react-components": "^4.1.1",
             "@pxblue/icons-mui": "^2.2.1",
             "@pxblue/colors": "^3.0.0",
-            "@testing-library/jest-dom": "^5.11.4",
-            "@testing-library/react": "^11.1.0",
-            "@testing-library/user-event": "^12.1.10",
             "react-app-polyfill": "latest",
             "react-router": "^5.2.0",
             "react-router-dom": "^5.2.0",
@@ -18,7 +15,10 @@
         },
         "devDependencies": {
             "enzyme": "^3.11.0",
-            "enzyme-adapter-react-16": "^1.15.0"
+            "enzyme-adapter-react-16": "^1.15.0",
+            "@testing-library/jest-dom": "^5.11.4",
+            "@testing-library/react": "^11.1.0",
+            "@testing-library/user-event": "^12.1.10"
         },
         "eslintConfig": {
             "extends": ["react-app", "react-app/jest"]
