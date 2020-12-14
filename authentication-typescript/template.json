@@ -1,0 +1,48 @@
+{
+    "package": {
+        "dependencies": {
+            "@material-ui/core": "^4.11.0",
+            "@material-ui/icons": "^4.9.1",
+            "@pxblue/react-auth-workflow": "^1.0.0",
+            "@pxblue/react-themes": "^5.0.2",
+            "@pxblue/react-components": "^4.1.1",
+            "@pxblue/icons-mui": "^2.2.1",
+            "react-app-polyfill": "latest",
+            "date-fns": "latest",
+            "highcharts": "^8.1.2",
+            "i18next": "^19.6.3",
+            "react-i18next": "^11.7.0",
+            "react-router": "^5.2.0",
+            "react-router-dom": "^5.2.0",
+            "typeface-open-sans": "latest",
+            "typescript": "^4.0.3",
+            "web-vitals": "^0.2.4"
+        },
+        "devDependencies": {
+            "enzyme": "^3.11.0",
+            "enzyme-adapter-react-16": "^1.15.0",
+            "@testing-library/jest-dom": "^5.11.4",
+            "@testing-library/react": "^11.1.0",
+            "@testing-library/user-event": "^12.1.10",
+            "@types/enzyme-adapter-react-16": "^1.0.6",
+            "@types/node": "^12.0.0",
+            "@types/react": "^16.9.53",
+            "@types/react-dom": "^16.9.8",
+            "@types/react-router-dom": "^5.1.6",
+            "@types/jest": "^26.0.15"
+        },
+        "eslintConfig": {
+            "extends": ["react-app", "react-app/jest"]
+        },
+        "browserslist": {
+            "production": [">0.2%", "not dead", "not op_mini all", "IE 11", "not IE 9-10"],
+            "development": [
+                "last 1 chrome version",
+                "last 1 firefox version",
+                "last 1 safari version",
+                "ie 11",
+                "not ie 9-10"
+            ]
+        }
+    }
+}
