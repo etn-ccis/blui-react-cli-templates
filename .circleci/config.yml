@@ -1,6 +1,6 @@
 version: 2
 jobs:
-    build-project:
+    build_project:
         docker:
             - image: circleci/node:12.9.1-browsers
         working_directory: ~/react-cli-templates
