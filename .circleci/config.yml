@@ -1,6 +1,6 @@
 version: 2
 jobs:
-    build:
+    build-project:
         docker:
             - image: circleci/node:12.9.1-browsers
         working_directory: ~/react-cli-templates
@@ -24,3 +24,96 @@ jobs:
             - run:
                   name: Lint
                   command: yarn lint
+    publish:
+        docker:
+          - image: circleci/node:12.9.1-browsers
+        steps:
+            - checkout
+            - run:
+                name: Authenticate with registry
+                command: echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > ~/.npmrc
+            - run:
+                name: Publish @pxblue/cra-template-blank
+                command:  |
+                  cd blank
+                  MASTER_VERSION=`node -p "require('./package.json').version"`
+                  NPM_LATEST_VERSION=`npm show @pxblue/cra-template-blank version`
+                  if ! [ $MASTER_VERSION == $NPM_LATEST_VERSION ];
+                  then
+                      npm publish
+                  else
+                      echo "Latest version is already published."
+                  fi
+            - run:
+                name: Publish @pxblue/cra-template-blank-typescript
+                command:   |
+                  cd blank-typescript
+                  MASTER_VERSION=`node -p "require('./package.json').version"`
+                  NPM_LATEST_VERSION=`npm show @pxblue/cra-template-blank-typescript version`
+                  if ! [ $MASTER_VERSION == $NPM_LATEST_VERSION ];
+                  then
+                      npm publish
+                  else
+                      echo "Latest version is already published."
+                  fi
+            - run:
+                name: Publish @pxblue/cra-template-routing
+                command:  |
+                  cd routing
+                  MASTER_VERSION=`node -p "require('./package.json').version"`
+                  NPM_LATEST_VERSION=`npm show @pxblue/cra-template-routing version`
+                  if ! [ $MASTER_VERSION == $NPM_LATEST_VERSION ];
+                  then
+                      npm publish
+                  else
+                      echo "Latest version is already published."
+                  fi
+            - run:
+                name: Publish @pxblue/cra-template-routing-typescript
+                command:   |
+                  cd routing-typescript
+                  MASTER_VERSION=`node -p "require('./package.json').version"`
+                  NPM_LATEST_VERSION=`npm show @pxblue/cra-template-routing-typescript version`
+                  if ! [ $MASTER_VERSION == $NPM_LATEST_VERSION ];
+                  then
+                      npm publish
+                  else
+                      echo "Latest version is already published."
+                  fi
+            - run:
+                name: Publish @pxblue/cra-template-authentication
+                command:  |
+                  cd authentication
+                  MASTER_VERSION=`node -p "require('./package.json').version"`
+                  NPM_LATEST_VERSION=`npm show @pxblue/cra-template-authentication version`
+                  if ! [ $MASTER_VERSION == $NPM_LATEST_VERSION ];
+                  then
+                      npm publish
+                  else
+                      echo "Latest version is already published."
+                  fi
+            - run:
+                name: Publish @pxblue/cra-template-routing-authentication-typescript
+                command:   |
+                  cd authentication-typescript
+                  MASTER_VERSION=`node -p "require('./package.json').version"`
+                  NPM_LATEST_VERSION=`npm show @pxblue/cra-template-authentication-typescript version`
+                  if ! [ $MASTER_VERSION == $NPM_LATEST_VERSION ];
+                  then
+                      npm publish
+                  else
+                      echo "Latest version is already published."
+                  fi
+
+workflows:
+    version: 2
+    react-cli-templates:
+        jobs:
+            - build_project
+            - publish:
+                requires:
+                    - build_project
+                filters:
+                    branches:
+                        only:
+                            - master
