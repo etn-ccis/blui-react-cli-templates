@@ -3,12 +3,11 @@
         "dependencies": {
             "@material-ui/core": "^4.11.0",
             "@material-ui/icons": "^4.9.1",
-            "@pxblue/react-themes": "^5.0.2",
+            "@pxblue/react-themes": "^6.0.0-beta.0",
             "@pxblue/react-components": "^4.1.1",
             "@pxblue/icons-mui": "^2.2.1",
             "@pxblue/colors": "^3.0.0",
             "react-app-polyfill": "latest",
-            "typeface-open-sans": "latest",
             "web-vitals": "^0.2.4"
         },
         "devDependencies": {
