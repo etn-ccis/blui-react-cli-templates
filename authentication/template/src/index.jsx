@@ -5,7 +5,7 @@ import ReactDOM from 'react-dom';
 import { CssBaseline, ThemeProvider, createMuiTheme } from '@material-ui/core';
 import { BrowserRouter } from 'react-router-dom';
 import * as PXBThemes from '@pxblue/react-themes';
-import 'typeface-open-sans';
+import '@pxblue/react-themes/open-sans';
 import { App } from './App';
 import reportWebVitals from './reportWebVitals';
 import './index.css';
