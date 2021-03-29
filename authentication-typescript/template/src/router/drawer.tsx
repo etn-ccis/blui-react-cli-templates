@@ -31,6 +31,7 @@ export const NavigationDrawer: React.FC = () => {
                 },
             }}
             variant={isMobile ? 'temporary' : 'persistent'}
+            activeItem={selected}
         >
             <DrawerHeader
                 title={'PX Blue'}
@@ -57,7 +58,6 @@ export const NavigationDrawer: React.FC = () => {
                         };
                     })}
                     hidePadding
-                    activeItem={selected}
                 />
             </DrawerBody>
         </Drawer>
