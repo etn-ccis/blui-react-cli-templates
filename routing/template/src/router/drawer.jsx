@@ -31,6 +31,7 @@ export const NavigationDrawer = () => {
                 },
             }}
             variant={isMobile ? 'temporary' : 'persistent'}
+            activeItem={selected}
         >
             <DrawerHeader
                 title={'PX Blue'}
@@ -57,7 +58,6 @@ export const NavigationDrawer = () => {
                         };
                     })}
                     hidePadding
-                    activeItem={selected}
                 />
             </DrawerBody>
         </Drawer>
