@@ -10,6 +10,10 @@
 
 -   Support for IE11.
 
+### Changed
+
+-   Moved TypeScript to devDependencies.
+
 ## v1.0.0
 
 ### Added
