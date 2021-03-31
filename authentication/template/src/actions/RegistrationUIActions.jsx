@@ -1,4 +1,4 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
+/* eslint-disable no-unused-vars */
 
 // Constants
 import { SAMPLE_EULA } from '../constants/sampleEula';
@@ -90,7 +90,7 @@ export const ProjectRegistrationUIActions = () => ({
      * @returns Resolve when account creation succeeds, otherwise reject with an error message.
      */
     completeRegistration: async (userData, validationCode, validationEmail) => {
-        const email = 'example@email.com';
+        const email = validationEmail || 'example@email.com';
         const organizationName = 'Acme Co.';
         const userInfo = { email, organizationName };
 
