@@ -2,9 +2,9 @@
 
 ## v1.1.1 (Unreleased)
 
-### Fixed
+### Removed
 
--   Removed IE11 polyfills import.
+-   IE11 polyfills import.
 
 ## v1.1.0 (March 31, 2021)
 
