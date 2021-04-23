@@ -1,6 +1,6 @@
 # Changelog
 
-## v1.1.1 (Unreleased)
+## v1.1.1 (April 23, 2021)
 
 ### Removed
 
