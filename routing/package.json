@@ -16,6 +16,9 @@
         "url": "https://github.com/pxblue/react-cli-templates.git",
         "directory": "routing-typescript"
     },
+    "scripts": {
+        "publish:package": "set npm_config_yes=true && npx -p @pxblue/publish pxb-publish"
+    },
     "license": "BSD-3-Clause",
     "engines": {
         "node": ">=10"
