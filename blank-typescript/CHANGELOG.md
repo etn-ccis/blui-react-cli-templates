@@ -1,5 +1,11 @@
 # Changelog
 
+## v1.1.1 (April 26, 2021)
+
+### Removed
+
+-   IE11 polyfills import.
+
 ## v1.1.0 (March 31, 2021)
 
 ### Added
