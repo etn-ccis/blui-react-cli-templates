@@ -1,6 +1,12 @@
 # Changelog
 
-## v1.1.0
+## v1.1.1 (April 27, 2021)
+
+### Removed
+
+-   IE11 polyfills import.
+
+## v1.1.0 (March 31, 2021)
 
 ### Added
 
@@ -14,7 +20,7 @@
 
 -   Moved TypeScript to devDependencies.
 
-## v1.0.0
+## v1.0.0 (December 10, 2020)
 
 ### Added
 
