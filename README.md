@@ -54,3 +54,7 @@ If you would like to test these templates locally, you may do so by running the 
 npx create-react-app myapp --template file:../path/to/template
 ```
 For more information refer to the [CRA documentation](https://create-react-app.dev/docs/custom-templates/).
+
+## Browser Support
+
+PX Blue CLI Templates will work with any modern browser. For details refer to our [Browser Support](https://pxblue.github.io/development/frameworks-web/react#browser-support) documentation.
