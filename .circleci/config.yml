@@ -69,11 +69,6 @@ jobs:
         - checkout
         - gh/setup
         - run:
-            name: Authenticate with registry
-            command: |
-              echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > ~/.npmrc
-              echo "//registry.yarnpkg.com/:_authToken=$NPM_TOKEN" >> ~/.npmrc
-        - run:
             name: Tag @pxblue/cra-template-blank
             command:  |
               cd blank && yarn tag:package -b $CIRCLE_BRANCH -s -cra-template-blank
