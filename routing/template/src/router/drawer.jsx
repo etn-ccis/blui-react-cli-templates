@@ -26,7 +26,7 @@ export const NavigationDrawer = () => {
         <Drawer
             open={drawerOpen}
             ModalProps={{
-                onBackdropClick: () => {
+                onClose: () => {
                     setDrawerOpen(false);
                 },
             }}
