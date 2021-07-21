@@ -10,14 +10,14 @@ import reportWebVitals from './reportWebVitals';
 import './index.css';
 
 ReactDOM.render(
-    <React.StrictMode>
+    // <React.StrictMode>
         <ThemeProvider theme={createMuiTheme(PXBThemes.blue)}>
             <BrowserRouter>
                 <CssBaseline />
                 <App />
             </BrowserRouter>
-        </ThemeProvider>
-    </React.StrictMode>,
+        </ThemeProvider>,
+    // </React.StrictMode>,
     document.getElementById('root')
 );
 
