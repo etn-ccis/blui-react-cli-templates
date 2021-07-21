@@ -1,5 +1,11 @@
 # Changelog
 
+## v1.1.2 (July 21, 2021)
+
+### Added
+
+-   Upgrade all PX Blue packages
+
 ## v1.1.1 (April 27, 2021)
 
 ### Removed
