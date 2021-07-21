@@ -71,27 +71,27 @@ jobs:
         - run:
             name: Tag @pxblue/cra-template-blank
             command:  |
-              cd blank && yarn tag:package -b $CIRCLE_BRANCH -s -cra-template-blank
+              cd blank && yarn tag:package -b $CIRCLE_BRANCH
         - run:
             name: Tag @pxblue/cra-template-blank-typescript
             command:   |
-              cd blank-typescript && yarn tag:package -b $CIRCLE_BRANCH -s -cra-template-blank-template
+              cd blank-typescript && yarn tag:package -b $CIRCLE_BRANCH
         - run:
             name: Tag @pxblue/cra-template-routing
             command:  |
-              cd routing && yarn tag:package -b $CIRCLE_BRANCH -s -cra-template-routing
+              cd routing && yarn tag:package -b $CIRCLE_BRANCH
         - run:
             name: Tag @pxblue/cra-template-routing-typescript
             command:   |
-              cd routing-typescript && yarn tag:package -b $CIRCLE_BRANCH -s -cra-template-routing-typescript
+              cd routing-typescript && yarn tag:package -b $CIRCLE_BRANCH
         - run:
             name: Tag @pxblue/cra-template-authentication
             command:  |
-              cd authentication && yarn tag:package -b $CIRCLE_BRANCH -s -cra-template-authentication
+              cd authentication && yarn tag:package -b $CIRCLE_BRANCH
         - run:
             name: Tag @pxblue/cra-template-routing-authentication-typescript
             command:   |
-              cd authentication-typescript && yarn tag:package -b $CIRCLE_BRANCH -s -cra-template-routing-authentication-typescript
+              cd authentication-typescript && yarn tag:package -b $CIRCLE_BRANCH
 
 workflows:
     version: 2
