@@ -1,7 +1,7 @@
 import 'react-app-polyfill/stable';
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { CssBaseline, ThemeProvider, createTheme } from '@material-ui/core';
+import { CssBaseline, ThemeProvider, createMuiTheme } from '@material-ui/core';
 import { BrowserRouter } from 'react-router-dom';
 import * as PXBThemes from '@pxblue/react-themes';
 import '@pxblue/react-themes/open-sans';
@@ -11,7 +11,7 @@ import './index.css';
 
 ReactDOM.render(
     <React.StrictMode>
-        <ThemeProvider theme={createTheme(PXBThemes.blue)}>
+        <ThemeProvider theme={createMuiTheme(PXBThemes.blue)}>
             <BrowserRouter>
                 <CssBaseline />
                 <App />
