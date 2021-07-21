@@ -1,7 +1,7 @@
 {
     "package": {
         "dependencies": {
-            "@material-ui/core": "~4.11.0",
+            "@material-ui/core": "4.11.0",
             "@material-ui/icons": "^4.9.1",
             "@pxblue/react-auth-workflow": "^2.2.0",
             "@pxblue/react-themes": "^6.1.0",
