@@ -6,6 +6,11 @@
 
 -   Upgrade all PX Blue packages
 
+### Changed
+
+- Lock Material UI dependency on version 4.11 to avoid v4 -> v5 deprecation warnings. We will have new templates in the future that will support v5.
+- React Strict Mode no longer enabled by default.
+
 ## v1.1.1 (April 27, 2021)
 
 ### Removed
