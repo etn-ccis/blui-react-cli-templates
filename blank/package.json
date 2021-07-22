@@ -16,7 +16,8 @@
         "directory": "blank"
     },
     "scripts": {
-        "publish:package": "set npm_config_yes=true && npx -p @pxblue/publish pxb-publish"
+        "publish:package": "set npm_config_yes=true && npx -p @pxblue/publish pxb-publish",
+        "tag-package": "npx -p @pxblue/tag pxb-tag"
     },
     "license": "BSD-3-Clause",
     "engines": {

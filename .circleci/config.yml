@@ -1,4 +1,6 @@
-version: 2
+version: 2.1
+orbs:
+    gh: circleci/github-cli@1.0.3
 jobs:
     build_project:
         docker:
@@ -24,40 +26,72 @@ jobs:
             - run:
                   name: Lint
                   command: yarn lint
+
     publish:
-        docker:
-          - image: circleci/node:12.9.1-browsers
-        steps:
-            - checkout
-            - run:
-                name: Authenticate with registry
-                command: |
-                  echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > ~/.npmrc
-                  echo "//registry.yarnpkg.com/:_authToken=$NPM_TOKEN" >> ~/.npmrc
-            - run:
-                name: Publish @pxblue/cra-template-blank
-                command:  |
-                  cd blank && yarn publish:package -b $CIRCLE_BRANCH
-            - run:
-                name: Publish @pxblue/cra-template-blank-typescript
-                command:   |
-                  cd blank-typescript && yarn publish:package -b $CIRCLE_BRANCH
-            - run:
-                name: Publish @pxblue/cra-template-routing
-                command:  |
-                  cd routing && yarn publish:package -b $CIRCLE_BRANCH
-            - run:
-                name: Publish @pxblue/cra-template-routing-typescript
-                command:   |
-                  cd routing-typescript && yarn publish:package -b $CIRCLE_BRANCH
-            - run:
-                name: Publish @pxblue/cra-template-authentication
-                command:  |
-                  cd authentication && yarn publish:package -b $CIRCLE_BRANCH
-            - run:
-                name: Publish @pxblue/cra-template-routing-authentication-typescript
-                command:   |
-                  cd authentication-typescript && yarn publish:package -b $CIRCLE_BRANCH
+      docker:
+        - image: circleci/node:12.9.1-browsers
+      steps:
+        - checkout
+        - run:
+            name: Authenticate with registry
+            command: |
+              echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > ~/.npmrc
+              echo "//registry.yarnpkg.com/:_authToken=$NPM_TOKEN" >> ~/.npmrc
+        - run:
+            name: Publish @pxblue/cra-template-blank
+            command:  |
+              cd blank && yarn publish:package -b $CIRCLE_BRANCH
+        - run:
+            name: Publish @pxblue/cra-template-blank-typescript
+            command:   |
+              cd blank-typescript && yarn publish:package -b $CIRCLE_BRANCH
+        - run:
+            name: Publish @pxblue/cra-template-routing
+            command:  |
+              cd routing && yarn publish:package -b $CIRCLE_BRANCH
+        - run:
+            name: Publish @pxblue/cra-template-routing-typescript
+            command:   |
+              cd routing-typescript && yarn publish:package -b $CIRCLE_BRANCH
+        - run:
+            name: Publish @pxblue/cra-template-authentication
+            command:  |
+              cd authentication && yarn publish:package -b $CIRCLE_BRANCH
+        - run:
+            name: Publish @pxblue/cra-template-authentication-typescript
+            command:   |
+              cd authentication-typescript && yarn publish:package -b $CIRCLE_BRANCH
+
+    tag:
+      docker:
+        - image: circleci/node:12.9.1-browsers
+      steps:
+        - checkout
+        - gh/setup
+        - run:
+            name: Tag @pxblue/cra-template-blank
+            command:  |
+              cd blank && yarn tag:package -b $CIRCLE_BRANCH
+        - run:
+            name: Tag @pxblue/cra-template-blank-typescript
+            command:   |
+              cd blank-typescript && yarn tag:package -b $CIRCLE_BRANCH
+        - run:
+            name: Tag @pxblue/cra-template-routing
+            command:  |
+              cd routing && yarn tag:package -b $CIRCLE_BRANCH
+        - run:
+            name: Tag @pxblue/cra-template-routing-typescript
+            command:   |
+              cd routing-typescript && yarn tag:package -b $CIRCLE_BRANCH
+        - run:
+            name: Tag @pxblue/cra-template-authentication
+            command:  |
+              cd authentication && yarn tag:package -b $CIRCLE_BRANCH
+        - run:
+            name: Tag @pxblue/cra-template-authentication-typescript
+            command:   |
+              cd authentication-typescript && yarn tag:package -b $CIRCLE_BRANCH
 
 workflows:
     version: 2
@@ -72,3 +106,10 @@ workflows:
                         only:
                             - master
                             - dev
+            - tag:
+                requires:
+                  - publish
+                filters:
+                  branches:
+                    only:
+                      - master
