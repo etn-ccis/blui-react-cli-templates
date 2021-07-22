@@ -16,12 +16,12 @@ import reportWebVitals from './reportWebVitals';
 import './index.css';
 
 ReactDOM.render(
-    <React.StrictMode>
+    // <React.StrictMode>
         <ThemeProvider theme={createMuiTheme(PXBThemes.blue)}>
             <CssBaseline />
             <App />
-        </ThemeProvider>
-    </React.StrictMode>,
+        </ThemeProvider>,
+    // </React.StrictMode>,
     document.getElementById('root')
 );
 
