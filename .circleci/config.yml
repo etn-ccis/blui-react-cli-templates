@@ -89,7 +89,7 @@ jobs:
             command:  |
               cd authentication && yarn tag:package -b $CIRCLE_BRANCH
         - run:
-            name: Tag @pxblue/cra-template-routing-authentication-typescript
+            name: Tag @pxblue/cra-template-authentication-typescript
             command:   |
               cd authentication-typescript && yarn tag:package -b $CIRCLE_BRANCH
 
