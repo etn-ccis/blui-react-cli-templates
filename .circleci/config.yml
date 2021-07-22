@@ -58,7 +58,7 @@ jobs:
             command:  |
               cd authentication && yarn publish:package -b $CIRCLE_BRANCH
         - run:
-            name: Publish @pxblue/cra-template-routing-authentication-typescript
+            name: Publish @pxblue/cra-template-authentication-typescript
             command:   |
               cd authentication-typescript && yarn publish:package -b $CIRCLE_BRANCH
 
