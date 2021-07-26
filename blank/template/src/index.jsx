@@ -1,3 +1,10 @@
+/**
+ Copyright (c) 2021-present, Eaton
+
+ All rights reserved.
+
+ This code is licensed under the BSD-3 license found in the LICENSE file in the root directory of this source tree and at https://opensource.org/licenses/BSD-3-Clause.
+ **/
 import 'react-app-polyfill/stable';
 import React from 'react';
 import ReactDOM from 'react-dom';
@@ -9,12 +16,12 @@ import reportWebVitals from './reportWebVitals';
 import './index.css';
 
 ReactDOM.render(
-    <React.StrictMode>
+    // <React.StrictMode>
         <ThemeProvider theme={createMuiTheme(PXBThemes.blue)}>
             <CssBaseline />
             <App />
-        </ThemeProvider>
-    </React.StrictMode>,
+        </ThemeProvider>,
+    // </React.StrictMode>,
     document.getElementById('root')
 );
 

@@ -29,8 +29,8 @@
         "url": "https://github.com/pxblue/react-cli-templates/issues"
     },
     "devDependencies": {
-        "@pxblue/eslint-config": "^2.0.3",
-        "@pxblue/prettier-config": "^1.0.2",
+        "@pxblue/eslint-config": "^2.0.5",
+        "@pxblue/prettier-config": "^1.0.3",
         "@typescript-eslint/eslint-plugin": "^4.7.0",
         "@typescript-eslint/parser": "^4.7.0",
         "eslint": "^7.13.0",
