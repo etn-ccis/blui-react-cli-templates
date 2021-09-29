@@ -2,7 +2,7 @@
 
 ## v1.1.3 (September 30, 2021)
 
-### Added
+### Changed
 
 -   Upgrade PX Blue packages
 
