@@ -10,7 +10,7 @@ import {
     makeStyles,
     useTheme,
 } from '@material-ui/core';
-import { EmptyState } from '@pxblue/react-components';
+import { EmptyState } from '@brightlayer-ui/react-components';
 import Menu from '@material-ui/icons/Menu';
 import Event from '@material-ui/icons/Event';
 import { useDrawer } from '../contexts/drawerContextProvider';

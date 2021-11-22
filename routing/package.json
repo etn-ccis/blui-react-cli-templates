@@ -1,31 +1,31 @@
 {
-    "name": "@pxblue/cra-template-routing",
+    "name": "@brightlayer-ui/cra-template-routing",
     "version": "1.1.2",
     "keywords": [
         "react",
         "create-react-app",
         "template",
         "javascript",
-        "pxblue",
-        "px blue",
+        "brightlayer-ui",
+        "Brightlayer UI",
         "cli"
     ],
-    "description": "A template with pre-configured routing for React projects created with the PX Blue CLI.",
+    "description": "A template with pre-configured routing for React projects created with the Brightlayer UI CLI.",
     "repository": {
         "type": "git",
-        "url": "https://github.com/pxblue/react-cli-templates.git",
+        "url": "https://github.com/brightlayer-ui/react-cli-templates.git",
         "directory": "routing-typescript"
     },
     "scripts": {
-        "publish:package": "set npm_config_yes=true && npx -p @pxblue/publish pxb-publish",
-        "tag:package": "set npm_config_yes=true && npx -p @pxblue/tag pxb-tag"
+        "publish:package": "set npm_config_yes=true && npx -p @brightlayer-ui/publish blui-publish",
+        "tag:package": "set npm_config_yes=true && npx -p @brightlayer-ui/tag blui-tag"
     },
     "license": "BSD-3-Clause",
     "engines": {
         "node": ">=10"
     },
     "bugs": {
-        "url": "https://github.com/pxblue/react-cli-templates/issues"
+        "url": "https://github.com/brightlayer-ui/react-cli-templates/issues"
     },
     "files": [
         "template",

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { DrawerContext } from './contexts/drawerContextProvider';
 import { NavigationDrawer } from './router/drawer';
 import { MainRouter } from './router/main';
-import { DrawerLayout } from '@pxblue/react-components';
+import { DrawerLayout } from '@brightlayer-ui/react-components';
 
 export const App = () => {
     const [drawerOpen, setDrawerOpen] = useState(false);

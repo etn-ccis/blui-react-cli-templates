@@ -1,13 +1,13 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 import { ThemeProvider, createMuiTheme } from '@material-ui/core';
-import * as PXBThemes from '@pxblue/react-themes';
+import * as BLUIThemes from '@brightlayer-ui/react-themes';
 import { HomePage } from './pages/home';
 import { DrawerContext } from './contexts/drawerContextProvider';
 
 test('renders welcome text', () => {
     render(
-        <ThemeProvider theme={createMuiTheme(PXBThemes.blue)}>
+        <ThemeProvider theme={createMuiTheme(BLUIThemes.blue)}>
             <DrawerContext.Provider
                 value={{
                     drawerOpen: true,
@@ -18,6 +18,6 @@ test('renders welcome text', () => {
             </DrawerContext.Provider>
         </ThemeProvider>
     );
-    const pxbText = screen.getByText(/Welcome to PX/i);
-    expect(pxbText).toBeInTheDocument();
+    const bluiText = screen.getByText(/Welcome to PX/i);
+    expect(bluiText).toBeInTheDocument();
 });

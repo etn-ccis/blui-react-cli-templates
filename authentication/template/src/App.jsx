@@ -2,13 +2,13 @@ import React, { useState } from 'react';
 import { DrawerContext } from './contexts/drawerContextProvider';
 import { NavigationDrawer } from './router/drawer';
 import { MainRouter } from './router/main';
-import { DrawerLayout } from '@pxblue/react-components';
+import { DrawerLayout } from '@brightlayer-ui/react-components';
 import {
     SecurityContextProvider,
     AuthNavigationContainer,
     AuthUIContextProvider,
     useSecurityActions,
-} from '@pxblue/react-auth-workflow';
+} from '@brightlayer-ui/react-auth-workflow';
 import { ProjectAuthUIActions } from './actions/AuthUIActions';
 import { ProjectRegistrationUIActions } from './actions/RegistrationUIActions';
 import { routes } from './constants/routing';
