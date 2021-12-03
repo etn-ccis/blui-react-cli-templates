@@ -69,29 +69,29 @@ jobs:
         - checkout
         - gh/setup
         - run:
-            name: Tag @brightlayer-ui/cra-template-blank -s -blui-cra-template-blank
+            name: Tag @brightlayer-ui/cra-template-blank
             command:  |
-              cd blank && yarn tag:package -b $CIRCLE_BRANCH
+              cd blank && yarn tag:package -b $CIRCLE_BRANCH -s -blui-cra-template-blank
         - run:
-            name: Tag @brightlayer-ui/cra-template-blank-typescript -s -blui-cra-template-blank-typescript
+            name: Tag @brightlayer-ui/cra-template-blank-typescript
             command:   |
-              cd blank-typescript && yarn tag:package -b $CIRCLE_BRANCH
+              cd blank-typescript && yarn tag:package -b $CIRCLE_BRANCH -s -blui-cra-template-blank-typescript
         - run:
-            name: Tag @brightlayer-ui/cra-template-routing -s -blui-cra-template-routing
+            name: Tag @brightlayer-ui/cra-template-routing
             command:  |
-              cd routing && yarn tag:package -b $CIRCLE_BRANCH
+              cd routing && yarn tag:package -b $CIRCLE_BRANCH -s -blui-cra-template-routing
         - run:
-            name: Tag @brightlayer-ui/cra-template-routing-typescript -s -blui-cra-template-routing-typescript
+            name: Tag @brightlayer-ui/cra-template-routing-typescript
             command:   |
-              cd routing-typescript && yarn tag:package -b $CIRCLE_BRANCH
+              cd routing-typescript && yarn tag:package -b $CIRCLE_BRANCH -s -blui-cra-template-routing-typescript
         - run:
-            name: Tag @brightlayer-ui/cra-template-authentication -s -blui-cra-template-authentication
+            name: Tag @brightlayer-ui/cra-template-authentication 
             command:  |
-              cd authentication && yarn tag:package -b $CIRCLE_BRANCH
+              cd authentication && yarn tag:package -b $CIRCLE_BRANCH -s -blui-cra-template-authentication
         - run:
-            name: Tag @brightlayer-ui/cra-template-authentication-typescript -s -blui-cra-template-authentication-typescript
+            name: Tag @brightlayer-ui/cra-template-authentication-typescript 
             command:   |
-              cd authentication-typescript && yarn tag:package -b $CIRCLE_BRANCH
+              cd authentication-typescript && yarn tag:package -b $CIRCLE_BRANCH -s -blui-cra-template-authentication-typescript
 
 workflows:
     version: 2
