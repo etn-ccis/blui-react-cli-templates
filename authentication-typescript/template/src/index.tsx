@@ -10,20 +10,20 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { CssBaseline, ThemeProvider, createMuiTheme } from '@material-ui/core';
 import { BrowserRouter } from 'react-router-dom';
-import * as PXBThemes from '@pxblue/react-themes';
-import '@pxblue/react-themes/open-sans';
+import * as BLUIThemes from '@brightlayer-ui/react-themes';
+import '@brightlayer-ui/react-themes/open-sans';
 import { App } from './App';
 import reportWebVitals from './reportWebVitals';
 import './index.css';
 
 ReactDOM.render(
     // <React.StrictMode>
-        <ThemeProvider theme={createMuiTheme(PXBThemes.blue)}>
-            <BrowserRouter>
-                <CssBaseline />
-                <App />
-            </BrowserRouter>
-        </ThemeProvider>,
+    <ThemeProvider theme={createMuiTheme(BLUIThemes.blue)}>
+        <BrowserRouter>
+            <CssBaseline />
+            <App />
+        </BrowserRouter>
+    </ThemeProvider>,
     // </React.StrictMode>,
     document.getElementById('root')
 );

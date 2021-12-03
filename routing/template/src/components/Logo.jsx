@@ -1,6 +1,6 @@
 import React from 'react';
 
-export const PXBlueSVG = (props) => {
+export const BluiSVG = (props) => {
     const { color, size, className } = props;
     return (
         <svg viewBox={'0 0 82 82'} width={size} height={size} className={className}>
