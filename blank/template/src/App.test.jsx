@@ -4,6 +4,6 @@ import { App } from './App';
 
 test('renders welcome text', () => {
     render(<App />);
-    const bluiText = screen.getByText(/Welcome to PX/i);
+    const bluiText = screen.getByText(/Welcome to Brightlayer/i);
     expect(bluiText).toBeInTheDocument();
 });
