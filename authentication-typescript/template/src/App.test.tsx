@@ -25,6 +25,6 @@ test('renders welcome text', () => {
             </DrawerContext.Provider>
         </ThemeProvider>
     );
-    const bluiText = screen.getByText(/Welcome to PX/i);
+    const bluiText = screen.getByText(/Welcome to Brightlayer/i);
     expect(bluiText).toBeInTheDocument();
 });

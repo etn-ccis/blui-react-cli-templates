@@ -72,9 +72,9 @@ export const App = (): JSX.Element => {
                     <div style={{ textAlign: 'center' }}>
                         <BluiSVG className={classes.rotate} size={xs ? 100 : 160} color={theme.palette.primary.main} />
                         <Typography variant={xs ? 'h4' : 'h2'} paragraph>
-                            Welcome to PX{' '}
+                            Welcome to Brightlayer{' '}
                             <Typography variant={'inherit'} color={'primary'}>
-                                Blue
+                                UI
                             </Typography>
                             .
                         </Typography>
