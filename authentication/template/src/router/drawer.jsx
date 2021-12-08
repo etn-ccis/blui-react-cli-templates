@@ -3,7 +3,7 @@ import { useMediaQuery, useTheme } from '@material-ui/core';
 import { useHistory, useLocation } from 'react-router';
 import { useDrawer } from '../contexts/drawerContextProvider';
 import Menu from '@material-ui/icons/Menu';
-import { Drawer, DrawerBody, DrawerHeader, DrawerNavGroup } from '@pxblue/react-components';
+import { Drawer, DrawerBody, DrawerHeader, DrawerNavGroup } from '@brightlayer-ui/react-components';
 import { PAGES } from './routes';
 
 export const NavigationDrawer = () => {
@@ -34,7 +34,7 @@ export const NavigationDrawer = () => {
             activeItem={selected}
         >
             <DrawerHeader
-                title={'PX Blue'}
+                title={'Brightlayer UI'}
                 subtitle={'React Project'}
                 icon={<Menu />}
                 onIconClick={() => {

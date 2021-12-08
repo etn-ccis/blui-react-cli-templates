@@ -17,10 +17,10 @@ import {
 import Lock from '@material-ui/icons/Lock';
 import Menu from '@material-ui/icons/Menu';
 import ExitToApp from '@material-ui/icons/ExitToApp';
-import { Spacer, UserMenu } from '@pxblue/react-components';
-import { useSecurityActions } from '@pxblue/react-auth-shared';
+import { Spacer, UserMenu } from '@brightlayer-ui/react-components';
+import { useSecurityActions } from '@brightlayer-ui/react-auth-shared';
 import { LocalStorage } from '../store/local-storage';
-import { PXBlueSVG } from '../components/Logo';
+import { BluiSVG } from '../components/Logo';
 import { useDrawer } from '../contexts/drawerContextProvider';
 
 const useStyles = makeStyles((theme) =>
@@ -119,15 +119,11 @@ export const HomePage = () => {
             <div className={classes.body}>
                 <div style={{ maxWidth: 600, margin: '0 auto' }}>
                     <div style={{ textAlign: 'center' }}>
-                        <PXBlueSVG
-                            className={classes.rotate}
-                            size={xs ? 100 : 160}
-                            color={theme.palette.primary.main}
-                        />
+                        <BluiSVG className={classes.rotate} size={xs ? 100 : 160} color={theme.palette.primary.main} />
                         <Typography variant={xs ? 'h4' : 'h2'} paragraph>
-                            Welcome to PX{' '}
+                            Welcome to Brightlayer{' '}
                             <Typography variant={'inherit'} color={'primary'}>
-                                Blue
+                                UI
                             </Typography>
                             .
                         </Typography>
@@ -139,45 +135,48 @@ export const HomePage = () => {
                         <Divider className={classes.divider} />
                         <Grid container spacing={2}>
                             <Grid item xs={12} sm={6}>
-                                <Button target={'_blank'} href={'https://pxblue.github.io/'}>
-                                    PX Blue Documentation
+                                <Button target={'_blank'} href={'https://brightlayer-ui.github.io/'}>
+                                    Brightlayer UI Documentation
                                 </Button>
                             </Grid>
                             <Grid item xs={12} sm={6}>
                                 <Button
                                     target={'_blank'}
-                                    href={'https://pxblue.github.io/development/frameworks-web/react'}
+                                    href={'https://brightlayer-ui.github.io/development/frameworks-web/react'}
                                 >
                                     React Getting Started Guide
                                 </Button>
                             </Grid>
                             <Grid item xs={12} sm={6}>
-                                <Button target={'_blank'} href={'https://pxblue.github.io/patterns'}>
+                                <Button target={'_blank'} href={'https://brightlayer-ui.github.io/patterns'}>
                                     Design Pattern Descriptions
                                 </Button>
                             </Grid>
                             <Grid item xs={12} sm={6}>
-                                <Button target={'_blank'} href={'https://pxblue-components.github.io/react/'}>
-                                    PX Blue React Component Library
+                                <Button target={'_blank'} href={'https://brightlayer-ui-components.github.io/react/'}>
+                                    Brightlayer UI React Component Library
                                 </Button>
                             </Grid>
                             <Grid item xs={12} sm={6}>
-                                <Button target={'_blank'} href={'https://github.com/pxblue'}>
+                                <Button target={'_blank'} href={'https://github.com/brightlayer-ui'}>
                                     Visit Us on GitHub
                                 </Button>
                             </Grid>
                             <Grid item xs={12} sm={6}>
-                                <Button target={'_blank'} href={'https://github.com/pxblue/react-design-patterns'}>
+                                <Button
+                                    target={'_blank'}
+                                    href={'https://github.com/brightlayer-ui/react-design-patterns'}
+                                >
                                     Design Pattern Source on GitHub
                                 </Button>
                             </Grid>
                             <Grid item xs={12} sm={6}>
-                                <Button target={'_blank'} href={'https://pxblue.github.io/roadmap'}>
+                                <Button target={'_blank'} href={'https://brightlayer-ui.github.io/roadmap'}>
                                     Release Roadmap
                                 </Button>
                             </Grid>
                             <Grid item xs={12} sm={6}>
-                                <Button target={'_blank'} href={'https://pxblue.github.io/community/contactus'}>
+                                <Button target={'_blank'} href={'https://brightlayer-ui.github.io/community/contactus'}>
                                     Send Feedback or Suggestions
                                 </Button>
                             </Grid>

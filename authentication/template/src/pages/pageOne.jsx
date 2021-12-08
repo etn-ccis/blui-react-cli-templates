@@ -14,8 +14,8 @@ import Lock from '@material-ui/icons/Lock';
 import Menu from '@material-ui/icons/Menu';
 import ExitToApp from '@material-ui/icons/ExitToApp';
 import Event from '@material-ui/icons/Event';
-import { EmptyState, Spacer, UserMenu } from '@pxblue/react-components';
-import { useSecurityActions } from '@pxblue/react-auth-shared';
+import { EmptyState, Spacer, UserMenu } from '@brightlayer-ui/react-components';
+import { useSecurityActions } from '@brightlayer-ui/react-auth-shared';
 import { LocalStorage } from '../store/local-storage';
 import { useDrawer } from '../contexts/drawerContextProvider';
 
