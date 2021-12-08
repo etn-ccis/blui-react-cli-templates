@@ -1,5 +1,5 @@
 # Changelog
-## v1.1.2 (December 7, 2021)
+## v1.1.2 (December 8, 2021)
 
 ### Changed
 
