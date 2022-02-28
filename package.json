@@ -18,11 +18,12 @@
         "node": ">=10"
     },
     "scripts": {
+        "generate:licenses": "npm-license-crawler -onlyDirectDependencies -json LICENSES.json",
         "lint": "eslint '**/**.{tsx,ts}'",
         "lint:fix": "eslint '**/**.{tsx,ts}' --fix",
         "prettier": "prettier \"**/**.{ts,tsx,js,jsx,json,css,scss,html}\" --write",
         "prettier:check": "prettier \"**/**.{ts,tsx,js,jsx,json,css,scss,html}\"",
-        "precommit": "yarn prettier && yarn lint"
+        "precommit": "yarn prettier && yarn lint && yarn generate:licenses"
     },
     "prettier": "@brightlayer-ui/prettier-config",
     "bugs": {
@@ -36,6 +37,7 @@
         "eslint": "^7.13.0",
         "eslint-config-prettier": "^6.15.0",
         "eslint-plugin-react": "^7.21.5",
+        "npm-license-crawler": "^0.2.1",
         "prettier": "^2.1.2"
     },
     "dependencies": {
