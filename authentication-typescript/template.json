@@ -3,6 +3,9 @@
         "dependencies": {
             "@mui/material": "^5.5.0",
             "@mui/icons-material": "^5.5.0",
+            "@mui/styles": "^5.5.0",
+            "@emotion/react": "^11.8.2",
+            "@emotion/styled": "^11.8.1",
             "@brightlayer-ui/react-auth-workflow": "^2.4.0",
             "@brightlayer-ui/react-themes": "^6.1.1",
             "@brightlayer-ui/react-components": "^5.4.0",
