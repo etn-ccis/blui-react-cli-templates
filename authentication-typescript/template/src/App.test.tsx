@@ -5,12 +5,10 @@ import * as BLUIThemes from '@brightlayer-ui/react-themes';
 import { HomePage } from './pages/home';
 import { DrawerContext } from './contexts/drawerContextProvider';
 
-
 declare module '@mui/styles/defaultTheme' {
-  // eslint-disable-next-line @typescript-eslint/no-empty-interface
-  interface DefaultTheme extends Theme {}
+    // eslint-disable-next-line
+    interface DefaultTheme extends Theme {}
 }
-
 
 jest.mock('@brightlayer-ui/react-auth-shared', () => ({
     useSecurityActions: (): any => ({
