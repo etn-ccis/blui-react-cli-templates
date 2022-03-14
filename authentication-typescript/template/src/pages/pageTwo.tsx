@@ -1,20 +1,11 @@
 import React from 'react';
-import {
-    AppBar,
-    Avatar,
-    IconButton,
-    Theme,
-    Hidden,
-    Toolbar,
-    Typography,
-    createStyles,
-    makeStyles,
-    useTheme,
-} from '@material-ui/core';
-import Lock from '@material-ui/icons/Lock';
-import Menu from '@material-ui/icons/Menu';
-import ExitToApp from '@material-ui/icons/ExitToApp';
-import Event from '@material-ui/icons/Event';
+import { AppBar, Avatar, IconButton, Theme, Hidden, Toolbar, Typography, useTheme } from '@mui/material';
+import createStyles from '@mui/styles/createStyles';
+import makeStyles from '@mui/styles/makeStyles';
+import Lock from '@mui/icons-material/Lock';
+import Menu from '@mui/icons-material/Menu';
+import ExitToApp from '@mui/icons-material/ExitToApp';
+import Event from '@mui/icons-material/Event';
 import { EmptyState, Spacer, UserMenu } from '@brightlayer-ui/react-components';
 import { useSecurityActions } from '@brightlayer-ui/react-auth-shared';
 import { LocalStorage } from '../store/local-storage';
@@ -52,7 +43,7 @@ export const PageTwo = (): JSX.Element => {
                             }}
                             edge={'start'}
                             style={{ marginRight: theme.spacing(3) }}
-                        >
+                            size="large">
                             <Menu />
                         </IconButton>
                     </Hidden>

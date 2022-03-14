@@ -1,8 +1,8 @@
 import React, { useState, useCallback } from 'react';
-import { useMediaQuery, useTheme } from '@material-ui/core';
+import { useMediaQuery, useTheme } from '@mui/material';
 import { useHistory, useLocation } from 'react-router';
 import { useDrawer } from '../contexts/drawerContextProvider';
-import Menu from '@material-ui/icons/Menu';
+import Menu from '@mui/icons-material/Menu';
 import { Drawer, DrawerBody, DrawerHeader, DrawerNavGroup } from '@brightlayer-ui/react-components';
 import { PAGES } from './routes';
 
@@ -11,7 +11,7 @@ export const NavigationDrawer = () => {
     const theme = useTheme();
     const history = useHistory();
     const location = useLocation();
-    const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
+    const isMobile = useMediaQuery(theme.breakpoints.down('md'));
     const [selected, setSelected] = useState(location.pathname);
 
     const navigate = useCallback(

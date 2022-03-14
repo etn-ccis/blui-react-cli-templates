@@ -8,7 +8,8 @@
 import 'react-app-polyfill/stable';
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { CssBaseline, ThemeProvider, createMuiTheme } from '@material-ui/core';
+import { createTheme, ThemeProvider } from '@mui/material/styles';
+import CssBaseline from '@mui/material/CssBaseline';
 import { BrowserRouter } from 'react-router-dom';
 import * as BLUIThemes from '@brightlayer-ui/react-themes';
 import '@brightlayer-ui/react-themes/open-sans';
@@ -18,7 +19,7 @@ import './index.css';
 
 ReactDOM.render(
     // <React.StrictMode>
-    <ThemeProvider theme={createMuiTheme(BLUIThemes.blue)}>
+    <ThemeProvider theme={createTheme(BLUIThemes.blue)}>
         <BrowserRouter>
             <CssBaseline />
             <App />

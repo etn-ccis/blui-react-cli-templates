@@ -9,14 +9,14 @@ import {
     IconButton,
     Toolbar,
     Typography,
-    createStyles,
-    makeStyles,
     useMediaQuery,
     useTheme,
-} from '@material-ui/core';
-import Lock from '@material-ui/icons/Lock';
-import Menu from '@material-ui/icons/Menu';
-import ExitToApp from '@material-ui/icons/ExitToApp';
+} from '@mui/material';
+import createStyles from '@mui/styles/createStyles';
+import makeStyles from '@mui/styles/makeStyles';
+import Lock from '@mui/icons-material/Lock';
+import Menu from '@mui/icons-material/Menu';
+import ExitToApp from '@mui/icons-material/ExitToApp';
 import { Spacer, UserMenu } from '@brightlayer-ui/react-components';
 import { useSecurityActions } from '@brightlayer-ui/react-auth-shared';
 import { LocalStorage } from '../store/local-storage';
@@ -31,13 +31,13 @@ const useStyles = makeStyles((theme) =>
             position: 'relative',
         },
         body: {
-            minHeight: `calc(100vh - ${theme.spacing(8)}px)`,
+            minHeight: `calc(100vh - ${theme.spacing(8)})`,
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
-            padding: `${theme.spacing(3)}px`,
-            [theme.breakpoints.down('xs')]: {
-                minHeight: `calc(100vh - ${theme.spacing(7)}px)`,
+            padding: theme.spacing(3),
+            [theme.breakpoints.down('sm')]: {
+                minHeight: `calc(100vh - ${theme.spacing(7)})`,
             },
         },
         toolbar: {
@@ -63,7 +63,7 @@ export const HomePage = () => {
     const theme = useTheme();
     const classes = useStyles(theme);
     const { setDrawerOpen } = useDrawer();
-    const xs = useMediaQuery(theme.breakpoints.down('xs'));
+    const xs = useMediaQuery(theme.breakpoints.down('sm'));
     const securityHelper = useSecurityActions();
 
     const logOut = () => {
@@ -83,7 +83,7 @@ export const HomePage = () => {
                             }}
                             edge={'start'}
                             style={{ marginRight: theme.spacing(3) }}
-                        >
+                            size="large">
                             <Menu />
                         </IconButton>
                     </Hidden>
@@ -131,7 +131,7 @@ export const HomePage = () => {
                             Edit <strong>src/pages/home.jsx</strong> and save to reload.
                         </Typography>
                     </div>
-                    <Hidden xsDown>
+                    <Hidden smDown>
                         <Divider className={classes.divider} />
                         <Grid container spacing={2}>
                             <Grid item xs={12} sm={6}>

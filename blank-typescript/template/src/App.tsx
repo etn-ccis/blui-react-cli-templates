@@ -9,12 +9,12 @@ import {
     Theme,
     Toolbar,
     Typography,
-    createStyles,
-    makeStyles,
     useMediaQuery,
     useTheme,
-} from '@material-ui/core';
-import MenuIcon from '@material-ui/icons/Menu';
+} from '@mui/material';
+import createStyles from '@mui/styles/createStyles';
+import makeStyles from '@mui/styles/makeStyles';
+import MenuIcon from '@mui/icons-material/Menu';
 import { BluiSVG } from './Logo';
 
 const useStyles = makeStyles((theme: Theme) =>
@@ -29,7 +29,7 @@ const useStyles = makeStyles((theme: Theme) =>
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
-            padding: `${theme.spacing(8)}px ${theme.spacing(3)}px`,
+            padding: `${theme.spacing(8)} ${theme.spacing(3)}`,
         },
         toolbar: {
             paddingLeft: theme.spacing(2),
@@ -53,13 +53,17 @@ const useStyles = makeStyles((theme: Theme) =>
 export const App = (): JSX.Element => {
     const theme = useTheme();
     const classes = useStyles(theme);
-    const xs = useMediaQuery(theme.breakpoints.down('xs'));
+    const xs = useMediaQuery(theme.breakpoints.down('sm'));
 
     return (
         <div className={classes.pageBackground}>
             <AppBar position={'fixed'}>
                 <Toolbar className={classes.toolbar}>
-                    <IconButton color={'inherit'} edge={'start'} style={{ marginRight: theme.spacing(3) }}>
+                    <IconButton
+                        color={'inherit'}
+                        edge={'start'}
+                        style={{ marginRight: theme.spacing(3) }}
+                        size="large">
                         <MenuIcon />
                     </IconButton>
                     <Typography variant={'h6'} color={'inherit'}>
@@ -82,7 +86,7 @@ export const App = (): JSX.Element => {
                             Edit <strong>src/App.tsx</strong> and save to reload.
                         </Typography>
                     </div>
-                    <Hidden xsDown>
+                    <Hidden smDown>
                         <Divider className={classes.divider} />
                         <Grid container spacing={2}>
                             <Grid item xs={12} sm={6}>

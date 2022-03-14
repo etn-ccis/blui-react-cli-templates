@@ -1,8 +1,10 @@
 import React from 'react';
-import { AppBar, IconButton, Hidden, Toolbar, Typography, createStyles, makeStyles, useTheme } from '@material-ui/core';
+import { AppBar, IconButton, Hidden, Toolbar, Typography, useTheme } from '@mui/material';
+import createStyles from '@mui/styles/createStyles';
+import makeStyles from '@mui/styles/makeStyles';
 import { EmptyState } from '@brightlayer-ui/react-components';
-import Menu from '@material-ui/icons/Menu';
-import Event from '@material-ui/icons/Event';
+import Menu from '@mui/icons-material/Menu';
+import Event from '@mui/icons-material/Event';
 import { useDrawer } from '../contexts/drawerContextProvider';
 
 const useStyles = makeStyles((theme) =>
@@ -31,7 +33,7 @@ export const PageOne = () => {
                             }}
                             edge={'start'}
                             style={{ marginRight: theme.spacing(3) }}
-                        >
+                            size="large">
                             <Menu />
                         </IconButton>
                     </Hidden>

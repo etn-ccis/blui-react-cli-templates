@@ -8,12 +8,12 @@ import {
     IconButton,
     Toolbar,
     Typography,
-    createStyles,
-    makeStyles,
     useMediaQuery,
     useTheme,
-} from '@material-ui/core';
-import MenuIcon from '@material-ui/icons/Menu';
+} from '@mui/material';
+import createStyles from '@mui/styles/createStyles';
+import makeStyles from '@mui/styles/makeStyles';
+import MenuIcon from '@mui/icons-material/Menu';
 import { BluiSVG } from '../components/Logo';
 import { useDrawer } from '../contexts/drawerContextProvider';
 
@@ -25,13 +25,13 @@ const useStyles = makeStyles((theme) =>
             position: 'relative',
         },
         body: {
-            minHeight: `calc(100vh - ${theme.spacing(8)}px)`,
+            minHeight: `calc(100vh - ${theme.spacing(8)})`,
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
-            padding: `${theme.spacing(3)}px`,
-            [theme.breakpoints.down('xs')]: {
-                minHeight: `calc(100vh - ${theme.spacing(7)}px)`,
+            padding: theme.spacing(3),
+            [theme.breakpoints.down('sm')]: {
+                minHeight: `calc(100vh - ${theme.spacing(7)})`,
             },
         },
         toolbar: {
@@ -57,7 +57,7 @@ export const HomePage = () => {
     const theme = useTheme();
     const classes = useStyles(theme);
     const { setDrawerOpen } = useDrawer();
-    const xs = useMediaQuery(theme.breakpoints.down('xs'));
+    const xs = useMediaQuery(theme.breakpoints.down('sm'));
 
     return (
         <div className={classes.pageBackground}>
@@ -71,7 +71,7 @@ export const HomePage = () => {
                             }}
                             edge={'start'}
                             style={{ marginRight: theme.spacing(3) }}
-                        >
+                            size="large">
                             <MenuIcon />
                         </IconButton>
                     </Hidden>
@@ -95,7 +95,7 @@ export const HomePage = () => {
                             Edit <strong>src/pages/home.jsx</strong> and save to reload.
                         </Typography>
                     </div>
-                    <Hidden xsDown>
+                    <Hidden smDown>
                         <Divider className={classes.divider} />
                         <Grid container spacing={2}>
                             <Grid item xs={12} sm={6}>
