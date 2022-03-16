@@ -1,5 +1,5 @@
 import React from 'react';
-import { AppBar, IconButton, Hidden, Toolbar, Typography, useTheme } from '@mui/material';
+import { AppBar, IconButton, Toolbar, Typography, useTheme, useMediaQuery } from '@mui/material';
 import createStyles from '@mui/styles/createStyles';
 import makeStyles from '@mui/styles/makeStyles';
 import { EmptyState } from '@brightlayer-ui/react-components';
@@ -20,12 +20,13 @@ export const PageOne = () => {
     const theme = useTheme();
     const classes = useStyles(theme);
     const { setDrawerOpen } = useDrawer();
+    const md = useMediaQuery(theme.breakpoints.up('md'));
 
     return (
         <div style={{ display: 'flex', flexDirection: 'column', height: '100%' }}>
             <AppBar position={'sticky'}>
                 <Toolbar className={classes.toolbar}>
-                    <Hidden mdUp={true}>
+                    {md ? null : (
                         <IconButton
                             color={'inherit'}
                             onClick={() => {
@@ -33,10 +34,11 @@ export const PageOne = () => {
                             }}
                             edge={'start'}
                             style={{ marginRight: theme.spacing(3) }}
-                            size="large">
+                            size="large"
+                        >
                             <Menu />
                         </IconButton>
-                    </Hidden>
+                    )}
                     <Typography variant={'h6'} color={'inherit'}>
                         Page One
                     </Typography>

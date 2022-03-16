@@ -1,5 +1,5 @@
 import React from 'react';
-import { AppBar, Avatar, IconButton, Theme, Hidden, Toolbar, Typography, useTheme } from '@mui/material';
+import { AppBar, Avatar, IconButton, Theme, Toolbar, Typography, useTheme, useMediaQuery } from '@mui/material';
 import createStyles from '@mui/styles/createStyles';
 import makeStyles from '@mui/styles/makeStyles';
 import Lock from '@mui/icons-material/Lock';
@@ -24,6 +24,7 @@ export const PageOne = (): JSX.Element => {
     const theme = useTheme();
     const classes = useStyles(theme);
     const { setDrawerOpen } = useDrawer();
+    const md = useMediaQuery(theme.breakpoints.up('md'));
     const securityHelper = useSecurityActions();
 
     const logOut = (): void => {
@@ -35,7 +36,7 @@ export const PageOne = (): JSX.Element => {
         <div style={{ display: 'flex', flexDirection: 'column', height: '100%' }}>
             <AppBar position={'sticky'}>
                 <Toolbar className={classes.toolbar}>
-                    <Hidden mdUp={true}>
+                    {md ? null : (
                         <IconButton
                             color={'inherit'}
                             onClick={(): void => {
@@ -43,10 +44,11 @@ export const PageOne = (): JSX.Element => {
                             }}
                             edge={'start'}
                             style={{ marginRight: theme.spacing(3) }}
-                            size="large">
+                            size="large"
+                        >
                             <Menu />
                         </IconButton>
-                    </Hidden>
+                    )}
                     <Typography variant={'h6'} color={'inherit'}>
                         Page One
                     </Typography>

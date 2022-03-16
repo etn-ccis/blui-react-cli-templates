@@ -4,7 +4,6 @@ import {
     Button,
     Divider,
     Grid,
-    Hidden,
     IconButton,
     Theme,
     Toolbar,
@@ -82,57 +81,65 @@ export const App = (): JSX.Element => {
                             Edit <strong>src/App.tsx</strong> and save to reload.
                         </Typography>
                     </div>
-                    <Hidden smDown>
-                        <Divider className={classes.divider} />
-                        <Grid container spacing={2}>
-                            <Grid item xs={12} sm={6}>
-                                <Button target={'_blank'} href={'https://brightlayer-ui.github.io/'}>
-                                    Brightlayer UI Documentation
-                                </Button>
+                    {sm ? null : (
+                        <>
+                            <Divider className={classes.divider} />
+                            <Grid container spacing={2}>
+                                <Grid item xs={12} sm={6}>
+                                    <Button target={'_blank'} href={'https://brightlayer-ui.github.io/'}>
+                                        Brightlayer UI Documentation
+                                    </Button>
+                                </Grid>
+                                <Grid item xs={12} sm={6}>
+                                    <Button
+                                        target={'_blank'}
+                                        href={'https://brightlayer-ui.github.io/development/frameworks-web/react'}
+                                    >
+                                        React Getting Started Guide
+                                    </Button>
+                                </Grid>
+                                <Grid item xs={12} sm={6}>
+                                    <Button target={'_blank'} href={'https://brightlayer-ui.github.io/patterns'}>
+                                        Design Pattern Descriptions
+                                    </Button>
+                                </Grid>
+                                <Grid item xs={12} sm={6}>
+                                    <Button
+                                        target={'_blank'}
+                                        href={'https://brightlayer-ui-components.github.io/react/'}
+                                    >
+                                        Brightlayer UI React Component Library
+                                    </Button>
+                                </Grid>
+                                <Grid item xs={12} sm={6}>
+                                    <Button target={'_blank'} href={'https://github.com/brightlayer-ui'}>
+                                        Visit Us on GitHub
+                                    </Button>
+                                </Grid>
+                                <Grid item xs={12} sm={6}>
+                                    <Button
+                                        target={'_blank'}
+                                        href={'https://github.com/brightlayer-ui/react-design-patterns'}
+                                    >
+                                        Design Pattern Source on GitHub
+                                    </Button>
+                                </Grid>
+                                <Grid item xs={12} sm={6}>
+                                    <Button target={'_blank'} href={'https://brightlayer-ui.github.io/roadmap'}>
+                                        Release Roadmap
+                                    </Button>
+                                </Grid>
+                                <Grid item xs={12} sm={6}>
+                                    <Button
+                                        target={'_blank'}
+                                        href={'https://brightlayer-ui.github.io/community/contactus'}
+                                    >
+                                        Send Feedback or Suggestions
+                                    </Button>
+                                </Grid>
                             </Grid>
-                            <Grid item xs={12} sm={6}>
-                                <Button
-                                    target={'_blank'}
-                                    href={'https://brightlayer-ui.github.io/development/frameworks-web/react'}
-                                >
-                                    React Getting Started Guide
-                                </Button>
-                            </Grid>
-                            <Grid item xs={12} sm={6}>
-                                <Button target={'_blank'} href={'https://brightlayer-ui.github.io/patterns'}>
-                                    Design Pattern Descriptions
-                                </Button>
-                            </Grid>
-                            <Grid item xs={12} sm={6}>
-                                <Button target={'_blank'} href={'https://brightlayer-ui-components.github.io/react/'}>
-                                    Brightlayer UI React Component Library
-                                </Button>
-                            </Grid>
-                            <Grid item xs={12} sm={6}>
-                                <Button target={'_blank'} href={'https://github.com/brightlayer-ui'}>
-                                    Visit Us on GitHub
-                                </Button>
-                            </Grid>
-                            <Grid item xs={12} sm={6}>
-                                <Button
-                                    target={'_blank'}
-                                    href={'https://github.com/brightlayer-ui/react-design-patterns'}
-                                >
-                                    Design Pattern Source on GitHub
-                                </Button>
-                            </Grid>
-                            <Grid item xs={12} sm={6}>
-                                <Button target={'_blank'} href={'https://brightlayer-ui.github.io/roadmap'}>
-                                    Release Roadmap
-                                </Button>
-                            </Grid>
-                            <Grid item xs={12} sm={6}>
-                                <Button target={'_blank'} href={'https://brightlayer-ui.github.io/community/contactus'}>
-                                    Send Feedback or Suggestions
-                                </Button>
-                            </Grid>
-                        </Grid>
-                    </Hidden>
+                        </>
+                    )}
                 </div>
             </div>
         </div>
