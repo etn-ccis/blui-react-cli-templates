@@ -64,7 +64,7 @@ export const HomePage = (): JSX.Element => {
     const theme = useTheme();
     const classes = useStyles(theme);
     const { setDrawerOpen } = useDrawer();
-    const xs = useMediaQuery(theme.breakpoints.down('sm'));
+    const sm = useMediaQuery(theme.breakpoints.down('sm'));
     const securityHelper = useSecurityActions();
 
     const logOut = (): void => {
@@ -84,7 +84,8 @@ export const HomePage = (): JSX.Element => {
                             }}
                             edge={'start'}
                             style={{ marginRight: theme.spacing(3) }}
-                            size="large">
+                            size="large"
+                        >
                             <Menu />
                         </IconButton>
                     </Hidden>
@@ -120,8 +121,8 @@ export const HomePage = (): JSX.Element => {
             <div className={classes.body}>
                 <div style={{ maxWidth: 600, margin: '0 auto' }}>
                     <div style={{ textAlign: 'center' }}>
-                        <BluiSVG className={classes.rotate} size={xs ? 100 : 160} color={theme.palette.primary.main} />
-                        <Typography variant={xs ? 'h4' : 'h2'} paragraph>
+                        <BluiSVG className={classes.rotate} size={sm ? 100 : 160} color={theme.palette.primary.main} />
+                        <Typography variant={sm ? 'h4' : 'h2'} paragraph>
                             Welcome to Brightlayer{' '}
                             <Typography variant={'inherit'} color={'primary'}>
                                 UI

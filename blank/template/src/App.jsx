@@ -52,7 +52,7 @@ const useStyles = makeStyles((theme) =>
 export const App = () => {
     const theme = useTheme();
     const classes = useStyles(theme);
-    const xs = useMediaQuery(theme.breakpoints.down('sm'));
+    const sm = useMediaQuery(theme.breakpoints.down('sm'));
 
     return (
         <div className={classes.pageBackground}>
@@ -73,8 +73,8 @@ export const App = () => {
             <div className={classes.body}>
                 <div style={{ maxWidth: 600, margin: '0 auto' }}>
                     <div style={{ textAlign: 'center' }}>
-                        <BluiSVG className={classes.rotate} size={xs ? 100 : 160} color={theme.palette.primary.main} />
-                        <Typography variant={xs ? 'h4' : 'h2'} paragraph>
+                        <BluiSVG className={classes.rotate} size={sm ? 100 : 160} color={theme.palette.primary.main} />
+                        <Typography variant={sm ? 'h4' : 'h2'} paragraph>
                             Welcome to Brightlayer{' '}
                             <Typography variant={'inherit'} color={'primary'}>
                                 UI
