@@ -1,4 +1,11 @@
 # Changelog
+
+## v2.0.0 (Unpublished)
+
+### Changed
+
+-   Updated material-ui version to v5.
+
 ## v1.1.2 (December 8, 2021)
 
 ### Changed
@@ -19,8 +26,8 @@ Previous versions listed after this indicator refer to our deprecated `@pxblue` 
 
 ### Changed
 
-- Lock Material UI dependency on version 4.11 to avoid v4 -> v5 deprecation warnings. We will have new templates in the future that will support v5.
-- React Strict Mode no longer enabled by default.
+-   Lock Material UI dependency on version 4.11 to avoid v4 -> v5 deprecation warnings. We will have new templates in the future that will support v5.
+-   React Strict Mode no longer enabled by default.
 
 ## v1.1.1 (April 27, 2021)
 
@@ -53,4 +60,5 @@ Previous versions listed after this indicator refer to our deprecated `@pxblue` 
 ## v1.0.0 (December 10, 2020)
 
 ### Added
+
 -   Initial authentication template for JavaScript projects
