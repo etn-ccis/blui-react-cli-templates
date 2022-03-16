@@ -1,6 +1,6 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
-import { ThemeProvider, Theme, StyledEngineProvider, createTheme, adaptV4Theme } from '@mui/material';
+import { ThemeProvider, Theme, StyledEngineProvider, createTheme } from '@mui/material';
 import * as BLUIThemes from '@brightlayer-ui/react-themes';
 import { HomePage } from './pages/home';
 import { DrawerContext } from './contexts/drawerContextProvider';
@@ -20,7 +20,7 @@ jest.mock('@brightlayer-ui/react-auth-shared', () => ({
 test('renders welcome text', () => {
     render(
         <StyledEngineProvider injectFirst>
-            <ThemeProvider theme={createTheme(adaptV4Theme(BLUIThemes.blue))}>
+            <ThemeProvider theme={createTheme(BLUIThemes.blue)}>
                 <DrawerContext.Provider
                     value={{
                         drawerOpen: true,
