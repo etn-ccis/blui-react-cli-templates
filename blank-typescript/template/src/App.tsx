@@ -46,6 +46,9 @@ const useStyles = makeStyles((theme: Theme) =>
                 transform: 'rotate(360deg)',
             },
         },
+        uiText: {
+            color: theme.palette.primary.main,
+        },
     })
 );
 
@@ -71,11 +74,7 @@ export const App = (): JSX.Element => {
                     <div style={{ textAlign: 'center' }}>
                         <BluiSVG className={classes.rotate} size={sm ? 100 : 160} color={theme.palette.primary.main} />
                         <Typography variant={sm ? 'h4' : 'h2'} paragraph>
-                            Welcome to Brightlayer{' '}
-                            <Typography variant={'inherit'} color={'primary'}>
-                                UI
-                            </Typography>
-                            .
+                            Welcome to Brightlayer <span className={classes.uiText}>UI</span>.
                         </Typography>
                         <Typography variant={'body1'}>
                             Edit <strong>src/App.tsx</strong> and save to reload.
