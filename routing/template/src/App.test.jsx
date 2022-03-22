@@ -1,6 +1,6 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
-import { ThemeProvider, StyledEngineProvider, createTheme } from '@mui/material';
+import { ThemeProvider, createTheme, StyledEngineProvider } from '@mui/material/styles';
 import * as BLUIThemes from '@brightlayer-ui/react-themes';
 import { HomePage } from './pages/home';
 import { DrawerContext } from './contexts/drawerContextProvider';
