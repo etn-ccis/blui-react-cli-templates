@@ -1,18 +1,10 @@
 import React from 'react';
-import {
-    AppBar,
-    IconButton,
-    Theme,
-    Hidden,
-    Toolbar,
-    Typography,
-    createStyles,
-    makeStyles,
-    useTheme,
-} from '@material-ui/core';
+import { AppBar, IconButton, Theme, Toolbar, Typography, useTheme, useMediaQuery } from '@mui/material';
+import createStyles from '@mui/styles/createStyles';
+import makeStyles from '@mui/styles/makeStyles';
 import { EmptyState } from '@brightlayer-ui/react-components';
-import Menu from '@material-ui/icons/Menu';
-import Event from '@material-ui/icons/Event';
+import Menu from '@mui/icons-material/Menu';
+import Event from '@mui/icons-material/Event';
 import { useDrawer } from '../contexts/drawerContextProvider';
 
 const useStyles = makeStyles((theme: Theme) =>
@@ -28,12 +20,13 @@ export const PageOne = (): JSX.Element => {
     const theme = useTheme();
     const classes = useStyles(theme);
     const { setDrawerOpen } = useDrawer();
+    const md = useMediaQuery(theme.breakpoints.up('md'));
 
     return (
         <div style={{ display: 'flex', flexDirection: 'column', height: '100%' }}>
             <AppBar position={'sticky'}>
                 <Toolbar className={classes.toolbar}>
-                    <Hidden mdUp={true}>
+                    {md ? null : (
                         <IconButton
                             color={'inherit'}
                             onClick={(): void => {
@@ -41,10 +34,11 @@ export const PageOne = (): JSX.Element => {
                             }}
                             edge={'start'}
                             style={{ marginRight: theme.spacing(3) }}
+                            size="large"
                         >
                             <Menu />
                         </IconButton>
-                    </Hidden>
+                    )}
                     <Typography variant={'h6'} color={'inherit'}>
                         Page One
                     </Typography>
