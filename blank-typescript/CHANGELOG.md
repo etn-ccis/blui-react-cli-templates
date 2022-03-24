@@ -4,6 +4,7 @@
 
 ### Changed
 
+-   Update blank template unit test ([#49](https://github.com/brightlayer-ui/react-cli-templates/issues/49)).
 -   Updated material-ui version to v5.
 
 ## v1.1.2 (December 8, 2021)
