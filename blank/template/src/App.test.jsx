@@ -8,7 +8,7 @@ test('renders welcome text', () => {
     render(
         <StyledEngineProvider injectFirst>
             <ThemeProvider theme={createTheme(BLUIThemes.blue)}>
-                    <App />
+                <App />
             </ThemeProvider>
         </StyledEngineProvider>
     );
