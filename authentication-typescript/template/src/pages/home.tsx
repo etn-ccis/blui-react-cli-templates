@@ -51,10 +51,12 @@ const useStyles = makeStyles((theme: Theme) =>
         rotate: {
             animation: '2500ms $spin linear infinite',
         },
+        /* eslint-disable @typescript-eslint/naming-convention */
         '@keyframes spin': {
             '100%': {
                 transform: 'rotate(360deg)',
             },
+            /* eslint-enable @typescript-eslint/naming-convention */
         },
         uiText: {
             color: theme.palette.primary.main,
