@@ -6,19 +6,19 @@ import LooksTwo from '@mui/icons-material/LooksTwo';
 export const PAGES = [
     {
         title: 'Home Page',
-        route: '/',
+        route: '',
         component: HomePage,
         icon: Home,
     },
     {
         title: 'Page One',
-        route: '/page-one',
+        route: 'page-one',
         component: PageOne,
         icon: LooksOne,
     },
     {
         title: 'Page Two',
-        route: '/page-two',
+        route: 'page-two',
         component: PageTwo,
         icon: LooksTwo,
     },

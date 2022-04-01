@@ -7,7 +7,7 @@
  **/
 import 'react-app-polyfill/stable';
 import React from 'react';
-import ReactDOM from 'react-dom';
+import ReactDOMClient from 'react-dom/client';
 import { createTheme, ThemeProvider, StyledEngineProvider } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 import * as BLUIThemes from '@brightlayer-ui/react-themes';
@@ -16,16 +16,18 @@ import { App } from './App';
 import reportWebVitals from './reportWebVitals';
 import './index.css';
 
-ReactDOM.render(
-    // <React.StrictMode>
+const container = document.getElementById('root');
+if (!container) throw new Error('Root Element was not found in the DOM');
+
+const root = ReactDOMClient.createRoot(container);
+
+root.render(
     <StyledEngineProvider injectFirst>
         <ThemeProvider theme={createTheme(BLUIThemes.blue)}>
             <CssBaseline />
             <App />
         </ThemeProvider>
-    </StyledEngineProvider>,
-    // </React.StrictMode>,
-    document.getElementById('root')
+    </StyledEngineProvider>
 );
 
 // If you want to start measuring performance in your app, pass a function
