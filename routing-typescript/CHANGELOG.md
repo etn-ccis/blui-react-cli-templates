@@ -1,10 +1,11 @@
 # Changelog
 
-## v2.0.0 (Unpublished)
+## v2.0.0 (April 1, 2022)
 
 ### Changed
 
 -   Updated material-ui version to v5.
+-   Updated React Router to v6.
 
 ## v1.1.2 (December 8, 2021)
 

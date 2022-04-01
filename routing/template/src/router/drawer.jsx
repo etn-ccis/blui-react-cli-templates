@@ -1,6 +1,6 @@
 import React, { useState, useCallback } from 'react';
 import { useMediaQuery, useTheme } from '@mui/material';
-import { useHistory, useLocation } from 'react-router';
+import { useNavigate, useLocation } from 'react-router';
 import { useDrawer } from '../contexts/drawerContextProvider';
 import Menu from '@mui/icons-material/Menu';
 import { Drawer, DrawerBody, DrawerHeader, DrawerNavGroup } from '@brightlayer-ui/react-components';
@@ -9,17 +9,17 @@ import { PAGES } from './routes';
 export const NavigationDrawer = () => {
     const { drawerOpen, setDrawerOpen } = useDrawer();
     const theme = useTheme();
-    const history = useHistory();
+    const navigate = useNavigate();
     const location = useLocation();
     const isMobile = useMediaQuery(theme.breakpoints.down('md'));
     const [selected, setSelected] = useState(location.pathname);
 
-    const navigate = useCallback(
+    const handleNavigate = useCallback(
         (id) => {
-            history.push(id);
+            navigate(id);
             setSelected(id);
         },
-        [history, setSelected]
+        [navigate, setSelected]
     );
 
     return (
@@ -51,7 +51,7 @@ export const NavigationDrawer = () => {
                             icon: <Icon />,
                             onClick: page.route
                                 ? () => {
-                                      navigate(page.route);
+                                      handleNavigate(page.route);
                                       if (isMobile) setDrawerOpen(false);
                                   }
                                 : undefined,
