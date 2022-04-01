@@ -34,31 +34,30 @@ export const AuthUIConfiguration: React.FC = (props) => {
     );
 };
 
-export const SharedLayoutWrapper: React.FC = () => (
-    <DrawerLayout drawer={<NavigationDrawer />} style={{ height: '100%' }}>
-        <Outlet />
-    </DrawerLayout>
-);
-
-export const App = (): JSX.Element => {
+const SharedLayoutWrapper: React.FC = () => {
     const [drawerOpen, setDrawerOpen] = useState(false);
-
     return (
-        <SecurityContextProvider>
-            <AuthUIConfiguration>
-                <AuthNavigationContainer routeConfig={routes}>
-                    <DrawerContext.Provider
-                        value={{
-                            drawerOpen,
-                            setDrawerOpen,
-                        }}
-                    >
-                        <Route path={''} element={<SharedLayoutWrapper />}>
-                            {MainRouter}
-                        </Route>
-                    </DrawerContext.Provider>
-                </AuthNavigationContainer>
-            </AuthUIConfiguration>
-        </SecurityContextProvider>
+        <DrawerContext.Provider
+            value={{
+                drawerOpen,
+                setDrawerOpen,
+            }}
+        >
+            <DrawerLayout drawer={<NavigationDrawer />} style={{ height: '100%' }}>
+                <Outlet />
+            </DrawerLayout>
+        </DrawerContext.Provider>
     );
 };
+
+export const App = (): JSX.Element => (
+    <SecurityContextProvider>
+        <AuthUIConfiguration>
+            <AuthNavigationContainer routeConfig={routes}>
+                <Route path={''} element={<SharedLayoutWrapper />}>
+                    {MainRouter}
+                </Route>
+            </AuthNavigationContainer>
+        </AuthUIConfiguration>
+    </SecurityContextProvider>
+);

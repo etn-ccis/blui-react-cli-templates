@@ -34,31 +34,30 @@ export const AuthUIConfiguration = (props) => {
     );
 };
 
-const SharedLayoutWrapper = () => (
-    <DrawerLayout drawer={<NavigationDrawer />} style={{ height: '100%' }}>
-        <Outlet />
-    </DrawerLayout>
-);
-
-export const App = () => {
+const SharedLayoutWrapper = () => {
     const [drawerOpen, setDrawerOpen] = useState(false);
-
     return (
-        <SecurityContextProvider>
-            <AuthUIConfiguration>
-                <AuthNavigationContainer routeConfig={routes}>
-                    <DrawerContext.Provider
-                        value={{
-                            drawerOpen,
-                            setDrawerOpen,
-                        }}
-                    >
-                        <Route path={''} element={<SharedLayoutWrapper />}>
-                            {MainRouter}
-                        </Route>
-                    </DrawerContext.Provider>
-                </AuthNavigationContainer>
-            </AuthUIConfiguration>
-        </SecurityContextProvider>
+        <DrawerContext.Provider
+            value={{
+                drawerOpen,
+                setDrawerOpen,
+            }}
+        >
+            <DrawerLayout drawer={<NavigationDrawer />} style={{ height: '100%' }}>
+                <Outlet />
+            </DrawerLayout>
+        </DrawerContext.Provider>
     );
 };
+
+export const App = () => (
+    <SecurityContextProvider>
+        <AuthUIConfiguration>
+            <AuthNavigationContainer routeConfig={routes}>
+                <Route path={''} element={<SharedLayoutWrapper />}>
+                    {MainRouter}
+                </Route>
+            </AuthNavigationContainer>
+        </AuthUIConfiguration>
+    </SecurityContextProvider>
+);
