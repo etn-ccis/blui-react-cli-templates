@@ -49,12 +49,13 @@ export const NavigationDrawer = () => {
                             title: page.title,
                             itemID: page.route || '',
                             icon: <Icon />,
-                            onClick: page.route
-                                ? () => {
-                                      handleNavigate(page.route);
-                                      if (isMobile) setDrawerOpen(false);
-                                  }
-                                : undefined,
+                            onClick:
+                                page.route !== undefined
+                                    ? () => {
+                                          handleNavigate(page.route);
+                                          if (isMobile) setDrawerOpen(false);
+                                      }
+                                    : undefined,
                         };
                     })}
                     hidePadding

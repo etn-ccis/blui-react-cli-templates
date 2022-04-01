@@ -11,7 +11,7 @@
             "@brightlayer-ui/icons-mui": "^3.0.0",
             "@brightlayer-ui/colors": "^3.0.1",
             "react-app-polyfill": "latest",
-            "web-vitals":"2.1.4"
+            "web-vitals": "2.1.4"
         },
         "devDependencies": {
             "enzyme": "^3.11.0",

@@ -49,12 +49,13 @@ export const NavigationDrawer: React.FC = () => {
                             title: page.title,
                             itemID: page.route || '',
                             icon: <Icon />,
-                            onClick: page.route
-                                ? (): void => {
-                                      handleNavigate(page.route);
-                                      if (isMobile) setDrawerOpen(false);
-                                  }
-                                : undefined,
+                            onClick:
+                                page.route !== undefined
+                                    ? (): void => {
+                                          handleNavigate(page.route);
+                                          if (isMobile) setDrawerOpen(false);
+                                      }
+                                    : undefined,
                         };
                     })}
                     hidePadding
