@@ -13,6 +13,7 @@ import { ProjectAuthUIActions } from './actions/AuthUIActions';
 import { ProjectRegistrationUIActions } from './actions/RegistrationUIActions';
 import { routes } from './constants/routing';
 import productLogo from './assets/images/eaton_stacked_logo.png';
+import { Route, Outlet } from 'react-router-dom';
 
 export const AuthUIConfiguration: React.FC = (props) => {
     const securityContextActions = useSecurityActions();
@@ -33,6 +34,12 @@ export const AuthUIConfiguration: React.FC = (props) => {
     );
 };
 
+export const SharedLayoutWrapper: React.FC = () => (
+    <DrawerLayout drawer={<NavigationDrawer />} style={{ height: '100%' }}>
+        <Outlet />
+    </DrawerLayout>
+);
+
 export const App = (): JSX.Element => {
     const [drawerOpen, setDrawerOpen] = useState(false);
 
@@ -46,9 +53,9 @@ export const App = (): JSX.Element => {
                             setDrawerOpen,
                         }}
                     >
-                        <DrawerLayout drawer={<NavigationDrawer />} style={{ height: '100%' }}>
-                            <MainRouter />
-                        </DrawerLayout>
+                        <Route path={''} element={<SharedLayoutWrapper />}>
+                            {MainRouter}
+                        </Route>
                     </DrawerContext.Provider>
                 </AuthNavigationContainer>
             </AuthUIConfiguration>
