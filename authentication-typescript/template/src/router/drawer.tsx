@@ -1,25 +1,25 @@
 import React, { useState, useCallback } from 'react';
-import { useMediaQuery, useTheme } from '@material-ui/core';
-import { useHistory, useLocation } from 'react-router';
+import { useMediaQuery, useTheme } from '@mui/material';
+import { useNavigate, useLocation } from 'react-router';
 import { useDrawer } from '../contexts/drawerContextProvider';
-import Menu from '@material-ui/icons/Menu';
+import Menu from '@mui/icons-material/Menu';
 import { Drawer, DrawerBody, DrawerHeader, DrawerNavGroup } from '@brightlayer-ui/react-components';
 import { PAGES } from './routes';
 
 export const NavigationDrawer: React.FC = () => {
     const { drawerOpen, setDrawerOpen } = useDrawer();
     const theme = useTheme();
-    const history = useHistory();
+    const navigate = useNavigate();
     const location = useLocation();
-    const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
+    const isMobile = useMediaQuery(theme.breakpoints.down('md'));
     const [selected, setSelected] = useState(location.pathname);
 
-    const navigate = useCallback(
+    const handleNavigate = useCallback(
         (id: string): void => {
-            history.push(id);
+            navigate(id);
             setSelected(id);
         },
-        [history, setSelected]
+        [navigate, setSelected]
     );
 
     return (
@@ -49,12 +49,13 @@ export const NavigationDrawer: React.FC = () => {
                             title: page.title,
                             itemID: page.route || '',
                             icon: <Icon />,
-                            onClick: page.route
-                                ? (): void => {
-                                      navigate(page.route);
-                                      if (isMobile) setDrawerOpen(false);
-                                  }
-                                : undefined,
+                            onClick:
+                                page.route !== undefined
+                                    ? (): void => {
+                                          handleNavigate(page.route);
+                                          if (isMobile) setDrawerOpen(false);
+                                      }
+                                    : undefined,
                         };
                     })}
                     hidePadding

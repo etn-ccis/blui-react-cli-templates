@@ -13,6 +13,7 @@ import { ProjectAuthUIActions } from './actions/AuthUIActions';
 import { ProjectRegistrationUIActions } from './actions/RegistrationUIActions';
 import { routes } from './constants/routing';
 import productLogo from './assets/images/eaton_stacked_logo.png';
+import { Route, Outlet } from 'react-router-dom';
 
 export const AuthUIConfiguration: React.FC = (props) => {
     const securityContextActions = useSecurityActions();
@@ -33,25 +34,30 @@ export const AuthUIConfiguration: React.FC = (props) => {
     );
 };
 
-export const App = (): JSX.Element => {
+const SharedLayoutWrapper: React.FC = () => {
     const [drawerOpen, setDrawerOpen] = useState(false);
-
     return (
-        <SecurityContextProvider>
-            <AuthUIConfiguration>
-                <AuthNavigationContainer routeConfig={routes}>
-                    <DrawerContext.Provider
-                        value={{
-                            drawerOpen,
-                            setDrawerOpen,
-                        }}
-                    >
-                        <DrawerLayout drawer={<NavigationDrawer />} style={{ height: '100%' }}>
-                            <MainRouter />
-                        </DrawerLayout>
-                    </DrawerContext.Provider>
-                </AuthNavigationContainer>
-            </AuthUIConfiguration>
-        </SecurityContextProvider>
+        <DrawerContext.Provider
+            value={{
+                drawerOpen,
+                setDrawerOpen,
+            }}
+        >
+            <DrawerLayout drawer={<NavigationDrawer />} style={{ height: '100%' }}>
+                <Outlet />
+            </DrawerLayout>
+        </DrawerContext.Provider>
     );
 };
+
+export const App = (): JSX.Element => (
+    <SecurityContextProvider>
+        <AuthUIConfiguration>
+            <AuthNavigationContainer routeConfig={routes}>
+                <Route path={''} element={<SharedLayoutWrapper />}>
+                    {MainRouter}
+                </Route>
+            </AuthNavigationContainer>
+        </AuthUIConfiguration>
+    </SecurityContextProvider>
+);
