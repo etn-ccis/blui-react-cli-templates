@@ -4,7 +4,7 @@ orbs:
 jobs:
     build_project:
         docker:
-            - image: circleci/node:12.9.1-browsers
+            - image: cimg/node:14.19.0-browsers
         working_directory: ~/react-cli-templates
         steps:
             - checkout
@@ -29,7 +29,7 @@ jobs:
 
     publish:
       docker:
-        - image: circleci/node:12.9.1-browsers
+        - image: cimg/node:14.19.0-browsers
       steps:
         - checkout
         - run:
@@ -64,7 +64,7 @@ jobs:
 
     tag:
       docker:
-        - image: circleci/node:12.9.1-browsers
+        - image: cimg/node:14.19.0-browsers
       steps:
         - checkout
         - gh/setup

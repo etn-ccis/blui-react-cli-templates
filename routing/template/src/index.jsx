@@ -7,25 +7,30 @@
  **/
 import 'react-app-polyfill/stable';
 import React from 'react';
-import ReactDOM from 'react-dom';
-import { CssBaseline, ThemeProvider, createMuiTheme } from '@material-ui/core';
+import ReactDOMClient from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
+import { createTheme, ThemeProvider, StyledEngineProvider } from '@mui/material/styles';
+import CssBaseline from '@mui/material/CssBaseline';
 import * as BLUIThemes from '@brightlayer-ui/react-themes';
 import '@brightlayer-ui/react-themes/open-sans';
 import { App } from './App';
 import reportWebVitals from './reportWebVitals';
 import './index.css';
 
-ReactDOM.render(
-    // <React.StrictMode>
-    <ThemeProvider theme={createMuiTheme(BLUIThemes.blue)}>
-        <BrowserRouter>
-            <CssBaseline />
-            <App />
-        </BrowserRouter>
-    </ThemeProvider>,
-    // </React.StrictMode>,
-    document.getElementById('root')
+const container = document.getElementById('root');
+if (!container) throw new Error('Root Element was not found in the DOM');
+
+const root = ReactDOMClient.createRoot(container);
+
+root.render(
+    <StyledEngineProvider injectFirst>
+        <ThemeProvider theme={createTheme(BLUIThemes.blue)}>
+            <BrowserRouter>
+                <CssBaseline />
+                <App />
+            </BrowserRouter>
+        </ThemeProvider>
+    </StyledEngineProvider>
 );
 
 // If you want to start measuring performance in your app, pass a function

@@ -13,6 +13,7 @@ import { ProjectAuthUIActions } from './actions/AuthUIActions';
 import { ProjectRegistrationUIActions } from './actions/RegistrationUIActions';
 import { routes } from './constants/routing';
 import productLogo from './assets/images/eaton_stacked_logo.png';
+import { Route, Outlet } from 'react-router-dom';
 
 export const AuthUIConfiguration = (props) => {
     const securityContextActions = useSecurityActions();
@@ -33,25 +34,30 @@ export const AuthUIConfiguration = (props) => {
     );
 };
 
-export const App = () => {
+const SharedLayoutWrapper = () => {
     const [drawerOpen, setDrawerOpen] = useState(false);
-
     return (
-        <SecurityContextProvider>
-            <AuthUIConfiguration>
-                <AuthNavigationContainer routeConfig={routes}>
-                    <DrawerContext.Provider
-                        value={{
-                            drawerOpen,
-                            setDrawerOpen,
-                        }}
-                    >
-                        <DrawerLayout drawer={<NavigationDrawer />} style={{ height: '100%' }}>
-                            <MainRouter />
-                        </DrawerLayout>
-                    </DrawerContext.Provider>
-                </AuthNavigationContainer>
-            </AuthUIConfiguration>
-        </SecurityContextProvider>
+        <DrawerContext.Provider
+            value={{
+                drawerOpen,
+                setDrawerOpen,
+            }}
+        >
+            <DrawerLayout drawer={<NavigationDrawer />} style={{ height: '100%' }}>
+                <Outlet />
+            </DrawerLayout>
+        </DrawerContext.Provider>
     );
 };
+
+export const App = () => (
+    <SecurityContextProvider>
+        <AuthUIConfiguration>
+            <AuthNavigationContainer routeConfig={routes}>
+                <Route path={''} element={<SharedLayoutWrapper />}>
+                    {MainRouter}
+                </Route>
+            </AuthNavigationContainer>
+        </AuthUIConfiguration>
+    </SecurityContextProvider>
+);

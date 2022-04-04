@@ -18,25 +18,27 @@
         "node": ">=10"
     },
     "scripts": {
+        "generate:licenses": "npm-license-crawler -onlyDirectDependencies -json LICENSES.json",
         "lint": "eslint '**/**.{tsx,ts}'",
         "lint:fix": "eslint '**/**.{tsx,ts}' --fix",
         "prettier": "prettier \"**/**.{ts,tsx,js,jsx,json,css,scss,html}\" --write",
         "prettier:check": "prettier \"**/**.{ts,tsx,js,jsx,json,css,scss,html}\"",
-        "precommit": "yarn prettier && yarn lint"
+        "precommit": "yarn prettier && yarn lint && yarn generate:licenses"
     },
     "prettier": "@brightlayer-ui/prettier-config",
     "bugs": {
         "url": "https://github.com/brightlayer-ui/react-cli-templates/issues"
     },
     "devDependencies": {
-        "@brightlayer-ui/eslint-config": "^2.0.5",
+        "@brightlayer-ui/eslint-config": "^3.0.0",
         "@brightlayer-ui/prettier-config": "^1.0.3",
-        "@typescript-eslint/eslint-plugin": "^4.7.0",
-        "@typescript-eslint/parser": "^4.7.0",
-        "eslint": "^7.13.0",
-        "eslint-config-prettier": "^6.15.0",
-        "eslint-plugin-react": "^7.21.5",
-        "prettier": "^2.1.2"
+        "@typescript-eslint/eslint-plugin": "^5.16.0",
+        "@typescript-eslint/parser": "^5.16.0",
+        "eslint": "^8.11.0",
+        "eslint-config-prettier": "^8.5.0",
+        "eslint-plugin-react": "^7.29.4",
+        "npm-license-crawler": "^0.2.1",
+        "prettier": "^2.6.0"
     },
     "dependencies": {
         "typescript": "^4.0.5"

@@ -3,6 +3,7 @@ import { DrawerContext } from './contexts/drawerContextProvider';
 import { NavigationDrawer } from './router/drawer';
 import { MainRouter } from './router/main';
 import { DrawerLayout } from '@brightlayer-ui/react-components';
+import { Routes } from 'react-router-dom';
 
 export const App = () => {
     const [drawerOpen, setDrawerOpen] = useState(false);
@@ -15,7 +16,7 @@ export const App = () => {
             }}
         >
             <DrawerLayout drawer={<NavigationDrawer />} style={{ height: '100%' }}>
-                <MainRouter />
+                <Routes>{MainRouter}</Routes>
             </DrawerLayout>
         </DrawerContext.Provider>
     );
