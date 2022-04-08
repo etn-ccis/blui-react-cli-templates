@@ -1,5 +1,11 @@
 # Changelog
 
+## v2.0.1 (April 11, 2022)
+
+### Changed
+
+-   Updated dependencies ([#58](https://github.com/brightlayer-ui/react-component-library/issues/58)).
+
 ## v2.0.0 (April 4, 2022)
 
 ### Changed
