@@ -1,6 +1,6 @@
 # Changelog
 
-## v2.0.1 (April 11, 2022)
+## v2.0.1 (April 15, 2022)
 
 ### Changed
 
