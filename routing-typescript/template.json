@@ -7,7 +7,7 @@
             "@emotion/react": "^11.8.2",
             "@emotion/styled": "^11.8.1",
             "@brightlayer-ui/react-themes": "^7.0.0",
-            "@brightlayer-ui/react-components": "^6.0.0",
+            "@brightlayer-ui/react-components": "^6.1.0-beta.0",
             "@brightlayer-ui/icons-mui": "^3.0.0",
             "@brightlayer-ui/colors": "^3.0.1",
             "react-app-polyfill": "latest",
