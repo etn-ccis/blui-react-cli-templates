@@ -1,56 +1,44 @@
 import React from 'react';
-import { AppBar, Button, Divider, Grid, IconButton, Toolbar, Typography, useMediaQuery, useTheme } from '@mui/material';
-import createStyles from '@mui/styles/createStyles';
-import makeStyles from '@mui/styles/makeStyles';
+import {
+    AppBar,
+    Button,
+    Divider,
+    Grid,
+    IconButton,
+    Toolbar,
+    Typography,
+    Box,
+    useMediaQuery,
+    useTheme,
+} from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import { BluiSVG } from './Logo';
+import { keyframes } from '@mui/system';
 
-const useStyles = makeStyles((theme) =>
-    createStyles({
-        pageBackground: {
-            backgroundColor: theme.palette.background.paper,
-            minHeight: '100vh',
-            position: 'relative',
-        },
-        body: {
-            minHeight: '100vh',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            padding: `${theme.spacing(8)} ${theme.spacing(3)}`,
-        },
-        toolbar: {
-            paddingLeft: theme.spacing(2),
-            paddingRight: theme.spacing(2),
-        },
-        divider: {
-            marginTop: theme.spacing(3),
-            marginBottom: theme.spacing(3),
-        },
-        rotate: {
-            animation: '2500ms $spin linear infinite',
-        },
-        '@keyframes spin': {
-            '100%': {
-                transform: 'rotate(360deg)',
-            },
-        },
-        uiText: {
-            color: theme.palette.primary.main,
-        },
-    })
-);
+const spin = keyframes`
+0% {
+    transform: 'rotate(0deg)',
+}
+100% {
+    transform: 'rotate(360deg)',
+}
+`;
 
 export const App = () => {
     const theme = useTheme();
-    const classes = useStyles(theme);
     const sm = useMediaQuery(theme.breakpoints.down('sm'));
 
     return (
-        <div className={classes.pageBackground}>
+        <Box
+            sx={{
+                backgroundColor: theme.palette.background.paper,
+                minHeight: '100vh',
+                position: 'relative',
+            }}
+        >
             <AppBar position={'fixed'}>
-                <Toolbar className={classes.toolbar}>
-                    <IconButton color={'inherit'} edge={'start'} style={{ marginRight: theme.spacing(3) }} size="large">
+                <Toolbar sx={{ px: 2 }}>
+                    <IconButton color={'inherit'} edge={'start'} sx={{ mr: 3 }} size="large">
                         <MenuIcon />
                     </IconButton>
                     <Typography variant={'h6'} color={'inherit'}>
@@ -58,20 +46,43 @@ export const App = () => {
                     </Typography>
                 </Toolbar>
             </AppBar>
-            <div className={classes.body}>
-                <div style={{ maxWidth: 600, margin: '0 auto' }}>
-                    <div style={{ textAlign: 'center' }}>
-                        <BluiSVG className={classes.rotate} size={sm ? 100 : 160} color={theme.palette.primary.main} />
+            <Box
+                sx={{
+                    minHeight: '100vh',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    p: `${theme.spacing(8)} ${theme.spacing(3)}`,
+                }}
+            >
+                <Box sx={{ maxWidth: 600, m: '0 auto' }}>
+                    <Box sx={{ textAlign: 'center' }}>
+                        <BluiSVG
+                            sx={{
+                                animation: `2500ms ${spin} linear infinite`,
+                            }}
+                            size={sm ? 100 : 160}
+                            color={theme.palette.primary.main}
+                        />
                         <Typography variant={sm ? 'h4' : 'h2'} paragraph>
-                            Welcome to Brightlayer <span className={classes.uiText}>UI</span>.
+                            Welcome to Brightlayer{' '}
+                            <Box
+                                component="span"
+                                sx={{
+                                    color: theme.palette.primary.main,
+                                }}
+                            >
+                                UI
+                            </Box>
+                            .
                         </Typography>
                         <Typography variant={'body1'}>
                             Edit <strong>src/App.jsx</strong> and save to reload.
                         </Typography>
-                    </div>
+                    </Box>
                     {sm ? null : (
                         <>
-                            <Divider className={classes.divider} />
+                            <Divider sx={{ my: 3 }} />
                             <Grid container spacing={2}>
                                 <Grid item xs={12} sm={6}>
                                     <Button target={'_blank'} href={'https://brightlayer-ui.github.io/'}>
@@ -128,8 +139,8 @@ export const App = () => {
                             </Grid>
                         </>
                     )}
-                </div>
-            </div>
-        </div>
+                </Box>
+            </Box>
+        </Box>
     );
 };
