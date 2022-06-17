@@ -15,7 +15,7 @@ export const App = () => {
                 setDrawerOpen,
             }}
         >
-            <DrawerLayout drawer={<NavigationDrawer />} style={{ height: '100%' }}>
+            <DrawerLayout drawer={<NavigationDrawer />} sx={{ height: '100%' }}>
                 <Routes>{MainRouter}</Routes>
             </DrawerLayout>
         </DrawerContext.Provider>
