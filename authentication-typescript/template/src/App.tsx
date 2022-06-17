@@ -43,7 +43,7 @@ const SharedLayoutWrapper: React.FC = () => {
                 setDrawerOpen,
             }}
         >
-            <DrawerLayout drawer={<NavigationDrawer />} style={{ height: '100%' }}>
+            <DrawerLayout drawer={<NavigationDrawer />} sx={{ height: '100%' }}>
                 <Outlet />
             </DrawerLayout>
         </DrawerContext.Provider>
