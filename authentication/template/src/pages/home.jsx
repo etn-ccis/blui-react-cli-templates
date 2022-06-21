@@ -20,16 +20,16 @@ import { useSecurityActions } from '@brightlayer-ui/react-auth-shared';
 import { LocalStorage } from '../store/local-storage';
 import { BluiSVG } from '../components/Logo';
 import { useDrawer } from '../contexts/drawerContextProvider';
-import { keyframes } from '@mui/system';
+import { styled } from '@mui/material/styles';
 
-const spin = keyframes`
-0% {
-    transform: 'rotate(0deg)',
-}
-100% {
-    transform: 'rotate(360deg)',
-}
-`;
+const BluiSVGStyled = styled(BluiSVG)({
+    '@keyframes spin': {
+        '100%': {
+            transform: 'rotate(360deg)',
+        },
+    },
+    animation: '2500ms spin linear infinite',
+});
 
 export const HomePage = () => {
     const theme = useTheme();
@@ -107,13 +107,7 @@ export const HomePage = () => {
             >
                 <Box sx={{ maxWidth: 600, m: '0 auto' }}>
                     <Box sx={{ textAlign: 'center' }}>
-                        <BluiSVG
-                            sx={{
-                                animation: `2500ms ${spin} linear infinite`,
-                            }}
-                            size={sm ? 100 : 160}
-                            color={theme.palette.primary.main}
-                        />
+                        <BluiSVGStyled size={sm ? 100 : 160} color={theme.palette.primary.main} />
                         <Typography variant={sm ? 'h4' : 'h2'} paragraph>
                             Welcome to Brightlayer{' '}
                             <Box
