@@ -15,7 +15,7 @@ import { routes } from './constants/routing';
 import productLogo from './assets/images/eaton_stacked_logo.png';
 import { Route, Outlet } from 'react-router-dom';
 
-export const AuthUIConfiguration: React.FC<React.PropsWithChildren<unknown>> = (props) => {
+export const AuthUIConfiguration: React.FC<React.PropsWithChildren> = (props) => {
     const securityContextActions = useSecurityActions();
 
     return (
