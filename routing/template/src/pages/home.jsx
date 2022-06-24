@@ -1,61 +1,40 @@
 import React from 'react';
-import { AppBar, Button, Divider, Grid, IconButton, Toolbar, Typography, useMediaQuery, useTheme } from '@mui/material';
-import createStyles from '@mui/styles/createStyles';
-import makeStyles from '@mui/styles/makeStyles';
+import {
+    AppBar,
+    Button,
+    Divider,
+    Grid,
+    IconButton,
+    Toolbar,
+    Typography,
+    Box,
+    useMediaQuery,
+    useTheme,
+} from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import { BluiSVG } from '../components/Logo';
 import { useDrawer } from '../contexts/drawerContextProvider';
+import { styled } from '@mui/material/styles';
 
-const useStyles = makeStyles((theme) =>
-    createStyles({
-        pageBackground: {
-            backgroundColor: theme.palette.background.paper,
-            minHeight: '100vh',
-            position: 'relative',
+const BluiSVGStyled = styled(BluiSVG)({
+    '@keyframes spin': {
+        '100%': {
+            transform: 'rotate(360deg)',
         },
-        body: {
-            minHeight: `calc(100vh - ${theme.spacing(8)})`,
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            padding: theme.spacing(3),
-            [theme.breakpoints.down('sm')]: {
-                minHeight: `calc(100vh - ${theme.spacing(7)})`,
-            },
-        },
-        toolbar: {
-            paddingLeft: theme.spacing(2),
-            paddingRight: theme.spacing(2),
-        },
-        divider: {
-            marginTop: theme.spacing(3),
-            marginBottom: theme.spacing(3),
-        },
-        rotate: {
-            animation: '2500ms $spin linear infinite',
-        },
-        '@keyframes spin': {
-            '100%': {
-                transform: 'rotate(360deg)',
-            },
-        },
-        uiText: {
-            color: theme.palette.primary.main,
-        },
-    })
-);
+    },
+    animation: '2500ms spin linear infinite',
+});
 
 export const HomePage = () => {
     const theme = useTheme();
-    const classes = useStyles(theme);
     const { setDrawerOpen } = useDrawer();
     const sm = useMediaQuery(theme.breakpoints.down('sm'));
     const md = useMediaQuery(theme.breakpoints.up('md'));
 
     return (
-        <div className={classes.pageBackground}>
+        <Box sx={{ backgroundColor: theme.palette.background.paper, minHeight: '100vh', position: 'relative' }}>
             <AppBar position={'sticky'}>
-                <Toolbar className={classes.toolbar}>
+                <Toolbar sx={{ px: 2 }}>
                     {md ? null : (
                         <IconButton
                             color={'inherit'}
@@ -63,7 +42,7 @@ export const HomePage = () => {
                                 setDrawerOpen(true);
                             }}
                             edge={'start'}
-                            style={{ marginRight: theme.spacing(3) }}
+                            sx={{ mr: 3 }}
                             size="large"
                         >
                             <MenuIcon />
@@ -74,20 +53,40 @@ export const HomePage = () => {
                     </Typography>
                 </Toolbar>
             </AppBar>
-            <div className={classes.body}>
-                <div style={{ maxWidth: 600, margin: '0 auto' }}>
-                    <div style={{ textAlign: 'center' }}>
-                        <BluiSVG className={classes.rotate} size={sm ? 100 : 160} color={theme.palette.primary.main} />
+            <Box
+                sx={{
+                    minHeight: `calc(100vh - ${theme.spacing(8)})`,
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    p: 3,
+                    [theme.breakpoints.down('sm')]: {
+                        minHeight: `calc(100vh - ${theme.spacing(7)})`,
+                    },
+                }}
+            >
+                <Box sx={{ maxWidth: 600, m: '0 auto' }}>
+                    <Box sx={{ textAlign: 'center' }}>
+                        <BluiSVGStyled size={sm ? 100 : 160} color={theme.palette.primary.main} />
                         <Typography variant={sm ? 'h4' : 'h2'} paragraph>
-                            Welcome to Brightlayer <span className={classes.uiText}>UI</span>.
+                            Welcome to Brightlayer{' '}
+                            <Box
+                                component="span"
+                                sx={{
+                                    color: theme.palette.primary.main,
+                                }}
+                            >
+                                UI
+                            </Box>
+                            .
                         </Typography>
                         <Typography variant={'body1'}>
                             Edit <strong>src/pages/home.jsx</strong> and save to reload.
                         </Typography>
-                    </div>
+                    </Box>
                     {sm ? null : (
                         <>
-                            <Divider className={classes.divider} />
+                            <Divider sx={{ my: 3 }} />
                             <Grid container spacing={2}>
                                 <Grid item xs={12} sm={6}>
                                     <Button target={'_blank'} href={'https://brightlayer-ui.github.io/'}>
@@ -144,8 +143,8 @@ export const HomePage = () => {
                             </Grid>
                         </>
                     )}
-                </div>
-            </div>
-        </div>
+                </Box>
+            </Box>
+        </Box>
     );
 };

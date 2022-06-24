@@ -1,5 +1,12 @@
 # Changelog
 
+## v2.1.0 (June 27, 2022)
+
+### Changed
+
+-   Updated dependencies.
+-   Templates are now styled using use the new MUI styled engine.
+
 ## v2.0.1 (April 15, 2022)
 
 ### Changed
