@@ -1,5 +1,12 @@
 # Changelog
 
+## v2.2.0 (December 15, 2022)
+
+### Changed
+
+-   Updated dependencies.
+-   Removed dependency on @mui/styles ([#71](https://github.com/brightlayer-ui/react-workflows/issues/71)).
+
 ## v2.1.0 (June 27, 2022)
 
 ### Changed

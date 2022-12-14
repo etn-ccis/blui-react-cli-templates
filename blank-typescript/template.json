@@ -1,15 +1,14 @@
 {
     "package": {
         "dependencies": {
-            "@mui/material": "^5.5.0",
-            "@mui/icons-material": "^5.5.0",
-            "@mui/styles": "^5.5.0",
+            "@mui/material": "^5.10.15",
+            "@mui/icons-material": "^5.10.15",
             "@emotion/css": "^11.9.0",
             "@emotion/react": "^11.8.2",
             "@emotion/styled": "^11.8.1",
-            "@brightlayer-ui/react-themes": "^7.0.0",
-            "@brightlayer-ui/react-components": "^6.1.0",
-            "@brightlayer-ui/icons-mui": "^3.0.0",
+            "@brightlayer-ui/react-themes": "^7.1.0",
+            "@brightlayer-ui/react-components": "^6.1.2",
+            "@brightlayer-ui/icons-mui": "^3.3.0",
             "@brightlayer-ui/colors": "^3.0.1",
             "react-app-polyfill": "latest",
             "web-vitals": "2.1.4"
