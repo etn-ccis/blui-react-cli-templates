@@ -6,15 +6,15 @@ These are project templates that are used by Create React App when starting a ne
 
 ### Blank
 
-The Blank template provides a bare-bones application with Brightlayer UI components and themes automatically configured and ready to use. This template is available in [TypeScript](https://www.npmjs.com/package/@brightlayer-ui/cra-template-blank-typescript).
+The [Blank template](https://www.npmjs.com/package/@brightlayer-ui/cra-template-blank-typescript) provides a bare-bones application with Brightlayer UI components and themes automatically configured and ready to use.
 
 ### Routing
 
-The Routing template provides all of the essential Brightlayer UI configuration as well as additional configuration for using using [React Router](https://reactrouter.com/). It also adds a navigation Drawer to switch between several sample screens. This template is available in [TypeScript](https://www.npmjs.com/package/@brightlayer-ui/cra-template-routing-typescript).
+The [Routing template](https://www.npmjs.com/package/@brightlayer-ui/cra-template-routing-typescript) provides all of the essential Brightlayer UI configuration as well as additional configuration for using using [React Router](https://reactrouter.com/). It also adds a navigation Drawer to switch between several sample screens.
 
 ### Authentication
 
-The Authentication template includes everything from the Routing template and also installs and configures the Brightlayer UI [react-auth-workflow](https://www.npmjs.com/package/@brightlayer-ui/react-auth-workflow) package to automatically wrap the main application with functions and screens for Login, Registration, Change Password, etc. This template is available in [TypeScript](https://www.npmjs.com/package/@brightlayer-ui/cra-template-authentication-typescript).
+The [Authentication template](https://www.npmjs.com/package/@brightlayer-ui/cra-template-authentication-typescript) includes everything from the Routing template and also installs and configures the Brightlayer UI [react-auth-workflow](https://www.npmjs.com/package/@brightlayer-ui/react-auth-workflow) package to automatically wrap the main application with functions and screens for Login, Registration, Change Password, etc.
 
 |                | placeholder landing page | navigation drawer & routing | login & registration screens |
 | -------------- | ------------------------ | --------------------------- | ---------------------------- |
