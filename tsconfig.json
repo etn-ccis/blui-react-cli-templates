@@ -16,12 +16,5 @@
         "noEmit": true,
         "jsx": "react"
     },
-    "include": [
-        "blank/template",
-        "blank-typescript/template",
-        "routing/template",
-        "routing-typescript/template",
-        "authentication/template",
-        "authentication-typescript/template"
-    ]
+    "include": ["blank-typescript/template", "routing-typescript/template", "authentication-typescript/template"]
 }
