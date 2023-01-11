@@ -164,7 +164,7 @@ export const HomePage = (): JSX.Element => {
                                 <Grid item xs={12} sm={6}>
                                     <Button
                                         target={'_blank'}
-                                        href={'https://github.com/brightlayer-ui/react-design-patterns'}
+                                        href={'https://github.com/etn-ccis/blui-react-design-patterns'}
                                     >
                                         Design Pattern Source on GitHub
                                     </Button>

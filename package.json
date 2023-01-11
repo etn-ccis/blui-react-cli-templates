@@ -10,7 +10,7 @@
     "description": "This repository holds the different react templates used by the Brightlayer UI CLI",
     "repository": {
         "type": "git",
-        "url": "https://github.com/brightlayer-ui/react-cli-templates.git",
+        "url": "https://github.com/etn-ccis/blui-react-cli-templates.git",
         "directory": "blank-typescript"
     },
     "license": "BSD-3-Clause",
@@ -27,7 +27,7 @@
     },
     "prettier": "@brightlayer-ui/prettier-config",
     "bugs": {
-        "url": "https://github.com/brightlayer-ui/react-cli-templates/issues"
+        "url": "https://github.com/etn-ccis/blui-react-cli-templates/issues"
     },
     "devDependencies": {
         "@brightlayer-ui/eslint-config": "^3.0.1",
