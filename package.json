@@ -38,7 +38,7 @@
         "eslint-config-prettier": "^8.5.0",
         "eslint-plugin-react": "^7.29.4",
         "npm-license-crawler": "^0.2.1",
-        "prettier": "^2.6.0"
+        "prettier": "^2.8.8"
     },
     "dependencies": {
         "typescript": "^4.0.5"
