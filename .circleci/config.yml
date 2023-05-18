@@ -49,6 +49,10 @@ jobs:
                   name: Publish @brightlayer-ui/cra-template-authentication-typescript
                   command: |
                       cd authentication-typescript && yarn publish:package -b $CIRCLE_BRANCH
+            - run:
+                  name: Publish @brightlayer-ui/cra-template-seedui-typescript
+                  command: |
+                      cd seedui-typescript && yarn publish:package -b $CIRCLE_BRANCH
 
 workflows:
     version: 2

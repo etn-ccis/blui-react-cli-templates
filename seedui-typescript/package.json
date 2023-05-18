@@ -1,0 +1,35 @@
+{
+  "name": "@brightlayer-ui/cra-template-seedui-typescript",
+  "version": "1.0.0",
+  "keywords": [
+      "react",
+      "create-react-app",
+      "template",
+      "typescript",
+      "brightlayer-ui",
+      "Brightlayer UI",
+      "cli"
+  ],
+  "description": "A template with pre-configured seed ui for React projects created with the Brightlayer UI CLI.",
+  "repository": {
+      "type": "git",
+      "url": "https://github.com/etn-ccis/blui-react-cli-templates.git",
+      "directory": "seed-ui"
+  },
+  "scripts": {
+      "publish:package": "set npm_config_yes=true && npx -p @brightlayer-ui/publish blui-publish",
+      "tag:package": "set npm_config_yes=true && npx -p @brightlayer-ui/tag blui-tag"
+  },
+  "license": "BSD-3-Clause",
+  "engines": {
+      "node": ">=10"
+  },
+  "bugs": {
+      "url": "https://github.com/etn-ccis/blui-react-cli-templates/issues"
+  },
+  "files": [
+      "template",
+      "template.json",
+      "CHANGELOG.md"
+  ]
+}
