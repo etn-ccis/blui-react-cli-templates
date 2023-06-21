@@ -73,3 +73,9 @@ For more information refer to the [CRA documentation](https://create-react-app.d
 ## Browser Support
 
 Brightlayer UI CLI Templates will work with any modern browser. For details refer to our [Browser Support](https://brightlayer-ui.github.io/development/frameworks-web/react#browser-support) documentation.
+
+##. Note
+> **Note for React Seed UI Template:** There are additional steps need to be done before starting the SeedUI template application.
+. 1. Request access for BLCloud SeedUI and Create Auth Token [Personal Access Token](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens).
+     2. In root folder you will find .npmrc file with placeholder ${AUTH_TOKEN} replace with Personal Access Token.
+     3. Install SeedUI package "npm install @etn-electrical/derms-blcloud-seedui".
