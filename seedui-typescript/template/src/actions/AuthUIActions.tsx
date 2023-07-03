@@ -1,4 +1,4 @@
-import { AuthUIActions } from '@etn-electrical/derms-blcloud-seedui';
+import { AuthUIActions } from '@etn-electrical/derms-blcloud-react-seedui';
 import { SAMPLE_EULA } from '../constants/sampleEula';
 
 export const ProjectAuthUIActions = () => (): AuthUIActions => ({

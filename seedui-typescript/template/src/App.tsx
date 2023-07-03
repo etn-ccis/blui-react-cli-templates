@@ -1,6 +1,6 @@
 import React from 'react';
 import { Navigate, Route, Routes } from 'react-router-dom';
-import { AuthUIContextProvider, AuthNavigationContainer } from '@etn-electrical/derms-blcloud-seedui';
+import { AuthUIContextProvider, AuthNavigationContainer } from '@etn-electrical/derms-blcloud-react-seedui';
 
 import { UserInvite } from './component/pages/userinvite/UserInvite';
 import { Dashboard } from './component/pages/dashboard/Dashboard';
