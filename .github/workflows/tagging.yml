@@ -25,3 +25,8 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - run: cd authentication-typescript && yarn tag:package -b ${CURRENT_BRANCH} -s -blui-cra-template-authentication-typescript
+  tag-cra-template-seedui-typescript-package:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - run: cd seedui-typescript && yarn tag:package -b ${CURRENT_BRANCH} -s -blui-cra-template-seedui-typescript

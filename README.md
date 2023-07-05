@@ -16,12 +16,16 @@ The [Routing template](https://www.npmjs.com/package/@brightlayer-ui/cra-templat
 
 The [Authentication template](https://www.npmjs.com/package/@brightlayer-ui/cra-template-authentication-typescript) includes everything from the Routing template and also installs and configures the Brightlayer UI [react-auth-workflow](https://www.npmjs.com/package/@brightlayer-ui/react-auth-workflow) package to automatically wrap the main application with functions and screens for Login, Registration, Change Password, etc.
 
+### Seed UI
+
+The Seed UI template contains authorization feature like Self Invite, Admin Invite, Registration screens along with basic routing etc.
+
 |                | placeholder landing page | navigation drawer & routing | login & registration screens |
 | -------------- | ------------------------ | --------------------------- | ---------------------------- |
 | Blank          | ✅                       |                             |                              |
 | Routing        | ✅                       | ✅                          |                              |
 | Authentication | ✅                       | ✅                          | ✅                           |
-
+| Seed UI        | ✅                       | ✅                          | ✅                           |
 ## Screenshots
 
 ##### Routing Template With Collapsed Drawer
@@ -44,6 +48,7 @@ You can use these templates with the Brightlayer UI CLI (recommended):
 npx -p @brightlayer-ui/cli blui new react --template=blank-typescript
 npx -p @brightlayer-ui/cli blui new react --template=routing-typescript
 npx -p @brightlayer-ui/cli blui new react --template=authentication-typescript
+npx -p @brightlayer-ui/cli blui new react --template=seedui-typescript
 ```
 
 or with the Create React App CLI:
@@ -52,6 +57,7 @@ or with the Create React App CLI:
 npx create-react-app app-name --template @brightlayer-ui/blank-typescript
 npx create-react-app app-name --template @brightlayer-ui/routing-typescript
 npx create-react-app app-name --template @brightlayer-ui/authentication-typescript
+npx create-react-app app-name --template @brightlayer-ui/seedui-typescript
 ```
 
 ## Testing Locally
@@ -67,3 +73,10 @@ For more information refer to the [CRA documentation](https://create-react-app.d
 ## Browser Support
 
 Brightlayer UI CLI Templates will work with any modern browser. For details refer to our [Browser Support](https://brightlayer-ui.github.io/development/frameworks-web/react#browser-support) documentation.
+
+##. Note
+> **Note for React Seed UI Template:** There are additional steps need to be done before starting the SeedUI template application. 
+ 1.  Create Auth Token [Personal Access Token](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens) by selecting scope **read:Packages**.
+ 2.  In root folder you will find .npmrc file with placeholder ${AUTH_TOKEN} replace with Personal Access Token.
+ 3.  Install SeedUI package "npm install @etn-electrical/derms-blcloud-react-seedui".
+ 4.  In config.ts file inside src folder you need to update ${ADOPTER_ID}, ${ADOPTER_APPLICATION_NAME}, ${APPLICATION_ID} with valid value. 
