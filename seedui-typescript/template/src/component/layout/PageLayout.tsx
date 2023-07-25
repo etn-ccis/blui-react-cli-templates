@@ -13,7 +13,8 @@ import LogoutIcon from '@mui/icons-material/Logout';
 import { GroupAdd } from '@mui/icons-material';
 import Menu from '@mui/icons-material/Menu';
 import * as PXBColors from '@brightlayer-ui/colors';
-import { Typography } from '@mui/material';
+import { Typography, useMediaQuery, useTheme } from '@mui/material';
+import { useDrawer } from '../../contexts/drawerContextProvider';
 import headerBackgroundImage from '../../assets/images/topology.png';
 import BrandLogo from '../../assets/images/seed_logo.png';
 import eatonlogo from '../../assets/images/eaton_logo.svg';
@@ -31,8 +32,11 @@ const ROUTE_OBJ = [
     },
 ];
 export const PageLayout: React.FC<React.PropsWithChildren> = (props) => {
-    const [open, setOpen] = useState(true);
+    const { drawerOpen, setDrawerOpen } = useDrawer();
+
     const [active, setActive] = useState<string>('');
+    const theme = useTheme();
+    const isMobile = useMediaQuery(theme.breakpoints.down('md'));
 
     const { pathname } = window.location;
     const firstNavList: NavItem[] = [
@@ -77,7 +81,7 @@ export const PageLayout: React.FC<React.PropsWithChildren> = (props) => {
         <DrawerLayout
             sx={{ height: '100%' }}
             drawer={
-                <Drawer open={open} width={332} variant="persistent" activeItem={active}>
+                <Drawer open={drawerOpen} width={332} variant={isMobile ? 'temporary' : 'persistent'} activeItem={active}>
                     <DrawerHeader
                         title="Seed UI"
                         sx={{ cursor: 'pointer' }}
@@ -85,7 +89,7 @@ export const PageLayout: React.FC<React.PropsWithChildren> = (props) => {
                         backgroundColor={PXBColors.blue[500]}
                         backgroundImage={headerBackgroundImage}
                         icon={<Menu />}
-                        onIconClick={(): void => setOpen(!open)}
+                        onIconClick={(): void => setDrawerOpen(!drawerOpen)}
                         titleContent={
                             <div style={{ width: '100%' }}>
                                 <img style={{ maxWidth: 220, marginTop: 5, height: 29 }} src={BrandLogo} alt="logo" />

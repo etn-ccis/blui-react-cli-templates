@@ -22,6 +22,8 @@ export const headerContent = (): React.CSSProperties => ({
 export const headerTitle = (): React.CSSProperties => ({
     flex: '1',
     color: '#000000',
+    display: 'flex',
+    alignItems: 'center'
 });
 
 export const copyRightsStyle = (): SxProps<Theme> => ({
