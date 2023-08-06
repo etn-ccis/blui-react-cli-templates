@@ -13,7 +13,7 @@ export const UserInviteStyle = (): React.CSSProperties => ({
     alignItems: 'center',
 });
 
-export const UserInvite: React.FC = () => (
+const UserInvite: React.FC = () => (
     <>
         <Header title={'Invite User'} />
         <Box sx={{ height: '90%', backgroundColor: '#7f7f7f' }}>
@@ -23,3 +23,5 @@ export const UserInvite: React.FC = () => (
         </Box>
     </>
 );
+
+export default UserInvite;

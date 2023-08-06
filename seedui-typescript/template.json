@@ -6,6 +6,7 @@
             "@emotion/styled": "^11.8.1",
             "@brightlayer-ui/react-components": "^6.2.0",
             "@brightlayer-ui/react-themes": "^7.1.0",
+            "@brightlayer-ui/react-progress-icons": "^2.1.1",
             "@brightlayer-ui/colors": "^3.1.1",
             "@brightlayer-ui/icons-mui": "^3.4.0",
             "@mui/icons-material": "^5.11.11",
@@ -18,6 +19,7 @@
             "date-fns": "latest"
         },
         "devDependencies": {
+            "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
             "typescript": "^4.9.5",
             "@testing-library/jest-dom": "^5.16.5",
             "@testing-library/react": "^13.4.0",

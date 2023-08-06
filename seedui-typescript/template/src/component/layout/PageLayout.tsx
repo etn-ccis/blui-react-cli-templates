@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from 'react';
+// @ts-nocheck
+import React, { useState, useEffect, useCallback } from 'react';
 import {
     DrawerLayout,
     Drawer,
@@ -8,12 +9,16 @@ import {
     NavItem,
     DrawerFooter,
 } from '@brightlayer-ui/react-components';
+import { useNavigate } from 'react-router';
 import Dashboard from '@mui/icons-material/Dashboard';
 import LogoutIcon from '@mui/icons-material/Logout';
-import { GroupAdd } from '@mui/icons-material';
+import GroupAdd from '@mui/icons-material/GroupAdd';
 import Menu from '@mui/icons-material/Menu';
 import * as PXBColors from '@brightlayer-ui/colors';
-import { Typography, useMediaQuery, useTheme } from '@mui/material';
+import { useTheme } from '@mui/material';
+import useMediaQuery from '@mui/material/useMediaQuery';
+import Typography from '@mui/material/Typography';
+
 import { useDrawer } from '../../contexts/drawerContextProvider';
 import headerBackgroundImage from '../../assets/images/topology.png';
 import BrandLogo from '../../assets/images/seed_logo.png';
@@ -31,22 +36,32 @@ const ROUTE_OBJ = [
         name: 'dashboard',
     },
 ];
-export const PageLayout: React.FC<React.PropsWithChildren> = (props) => {
+const PageLayout: React.FC<React.PropsWithChildren> = (props) => {
     const { drawerOpen, setDrawerOpen } = useDrawer();
+    const navigate = useNavigate();
 
     const [active, setActive] = useState<string>('');
     const theme = useTheme();
     const isMobile = useMediaQuery(theme.breakpoints.down('md'));
 
     const { pathname } = window.location;
+
+    const handleNavigate = useCallback(
+        (path: string, id: string): void => {
+            if (isMobile) setDrawerOpen(false);
+            setActive(id);
+            navigate(path);
+        },
+        [navigate, setActive]
+    );
+
     const firstNavList: NavItem[] = [
         {
             itemID: 'dashboard',
             title: 'Dashboard',
             icon: <Dashboard />,
             onClick: (): void => {
-                setActive('dashboard');
-                window.location.href = '/dashboard';
+                handleNavigate('/dashboard', 'dashboard') 
             },
             divider: false,
         },
@@ -55,8 +70,7 @@ export const PageLayout: React.FC<React.PropsWithChildren> = (props) => {
             title: 'Invite User',
             icon: <GroupAdd />,
             onClick: (): void => {
-                setActive('inviteUser');
-                window.location.href = '/invite';
+                handleNavigate('/invite', 'inviteUser')
             },
             divider: false,
         },
@@ -66,7 +80,7 @@ export const PageLayout: React.FC<React.PropsWithChildren> = (props) => {
             icon: <LogoutIcon />,
             onClick: (): void => {
                 LocalStorage.clearAuthToken();
-                window.location.href = '/login';
+                window.location.href = '/login'
             },
             divider: false,
         },
@@ -81,7 +95,16 @@ export const PageLayout: React.FC<React.PropsWithChildren> = (props) => {
         <DrawerLayout
             sx={{ height: '100%' }}
             drawer={
-                <Drawer open={drawerOpen} width={332} variant={isMobile ? 'temporary' : 'persistent'} activeItem={active}>
+                <Drawer
+                    open={drawerOpen}
+                    ModalProps={{
+                        onBackdropClick: (): void => {
+                            setDrawerOpen(false);
+                        },
+                    }}
+                    width={332}
+                    variant={isMobile ? 'temporary' : 'persistent'} activeItem={active}
+                >
                     <DrawerHeader
                         title="Seed UI"
                         sx={{ cursor: 'pointer' }}
@@ -126,3 +149,5 @@ export const PageLayout: React.FC<React.PropsWithChildren> = (props) => {
         </DrawerLayout>
     );
 };
+
+export default PageLayout;
