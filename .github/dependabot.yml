@@ -9,7 +9,6 @@ updates:
       target-branch: 'dev'
       labels:
           - 'external-dependency'
-          - 'brightlayer-ui'
 
     - package-ecosystem: 'npm'
       directory: '/authentication-typescript'
@@ -20,7 +19,6 @@ updates:
       target-branch: 'dev'
       labels:
           - 'external-dependency'
-          - 'brightlayer-ui'
 
     - package-ecosystem: 'npm'
       directory: '/blank-typescript'
@@ -31,7 +29,6 @@ updates:
       target-branch: 'dev'
       labels:
           - 'external-dependency'
-          - 'brightlayer-ui'
 
     - package-ecosystem: 'npm'
       directory: '/routing-typescript'
@@ -42,7 +39,6 @@ updates:
       target-branch: 'dev'
       labels:
           - 'external-dependency'
-          - 'brightlayer-ui'
 
      - package-ecosystem: 'npm'
       directory: '/seedui-typescript'
@@ -53,4 +49,3 @@ updates:
       target-branch: 'dev'
       labels:
           - 'external-dependency'
-          - 'brightlayer-ui'
