@@ -1,0 +1,27 @@
+name: Tagging
+
+env:
+  GH_TOKEN: ${{ github.token }}
+  CURRENT_BRANCH: ${{ github.ref_name }}
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  tag-cra-template-blank-typescript-package:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - run: cd blank-typescript && yarn tag:package -b ${CURRENT_BRANCH} -s -blui-cra-template-blank-typescript
+  tag-cra-template-routing-typescript-package:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - run: cd routing-typescript && yarn tag:package -b ${CURRENT_BRANCH} -s -blui-cra-template-routing-typescript
+  tag-cra-template-authentication-typescript-package:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - run: cd authentication-typescript && yarn tag:package -b ${CURRENT_BRANCH} -s -blui-cra-template-authentication-typescript

@@ -5,7 +5,7 @@
 ### Changed
 
 -   Updated dependencies.
--   Removed dependency on @mui/styles ([#71](https://github.com/brightlayer-ui/react-workflows/issues/71)).
+-   Removed dependency on @mui/styles ([#71](https://github.com/etn-ccis/blui-react-workflows/issues/71)).
 
 ## v2.1.0 (June 27, 2022)
 
@@ -18,7 +18,7 @@
 
 ### Changed
 
--   Updated dependencies ([#58](https://github.com/brightlayer-ui/react-component-library/issues/58))
+-   Updated dependencies ([#58](https://github.com/etn-ccis/blui-react-component-library/issues/58))
   
 ## v2.0.0 (April 4, 2022)
 

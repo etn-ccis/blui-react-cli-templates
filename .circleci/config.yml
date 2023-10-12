@@ -28,70 +28,27 @@ jobs:
                   command: yarn lint
 
     publish:
-      docker:
-        - image: cimg/node:14.19.0-browsers
-      steps:
-        - checkout
-        - run:
-            name: Authenticate with registry
-            command: |
-              echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > ~/.npmrc
-              echo "//registry.yarnpkg.com/:_authToken=$NPM_TOKEN" >> ~/.npmrc
-        - run:
-            name: Publish @brightlayer-ui/cra-template-blank
-            command:  |
-              cd blank && yarn publish:package -b $CIRCLE_BRANCH
-        - run:
-            name: Publish @brightlayer-ui/cra-template-blank-typescript
-            command:   |
-              cd blank-typescript && yarn publish:package -b $CIRCLE_BRANCH
-        - run:
-            name: Publish @brightlayer-ui/cra-template-routing
-            command:  |
-              cd routing && yarn publish:package -b $CIRCLE_BRANCH
-        - run:
-            name: Publish @brightlayer-ui/cra-template-routing-typescript
-            command:   |
-              cd routing-typescript && yarn publish:package -b $CIRCLE_BRANCH
-        - run:
-            name: Publish @brightlayer-ui/cra-template-authentication
-            command:  |
-              cd authentication && yarn publish:package -b $CIRCLE_BRANCH
-        - run:
-            name: Publish @brightlayer-ui/cra-template-authentication-typescript
-            command:   |
-              cd authentication-typescript && yarn publish:package -b $CIRCLE_BRANCH
-
-    tag:
-      docker:
-        - image: cimg/node:14.19.0-browsers
-      steps:
-        - checkout
-        - gh/setup
-        - run:
-            name: Tag @brightlayer-ui/cra-template-blank
-            command:  |
-              cd blank && yarn tag:package -b $CIRCLE_BRANCH -s -blui-cra-template-blank
-        - run:
-            name: Tag @brightlayer-ui/cra-template-blank-typescript
-            command:   |
-              cd blank-typescript && yarn tag:package -b $CIRCLE_BRANCH -s -blui-cra-template-blank-typescript
-        - run:
-            name: Tag @brightlayer-ui/cra-template-routing
-            command:  |
-              cd routing && yarn tag:package -b $CIRCLE_BRANCH -s -blui-cra-template-routing
-        - run:
-            name: Tag @brightlayer-ui/cra-template-routing-typescript
-            command:   |
-              cd routing-typescript && yarn tag:package -b $CIRCLE_BRANCH -s -blui-cra-template-routing-typescript
-        - run:
-            name: Tag @brightlayer-ui/cra-template-authentication 
-            command:  |
-              cd authentication && yarn tag:package -b $CIRCLE_BRANCH -s -blui-cra-template-authentication
-        - run:
-            name: Tag @brightlayer-ui/cra-template-authentication-typescript 
-            command:   |
-              cd authentication-typescript && yarn tag:package -b $CIRCLE_BRANCH -s -blui-cra-template-authentication-typescript
+        docker:
+            - image: cimg/node:14.19.0-browsers
+        steps:
+            - checkout
+            - run:
+                  name: Authenticate with registry
+                  command: |
+                      echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > ~/.npmrc
+                      echo "//registry.yarnpkg.com/:_authToken=$NPM_TOKEN" >> ~/.npmrc
+            - run:
+                  name: Publish @brightlayer-ui/cra-template-blank-typescript
+                  command: |
+                      cd blank-typescript && yarn publish:package -b $CIRCLE_BRANCH
+            - run:
+                  name: Publish @brightlayer-ui/cra-template-routing-typescript
+                  command: |
+                      cd routing-typescript && yarn publish:package -b $CIRCLE_BRANCH
+            - run:
+                  name: Publish @brightlayer-ui/cra-template-authentication-typescript
+                  command: |
+                      cd authentication-typescript && yarn publish:package -b $CIRCLE_BRANCH
 
 workflows:
     version: 2
@@ -99,17 +56,10 @@ workflows:
         jobs:
             - build_project
             - publish:
-                requires:
-                    - build_project
-                filters:
-                    branches:
-                        only:
-                            - master
-                            - dev
-            - tag:
-                requires:
-                  - publish
-                filters:
-                  branches:
-                    only:
-                      - master
+                  requires:
+                      - build_project
+                  filters:
+                      branches:
+                          only:
+                              - master
+                              - dev

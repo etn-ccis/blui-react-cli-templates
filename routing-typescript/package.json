@@ -13,7 +13,7 @@
     "description": "A template with pre-configured routing for React projects created with the Brightlayer UI CLI.",
     "repository": {
         "type": "git",
-        "url": "https://github.com/brightlayer-ui/react-cli-templates.git",
+        "url": "https://github.com/etn-ccis/blui-react-cli-templates.git",
         "directory": "routing-typescript"
     },
     "scripts": {
@@ -25,7 +25,7 @@
         "node": ">=10"
     },
     "bugs": {
-        "url": "https://github.com/brightlayer-ui/react-cli-templates/issues"
+        "url": "https://github.com/etn-ccis/blui-react-cli-templates/issues"
     },
     "files": [
         "template",

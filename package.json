@@ -10,7 +10,7 @@
     "description": "This repository holds the different react templates used by the Brightlayer UI CLI",
     "repository": {
         "type": "git",
-        "url": "https://github.com/brightlayer-ui/react-cli-templates.git",
+        "url": "https://github.com/etn-ccis/blui-react-cli-templates.git",
         "directory": "blank-typescript"
     },
     "license": "BSD-3-Clause",
@@ -27,18 +27,18 @@
     },
     "prettier": "@brightlayer-ui/prettier-config",
     "bugs": {
-        "url": "https://github.com/brightlayer-ui/react-cli-templates/issues"
+        "url": "https://github.com/etn-ccis/blui-react-cli-templates/issues"
     },
     "devDependencies": {
         "@brightlayer-ui/eslint-config": "^3.0.1",
         "@brightlayer-ui/prettier-config": "^1.0.3",
-        "@typescript-eslint/eslint-plugin": "^5.16.0",
-        "@typescript-eslint/parser": "^5.16.0",
-        "eslint": "^8.11.0",
-        "eslint-config-prettier": "^8.5.0",
-        "eslint-plugin-react": "^7.29.4",
+        "@typescript-eslint/eslint-plugin": "^5.62.0",
+        "@typescript-eslint/parser": "^5.50.0",
+        "eslint": "^8.44.0",
+        "eslint-config-prettier": "^9.0.0",
+        "eslint-plugin-react": "^7.33.2",
         "npm-license-crawler": "^0.2.1",
-        "prettier": "^2.6.0"
+        "prettier": "^2.8.8"
     },
     "dependencies": {
         "typescript": "^4.0.5"
