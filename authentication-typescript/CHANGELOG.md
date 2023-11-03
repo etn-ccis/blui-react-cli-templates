@@ -1,5 +1,12 @@
 # Changelog
 
+## v3.0.0 (November 6, 2023)
+
+-   Update dependencies.
+-   Template update to use latest Authentication Workflow
+
+### Changed
+
 ## v2.2.0 (December 15, 2022)
 
 ### Changed
