@@ -3,6 +3,7 @@ import Home from '@mui/icons-material/Home';
 import LooksOne from '@mui/icons-material/LooksOne';
 import LooksTwo from '@mui/icons-material/LooksTwo';
 
+
 export const PAGES = [
     {
         title: 'Home Page',

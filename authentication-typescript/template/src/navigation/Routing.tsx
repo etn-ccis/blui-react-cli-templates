@@ -1,5 +1,6 @@
 import { RouteConfig } from '@brightlayer-ui/react-auth-workflow';
 
+
 export const routes: RouteConfig = {
     LOGIN: '/login',
     REGISTER_INVITE: '/register-by-invite?code=DEBUG_VALIDATION_CODE_DEADBEEF&email=example@example.com',
