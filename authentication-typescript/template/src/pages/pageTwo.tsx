@@ -49,7 +49,7 @@ export const PageTwo = (): JSX.Element => {
                                     {
                                         title: 'Change Password',
                                         icon: <Lock />,
-                                        onClick: app.setShowChangePasswordDialog(true),
+                                        onClick: () => app.setShowChangePasswordDialog(true),
                                     },
                                     {
                                         title: 'Log Out',
