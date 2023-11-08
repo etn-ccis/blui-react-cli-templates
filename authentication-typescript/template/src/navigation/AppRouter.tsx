@@ -8,17 +8,19 @@ import {
     RegistrationContextProvider,
     ResetPasswordScreen,
     RegistrationWorkflow,
+    LoginScreen,
 } from '@brightlayer-ui/react-auth-workflow';
 import { useApp } from '../contexts/AppContextProvider';
 import { useNavigate } from 'react-router';
 import { ProjectAuthUIActions } from '../actions/AuthUIActions';
 import { Navigate, Outlet, Route, Routes } from 'react-router-dom';
-import { Login } from '../screens/Login';
 import { ProjectRegistrationUIActions } from '../actions/RegistrationUIActions';
 import { routes } from './Routing';
 import { ExampleHome } from '../screens/ExampleHome';
 import i18nAppInstance from '../translations/i18n';
 import { ChangePassword } from '../components/ChangePassword';
+import { DebugComponent } from '../components';
+import EatonLogo from '../assets/images/eaton_stacked_logo.png';
 
 export const AppRouter: React.FC = () => {
     const navigate = useNavigate();
@@ -46,7 +48,17 @@ export const AppRouter: React.FC = () => {
                     path={'/login'}
                     element={
                         <ReactRouterGuestGuard isAuthenticated={app.isAuthenticated} fallBackUrl={'/'}>
-                            <Login />
+                            <LoginScreen
+                                projectImage={<img src={EatonLogo} alt="logo" style={{ maxHeight: 80 }} />}
+                                header={<DebugComponent />}
+                                errorDisplayConfig={{
+                                    mode: 'message-box',
+                                    messageBoxConfig: {
+                                        dismissible: true,
+                                        position: 'top',
+                                    },
+                                }}
+                            />
                         </ReactRouterGuestGuard>
                     }
                 />
