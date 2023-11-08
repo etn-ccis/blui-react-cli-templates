@@ -29,7 +29,7 @@ import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
 import * as Colors from '@brightlayer-ui/colors';
 import FormControl from '@mui/material/FormControl';
-import { MenuItem, Select, SelectChangeEvent } from '@mui/material';
+import { MenuItem, Select, SelectChangeEvent, Stack } from '@mui/material';
 import i18n from '../translations/i18n';
 
 export const ExampleHome: React.FC<React.PropsWithChildren> = () => {
@@ -39,30 +39,6 @@ export const ExampleHome: React.FC<React.PropsWithChildren> = () => {
     const [open, setOpen] = useState(false);
     const navigate = useNavigate();
     const theme = useTheme();
-
-    const containerStyles = {
-        width: '100%',
-        height: `calc(100vh - ${theme.spacing(8)})`,
-        display: 'flex',
-        padding: 0,
-        overflow: 'auto',
-        position: 'relative',
-        flexDirection: 'column',
-        alignItems: 'center',
-        justifyContent: 'center',
-        [theme.breakpoints.down('sm')]: {
-            height: `calc(100vh - ${theme.spacing(7)})`,
-        },
-    };
-
-    const emptyStateContainerStyles = {
-        margin: 'auto',
-        display: 'flex',
-        zIndex: 4,
-        position: 'absolute',
-        alignItems: 'center',
-        justifyContent: 'center',
-    };
 
     const logOut = (): void => {
         LocalStorage.clearAuthCredentials();
@@ -162,14 +138,34 @@ export const ExampleHome: React.FC<React.PropsWithChildren> = () => {
                         </Toolbar>
                     </AppBar>
                 </Box>
-                <Box sx={containerStyles}>
+                <Stack
+                    alignItems={'center'}
+                    justifyContent={'center'}
+                    sx={{
+                        width: '100%',
+                        height: `calc(100vh - ${theme.spacing(8)})`,
+                        padding: 0,
+                        overflow: 'auto',
+                        position: 'relative',
+                        [theme.breakpoints.down('sm')]: {
+                            height: `calc(100vh - ${theme.spacing(7)})`,
+                        },
+                    }}
+                >
                     <EmptyState
-                        sx={emptyStateContainerStyles}
+                        sx={{
+                            margin: 'auto',
+                            display: 'flex',
+                            zIndex: 4,
+                            position: 'absolute',
+                            alignItems: 'center',
+                            justifyContent: 'center',
+                        }}
                         icon={<Event fontSize={'inherit'} />}
                         title={`${t('TOOLBAR_MENU.HOME_PAGE')}`}
                         description={`${t('PAGE_DETAILS.AUTHORISED_MESSAGE')}`}
                     />
-                </Box>
+                </Stack>
             </DrawerLayout>
         </>
     );

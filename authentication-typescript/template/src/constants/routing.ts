@@ -1,6 +1,5 @@
 import { RouteConfig } from '@brightlayer-ui/react-auth-workflow';
 
-
 export const routes: RouteConfig = {
     LOGIN: '/custom-login-route',
     FORGOT_PASSWORD: '/custom-forgot-password-route',

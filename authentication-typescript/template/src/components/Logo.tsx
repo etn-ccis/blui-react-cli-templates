@@ -1,6 +1,5 @@
 import React from 'react';
 
-
 type BluiSVGProps = {
     className?: string;
     color?: string;
