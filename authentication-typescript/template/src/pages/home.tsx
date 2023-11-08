@@ -16,7 +16,7 @@ import Lock from '@mui/icons-material/Lock';
 import Menu from '@mui/icons-material/Menu';
 import ExitToApp from '@mui/icons-material/ExitToApp';
 import { Spacer, UserMenu } from '@brightlayer-ui/react-components';
-import {useApp} from '../contexts/AppContextProvider'
+import { useApp } from '../contexts/AppContextProvider';
 import { LocalStorage } from '../store/local-storage';
 import { BluiSVG } from '../components/Logo';
 import { useDrawer } from '../contexts/drawerContextProvider';
@@ -36,7 +36,7 @@ export const HomePage = (): JSX.Element => {
     const { setDrawerOpen } = useDrawer();
     const sm = useMediaQuery(theme.breakpoints.down('sm'));
     const md = useMediaQuery(theme.breakpoints.up('md'));
-    const app =useApp();
+    const app = useApp();
 
     const logOut = (): void => {
         LocalStorage.clearAuthCredentials();
@@ -78,7 +78,7 @@ export const HomePage = (): JSX.Element => {
                                     {
                                         title: 'Change Password',
                                         icon: <Lock />,
-                                        onClick: app.setShowChangePasswordDialog(true),
+                                        onClick: () => app.setShowChangePasswordDialog(true),
                                     },
                                     {
                                         title: 'Log Out',

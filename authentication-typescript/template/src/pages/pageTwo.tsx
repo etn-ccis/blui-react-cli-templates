@@ -5,7 +5,7 @@ import Menu from '@mui/icons-material/Menu';
 import ExitToApp from '@mui/icons-material/ExitToApp';
 import Event from '@mui/icons-material/Event';
 import { EmptyState, Spacer, UserMenu } from '@brightlayer-ui/react-components';
-import {useApp} from '../contexts/AppContextProvider'
+import { useApp } from '../contexts/AppContextProvider';
 import { LocalStorage } from '../store/local-storage';
 import { useDrawer } from '../contexts/drawerContextProvider';
 
@@ -49,7 +49,7 @@ export const PageTwo = (): JSX.Element => {
                                     {
                                         title: 'Change Password',
                                         icon: <Lock />,
-                                        onClick: app.setShowChangePasswordDialog(true),
+                                        onClick: () => app.setShowChangePasswordDialog(true),
                                     },
                                     {
                                         title: 'Log Out',
