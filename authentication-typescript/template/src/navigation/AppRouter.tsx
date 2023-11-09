@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
     AuthContextProvider,
     ContactSupportScreen,
@@ -10,6 +10,7 @@ import {
     RegistrationWorkflow,
     LoginScreen,
 } from '@brightlayer-ui/react-auth-workflow';
+import { DrawerLayout } from '@brightlayer-ui/react-components';
 import { useApp } from '../contexts/AppContextProvider';
 import { useNavigate } from 'react-router';
 import { ProjectAuthUIActions } from '../actions/AuthUIActions';
@@ -21,10 +22,14 @@ import i18nAppInstance from '../translations/i18n';
 import { ChangePassword } from '../components/ChangePassword';
 import { DebugComponent } from '../components';
 import EatonLogo from '../assets/images/eaton_stacked_logo.png';
+import { PAGES } from '../router/routes';
+import { DrawerContext } from '../contexts/drawerContextProvider';
+import { NavigationDrawer } from '../router/drawer';
 
 export const AppRouter: React.FC = () => {
     const navigate = useNavigate();
     const app = useApp();
+    const [drawerOpen, setDrawerOpen] = useState(false);
     const { email, rememberMe } = app.loginData;
 
     return (
@@ -89,10 +94,17 @@ export const AppRouter: React.FC = () => {
                 {/* USER APPLICATION ROUTES */}
                 <Route
                     element={
-                        <>
-                            <Outlet />
-                            {app.showChangePasswordDialog && <ChangePassword />}
-                        </>
+                        <DrawerContext.Provider
+                            value={{
+                                drawerOpen,
+                                setDrawerOpen,
+                            }}
+                        >
+                            <DrawerLayout drawer={<NavigationDrawer />} sx={{ height: '100%' }}>
+                                <Outlet />
+                                {app.showChangePasswordDialog && <ChangePassword />}
+                            </DrawerLayout>
+                        </DrawerContext.Provider>
                     }
                 >
                     <Route
@@ -103,6 +115,20 @@ export const AppRouter: React.FC = () => {
                             </ReactRouterAuthGuard>
                         }
                     />
+                    {PAGES.map((page) => {
+                        const RouteElement = page.component;
+                        return (
+                            <Route
+                                key={`route_${page.route}`}
+                                path={`${page.route}`}
+                                element={
+                                    <ReactRouterAuthGuard isAuthenticated={app.isAuthenticated} fallBackUrl={'/login'}>
+                                        <RouteElement />
+                                    </ReactRouterAuthGuard>
+                                }
+                            />
+                        );
+                    })}
                     <Route path={'/'} element={<Navigate to={'/homepage'} replace />} />
                 </Route>
                 <Route
