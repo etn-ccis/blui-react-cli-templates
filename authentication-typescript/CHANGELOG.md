@@ -2,7 +2,9 @@
 
 ## v3.0.0 (Unreleased)
 
--   Update dependencies.
+### Changed
+
+-   Updated dependencies.
 -   Template update to use latest Authentication Workflow
 
 ### Changed
