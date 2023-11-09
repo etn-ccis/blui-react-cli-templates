@@ -17,7 +17,6 @@ import { ProjectAuthUIActions } from '../actions/AuthUIActions';
 import { Navigate, Outlet, Route, Routes } from 'react-router-dom';
 import { ProjectRegistrationUIActions } from '../actions/RegistrationUIActions';
 import { routes } from './Routing';
-import { ExampleHome } from '../screens/ExampleHome';
 import i18nAppInstance from '../translations/i18n';
 import { ChangePassword } from '../components/ChangePassword';
 import { DebugComponent } from '../components';
@@ -25,6 +24,7 @@ import EatonLogo from '../assets/images/eaton_stacked_logo.png';
 import { PAGES } from '../router/routes';
 import { DrawerContext } from '../contexts/drawerContextProvider';
 import { NavigationDrawer } from '../router/drawer';
+import { HomePage } from '../pages';
 
 export const AppRouter: React.FC = () => {
     const navigate = useNavigate();
@@ -111,7 +111,7 @@ export const AppRouter: React.FC = () => {
                         path={'/homepage'}
                         element={
                             <ReactRouterAuthGuard isAuthenticated={app.isAuthenticated} fallBackUrl={'/login'}>
-                                <ExampleHome />
+                                <HomePage />
                             </ReactRouterAuthGuard>
                         }
                     />
