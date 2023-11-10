@@ -1,36 +1,30 @@
-/**
- Copyright (c) 2021-present, Eaton
-
- All rights reserved.
-
- This code is licensed under the BSD-3 license found in the LICENSE file in the root directory of this source tree and at https://opensource.org/licenses/BSD-3-Clause.
- **/
+import { ThemeProvider, createTheme, StyledEngineProvider } from '@mui/material/styles';
 import 'react-app-polyfill/stable';
 import React from 'react';
-import ReactDOMClient from 'react-dom/client';
-import { createTheme, ThemeProvider, StyledEngineProvider } from '@mui/material/styles';
+import * as serviceWorker from './serviceWorker';
+import { App } from './App';
 import CssBaseline from '@mui/material/CssBaseline';
 import * as BLUIThemes from '@brightlayer-ui/react-themes';
 import '@brightlayer-ui/react-themes/open-sans';
-import { App } from './App';
-import reportWebVitals from './reportWebVitals';
 import './index.css';
+import { createRoot } from 'react-dom/client';
 
 const container = document.getElementById('root');
-if (!container) throw new Error('Root Element was not found in the DOM');
-
-const root = ReactDOMClient.createRoot(container);
+const root = createRoot(container || document.createDocumentFragment());
 
 root.render(
-    <StyledEngineProvider injectFirst>
-        <ThemeProvider theme={createTheme(BLUIThemes.blue)}>
-            <CssBaseline />
-            <App />
-        </ThemeProvider>
-    </StyledEngineProvider>
+    // Enable Strict Mode for more error checking
+    <React.StrictMode>
+        <StyledEngineProvider injectFirst>
+            <ThemeProvider theme={createTheme(BLUIThemes.blue)}>
+                <CssBaseline />
+                <App />
+            </ThemeProvider>
+        </StyledEngineProvider>
+    </React.StrictMode>
 );
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+// If you want your app to work offline and load faster, you can change
+// unregister() to register() below. Note this comes with some pitfalls.
+// Learn more about service workers: https://bit.ly/CRA-PWA
+serviceWorker.unregister();

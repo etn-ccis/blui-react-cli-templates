@@ -1,63 +1,89 @@
-import React, { useState } from 'react';
-import { DrawerContext } from './contexts/drawerContextProvider';
-import { NavigationDrawer } from './router/drawer';
-import { MainRouter } from './router/main';
-import { DrawerLayout } from '@brightlayer-ui/react-components';
-import {
-    SecurityContextProvider,
-    AuthNavigationContainer,
-    AuthUIContextProvider,
-    useSecurityActions,
-} from '@brightlayer-ui/react-auth-workflow';
-import { ProjectAuthUIActions } from './actions/AuthUIActions';
-import { ProjectRegistrationUIActions } from './actions/RegistrationUIActions';
-import { routes } from './constants/routing';
-import productLogo from './assets/images/eaton_stacked_logo.png';
-import { Route, Outlet } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { AppContext, AppContextType } from './contexts/AppContextProvider';
+import { BrowserRouter } from 'react-router-dom';
+import { AppRouter } from './navigation/AppRouter';
+import { I18nextProvider } from 'react-i18next';
+import i18nAppInstance from './translations/i18n';
+import { LocalStorage } from './store/local-storage';
+import { Stack, CircularProgress } from '@mui/material';
 
-export const AuthUIConfiguration: React.FC<React.PropsWithChildren> = (props) => {
-    const securityContextActions = useSecurityActions();
+export const App = (): JSX.Element => {
+    const [isAuthenticated, setIsAuthenticated] = useState(false);
+    const [language, setLanguage] = useState(window.localStorage.getItem('app-i18nextLng')?.toString() ?? 'en');
+    const [loginData, setLoginData] = useState<AppContextType['loginData']>({
+        email: '',
+        rememberMe: false,
+    });
+    const [showChangePasswordDialog, setShowChangePasswordDialog] = useState(false);
 
-    return (
-        <AuthUIContextProvider
-            authActions={ProjectAuthUIActions(securityContextActions)}
-            registrationActions={ProjectRegistrationUIActions}
-            showSelfRegistration={false}
-            allowDebugMode={true}
-            htmlEula={false}
-            contactEmail={'something@email.com'}
-            contactPhone={'1-800-123-4567'}
-            projectImage={productLogo}
-        >
-            {props.children}
-        </AuthUIContextProvider>
-    );
-};
+    const [isLoading, setIsLoading] = useState(true);
 
-const SharedLayoutWrapper: React.FC = () => {
-    const [drawerOpen, setDrawerOpen] = useState(false);
-    return (
-        <DrawerContext.Provider
-            value={{
-                drawerOpen,
-                setDrawerOpen,
+    // handle initialization of auth data on first load
+    useEffect(() => {
+        const initialize = async (): Promise<void> => {
+            try {
+                const userData = await LocalStorage.readAuthData();
+                setLoginData({ email: userData.rememberMeData.user, rememberMe: userData.rememberMeData.rememberMe });
+                setIsAuthenticated(Boolean(userData.userId));
+            } catch (e) {
+                // handle any error state, rejected promises, etc..
+            } finally {
+                setIsLoading(false);
+            }
+        };
+        void initialize();
+    }, []);
+
+    return isLoading ? (
+        <Stack
+            alignItems={'center'}
+            justifyContent={'center'}
+            sx={{
+                width: '100%',
+                height: (t) => ({ xs: `calc(100vh - ${t.spacing(7)})`, md: `calc(100vh - ${t.spacing(8)})` }),
+                padding: 0,
+                overflow: 'auto',
+                position: 'relative',
             }}
         >
-            <DrawerLayout drawer={<NavigationDrawer />} sx={{ height: '100%' }}>
-                <Outlet />
-            </DrawerLayout>
-        </DrawerContext.Provider>
+            <CircularProgress
+                sx={{
+                    margin: 'auto',
+                    display: 'flex',
+                    zIndex: 4,
+                    position: 'absolute',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                }}
+                size={70}
+                variant={'indeterminate'}
+            />
+        </Stack>
+    ) : (
+        <I18nextProvider i18n={i18nAppInstance} defaultNS={'app'}>
+            <AppContext.Provider
+                value={{
+                    isAuthenticated,
+                    onUserAuthenticated: (userData): void => {
+                        setIsAuthenticated(true);
+                        setLoginData(userData);
+                    },
+                    // eslint-disable-next-line
+                    onUserNotAuthenticated: (userData): void => {
+                        setIsAuthenticated(false);
+                    },
+                    loginData,
+                    setLoginData,
+                    language,
+                    setLanguage,
+                    showChangePasswordDialog,
+                    setShowChangePasswordDialog,
+                }}
+            >
+                <BrowserRouter>
+                    <AppRouter />
+                </BrowserRouter>
+            </AppContext.Provider>
+        </I18nextProvider>
     );
 };
-
-export const App = (): JSX.Element => (
-    <SecurityContextProvider>
-        <AuthUIConfiguration>
-            <AuthNavigationContainer routeConfig={routes}>
-                <Route path={''} element={<SharedLayoutWrapper />}>
-                    {MainRouter}
-                </Route>
-            </AuthNavigationContainer>
-        </AuthUIConfiguration>
-    </SecurityContextProvider>
-);

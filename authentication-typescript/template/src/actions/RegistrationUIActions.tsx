@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
-import { RegistrationUIActions, AccountDetailInformation } from '@brightlayer-ui/react-auth-workflow';
+import { RegistrationUIActions, AccountDetails } from '@brightlayer-ui/react-auth-workflow';
 
 // Constants
 import { SAMPLE_EULA } from '../constants/sampleEula';
@@ -30,14 +30,14 @@ export const ProjectRegistrationUIActions: () => RegistrationUIActions = () => (
      *
      * @returns Resolve with EULA, otherwise reject with an error message.
      */
-    loadEULA: async (language: string): Promise<string> => {
+    loadEula: async (language: string): Promise<string> => {
         await sleep(1000);
 
         if (isRandomFailure()) {
             throw new Error('Sorry, there was a problem sending your request.');
         }
 
-        if (language !== 'en' && language !== 'en_US') {
+        if (!language.includes('en')) {
             return 'Other language EULA';
         }
 
@@ -45,18 +45,65 @@ export const ProjectRegistrationUIActions: () => RegistrationUIActions = () => (
     },
 
     /**
-     * The user entered their email address and accepted the EULA.
-     * The API should now send them an email with the validation code.
+     * The user accepted the EULA.
+     * The API should now update accepted EULA.
      *
-     * @param email  Email for the registering user.
      *
      * @returns Resolve when the server accepted the request.
      */
-    requestRegistrationCode: async (email: string): Promise<void> => {
+    acceptEula: async (): Promise<void> => {
         await sleep(800);
         if (isRandomFailure()) {
             throw new Error('Sorry, there was a problem sending your request.');
         }
+    },
+
+    /**
+     * The user requests for the registration code.
+     * The application should send the code to the email.
+     *
+     * @param email Email used to create an account.
+     *
+     * @returns Resolve when the server sends the registration code.
+     */
+    requestRegistrationCode: async (email: string): Promise<string> => {
+        await sleep(800);
+        if (isRandomFailure()) {
+            throw new Error('Sorry, there was a problem sending your request.');
+        }
+        return 'a1b2c3';
+    },
+
+    /**
+     * The user enters the password to set for an account.
+     * The application should set the password.
+     *
+     * @param password Password used for logging into an account.
+     *
+     * @returns Resolve when the server sends the boolean confirmation.
+     */
+    createPassword: async (password: string): Promise<boolean> => {
+        await sleep(800);
+        if (isRandomFailure()) {
+            throw new Error('Sorry, there was a problem sending your request.');
+        }
+        return true;
+    },
+
+    /**
+     * The user enters the account details to set for an account.
+     * The application should set the account details.
+     *
+     * @param details Account details used for an account.
+     *
+     * @returns Resolve when the server sends the boolean confirmation.
+     */
+    setAccountDetails: async (details: AccountDetails): Promise<boolean> => {
+        await sleep(800);
+        if (isRandomFailure()) {
+            throw new Error('Sorry, there was a problem sending your request.');
+        }
+        return true;
     },
 
     /**
@@ -69,36 +116,28 @@ export const ProjectRegistrationUIActions: () => RegistrationUIActions = () => (
      * @returns Resolves when the code is valid. True if registration is complete, False if account information is needed.
      *          If the code is not valid a rejection will occur with an error message.
      */
-    validateUserRegistrationRequest: async (validationCode: string, validationEmail?: string): Promise<boolean> => {
+    validateUserRegistrationRequest: async (
+        validationCode: string,
+        validationEmail?: string
+    ): Promise<{ codeValid: boolean | string; accountExists?: boolean }> => {
         await sleep(800);
 
         if (isRandomFailure()) {
             throw new Error('Sorry, there was a problem sending your request.');
         }
-        return isRandomFailure();
+        return { codeValid: true, accountExists: false };
     },
+
     /**
-     * The user has been invited to register and has entered the necessary account and
-     * password information.
-     * The application should now complete the registration process given the user's data.
+     * The user requests for completing the account registration process.
+     * The application should complete the registration process.
      *
-     * Note: Upon resolution, the user will be brought back to the Login screen.
+     * @param userData A complete user data for an account.
      *
-     * @param userData  Account details and password entered by the user.
-     * @param validationCode  Registration code provided from the invitation email link.
-     * @param validationEmail  Email provided from the invitation email link (optional) `?email=addr%40domain.com`.
-     *
-     * @returns Resolve when account creation succeeds, otherwise reject with an error message.
+     * @returns Resolve when the server sends the email and organizationName.
      */
-    completeRegistration: async (
-        userData: {
-            password: string;
-            accountDetails: AccountDetailInformation;
-        },
-        validationCode: string,
-        validationEmail?: string
-    ): Promise<{ email: string; organizationName: string }> => {
-        const email = validationEmail || 'example@email.com';
+    completeRegistration: async (userData: object): Promise<{ email: string; organizationName: string }> => {
+        const email = 'example@email.com';
         const organizationName = 'Acme Co.';
         const userInfo = { email, organizationName };
 

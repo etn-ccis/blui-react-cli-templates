@@ -1,5 +1,14 @@
 # Changelog
 
+## v3.0.0 (Unpublished)
+
+### Changed
+
+-   Updated dependencies.
+-   Template update to use latest Authentication Workflow
+
+### Changed
+
 ## v2.2.0 (December 15, 2022)
 
 ### Changed

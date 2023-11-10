@@ -5,7 +5,7 @@ import Menu from '@mui/icons-material/Menu';
 import ExitToApp from '@mui/icons-material/ExitToApp';
 import Event from '@mui/icons-material/Event';
 import { EmptyState, Spacer, UserMenu } from '@brightlayer-ui/react-components';
-import { useSecurityActions } from '@brightlayer-ui/react-auth-shared';
+import { useApp } from '../contexts/AppContextProvider';
 import { LocalStorage } from '../store/local-storage';
 import { useDrawer } from '../contexts/drawerContextProvider';
 
@@ -13,11 +13,11 @@ export const PageTwo = (): JSX.Element => {
     const theme = useTheme();
     const { setDrawerOpen } = useDrawer();
     const md = useMediaQuery(theme.breakpoints.up('md'));
-    const securityHelper = useSecurityActions();
+    const app = useApp();
 
     const logOut = (): void => {
         LocalStorage.clearAuthCredentials();
-        securityHelper.onUserNotAuthenticated();
+        app.onUserNotAuthenticated();
     };
 
     return (
@@ -49,7 +49,7 @@ export const PageTwo = (): JSX.Element => {
                                     {
                                         title: 'Change Password',
                                         icon: <Lock />,
-                                        onClick: securityHelper.showChangePassword,
+                                        onClick: () => app.setShowChangePasswordDialog(true),
                                     },
                                     {
                                         title: 'Log Out',
