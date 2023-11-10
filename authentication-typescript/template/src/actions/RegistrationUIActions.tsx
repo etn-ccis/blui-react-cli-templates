@@ -58,6 +58,14 @@ export const ProjectRegistrationUIActions: () => RegistrationUIActions = () => (
         }
     },
 
+    /**
+     * The user requests for the registration code.
+     * The application should send the code to the email.
+     *
+     * @param email Email used to create an account.
+     *
+     * @returns Resolve when the server sends the registration code.
+     */
     requestRegistrationCode: async (email: string): Promise<string> => {
         await sleep(800);
         if (isRandomFailure()) {
@@ -66,6 +74,14 @@ export const ProjectRegistrationUIActions: () => RegistrationUIActions = () => (
         return 'a1b2c3';
     },
 
+    /**
+     * The user enters the password to set for an account.
+     * The application should set the password.
+     *
+     * @param password Password used for logging into an account.
+     *
+     * @returns Resolve when the server sends the boolean confirmation.
+     */
     createPassword: async (password: string): Promise<boolean> => {
         await sleep(800);
         if (isRandomFailure()) {
@@ -74,6 +90,14 @@ export const ProjectRegistrationUIActions: () => RegistrationUIActions = () => (
         return true;
     },
 
+    /**
+     * The user enters the account details to set for an account.
+     * The application should set the account details.
+     *
+     * @param details Account details used for an account.
+     *
+     * @returns Resolve when the server sends the boolean confirmation.
+     */
     setAccountDetails: async (details: AccountDetails): Promise<boolean> => {
         await sleep(800);
         if (isRandomFailure()) {
@@ -104,6 +128,14 @@ export const ProjectRegistrationUIActions: () => RegistrationUIActions = () => (
         return { codeValid: true, accountExists: false };
     },
 
+    /**
+     * The user requests for completing the account registration process.
+     * The application should complete the registration process.
+     *
+     * @param userData A complete user data for an account.
+     *
+     * @returns Resolve when the server sends the email and organizationName.
+     */
     completeRegistration: async (userData: object): Promise<{ email: string; organizationName: string }> => {
         const email = 'example@email.com';
         const organizationName = 'Acme Co.';
