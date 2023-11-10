@@ -24,7 +24,6 @@ import EatonLogo from '../assets/images/eaton_stacked_logo.png';
 import { PAGES } from '../router/routes';
 import { DrawerContext } from '../contexts/drawerContextProvider';
 import { NavigationDrawer } from '../router/drawer';
-import { HomePage } from '../pages';
 
 export const AppRouter: React.FC = () => {
     const navigate = useNavigate();
@@ -107,14 +106,6 @@ export const AppRouter: React.FC = () => {
                         </DrawerContext.Provider>
                     }
                 >
-                    <Route
-                        path={'/homepage'}
-                        element={
-                            <ReactRouterAuthGuard isAuthenticated={app.isAuthenticated} fallBackUrl={'/login'}>
-                                <HomePage />
-                            </ReactRouterAuthGuard>
-                        }
-                    />
                     {PAGES.map((page) => {
                         const RouteElement = page.component;
                         return (
