@@ -31,16 +31,16 @@ jobs:
               with:
                   node-version: ${{ matrix.node-version }}
                   cache: 'yarn'
-            - run: yarn 
+            - run: yarn
             - run: yarn prettier:check
 
     lint_templates:
         runs-on: ubuntu-latest
-        
+
         strategy:
             matrix:
                 node-version: [20.x]
-        
+
         steps:
             - name: Checkout
               uses: actions/checkout@v4
@@ -54,11 +54,11 @@ jobs:
 
     unit_test_templates:
         runs-on: ubuntu-latest
-      
+
         strategy:
             matrix:
                 node-version: [20.x]
-      
+
         steps:
             - uses: actions/checkout@v4
             - name: Use Node.js ${{ matrix.node-version }}
@@ -82,18 +82,18 @@ jobs:
 
     build_templates:
         runs-on: ubuntu-latest
-              
+
         strategy:
             matrix:
                 node-version: [20.x]
-              
+
         steps:
             - uses: actions/checkout@v4
             - name: Use Node.js ${{ matrix.node-version }}
               uses: actions/setup-node@v4
               with:
-                node-version: ${{ matrix.node-version }}
-                cache: 'yarn'
+                  node-version: ${{ matrix.node-version }}
+                  cache: 'yarn'
             - run: yarn
             - run: yarn
               working-directory: templates/authentication-typescript
@@ -107,7 +107,6 @@ jobs:
               working-directory: templates/routing-typescript
             - run: yarn build
               working-directory: templates/routing-typescript
-
 
     publish_cli_templates:
         runs-on: ubuntu-latest
@@ -122,10 +121,9 @@ jobs:
         steps:
             - name: Checkout
               uses: actions/checkout@v4
-            - uses: actions/setup-node@v3
+            - uses: actions/setup-node@v4
               with:
                   node-version: ${{ matrix.node-version }}
                   registry-url: 'https://registry.npmjs.org'
             - run: yarn --immutable
             - run: npm run publish:package -- -b ${{env.BRANCH}}
-    
