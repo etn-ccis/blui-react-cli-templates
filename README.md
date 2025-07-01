@@ -1,5 +1,9 @@
 [![Build](https://github.com/etn-ccis/blui-react-cli-templates/actions/workflows/blui-ci.yml/badge.svg?branch=master)](https://github.com/etn-ccis/blui-react-cli-templates/actions/workflows/blui-ci.yml)
 
+> **Important Migration Notice:**
+>
+> This repository has been migrated to a monorepo to consolidate all the React libraries developed by Brightlayer UI team into a single workspace. Future development and updates will now occur in [this location](https://github.com/etn-ccis/blui-react/tree/dev/packages/cli-templates). Please update your bookmarks and contribute to the monorepo for the latest changes.
+
 # React + TypeScript + Vite Templates
 
 These are project templates that are used for starting a new Brightlayer UI project. The templates are configured with the basic Brightlayer UI libraries for themes and components and configures the application to use them.
