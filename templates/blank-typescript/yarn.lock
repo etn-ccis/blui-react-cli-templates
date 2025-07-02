@@ -226,14 +226,14 @@
     "@seznam/compose-react-refs" "^1.0.6"
     color "^4.2.3"
 
-"@brightlayer-ui/react-themes@8.1.0":
-  version "8.1.0"
-  resolved "https://registry.yarnpkg.com/@brightlayer-ui/react-themes/-/react-themes-8.1.0.tgz#96c20e9605c01e8bf63953d3befbcbebf7210015"
-  integrity sha512-YPxVtRkkdgbQdhqAG9VkxAmFDErvzCkq/NSd31VCA/tCPRlV5DVrdCliptn69C5VmnaQfGf0wPwo7Fx7fkBIuw==
+"@brightlayer-ui/react-themes@8.1.2":
+  version "8.1.2"
+  resolved "https://registry.yarnpkg.com/@brightlayer-ui/react-themes/-/react-themes-8.1.2.tgz#fdaee46aa24d91be158f66fe5ea49912e7504b66"
+  integrity sha512-D4DFJvBcYETvWbdJlNCPnQEwgRbHuReTqjzXOKNylenNLA9Syc/0qM8nfx3VRHAPubjzkkpLRkqjuDnwStPjqw==
   dependencies:
     "@brightlayer-ui/colors" "^3.1.1"
     "@fontsource/open-sans" "^5.0.3"
-    color "^5.0.0"
+    color "^4.0.0"
 
 "@brightlayer-ui/types@^2.0.0":
   version "2.0.0"
@@ -1732,22 +1732,10 @@ color-convert@^2.0.1:
   dependencies:
     color-name "~1.1.4"
 
-color-convert@^3.0.1:
-  version "3.1.0"
-  resolved "https://registry.yarnpkg.com/color-convert/-/color-convert-3.1.0.tgz#ce16ebb832f9d7522649ed9e11bc0ccb9433a524"
-  integrity sha512-TVoqAq8ZDIpK5lsQY874DDnu65CSsc9vzq0wLpNQ6UMBq81GSZocVazPiBbYGzngzBOIRahpkTzCLVe2at4MfA==
-  dependencies:
-    color-name "^2.0.0"
-
 color-name@^1.0.0, color-name@~1.1.4:
   version "1.1.4"
   resolved "https://registry.yarnpkg.com/color-name/-/color-name-1.1.4.tgz#c2a09a87acbde69543de6f63fa3995c826c536a2"
   integrity sha512-dOy+3AuW3a2wNbZHIuMZpTcgjGuLU/uBL/ubcZF9OXbDo8ff4O8yVp5Bf0efS8uEoYo5q4Fx7dY9OgQGXgAsQA==
-
-color-name@^2.0.0:
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/color-name/-/color-name-2.0.0.tgz#03ff6b1b5aec9bb3cf1ed82400c2790dfcd01d2d"
-  integrity sha512-SbtvAMWvASO5TE2QP07jHBMXKafgdZz8Vrsrn96fiL+O92/FN/PLARzUW5sKt013fjAprK2d2iCn2hk2Xb5oow==
 
 color-string@^1.9.0:
   version "1.9.1"
@@ -1757,28 +1745,13 @@ color-string@^1.9.0:
     color-name "^1.0.0"
     simple-swizzle "^0.2.2"
 
-color-string@^2.0.0:
-  version "2.0.1"
-  resolved "https://registry.yarnpkg.com/color-string/-/color-string-2.0.1.tgz#89e20d5baa60a49b3d7ffdd95b28d2bb9c1074e8"
-  integrity sha512-5z9FbYTZPAo8iKsNEqRNv+OlpBbDcoE+SY9GjLfDUHEfcNNV7tS9eSAlFHEaub/r5tBL9LtskAeq1l9SaoZ5tQ==
-  dependencies:
-    color-name "^2.0.0"
-
-color@^4.2.3:
+color@^4.0.0, color@^4.2.3:
   version "4.2.3"
   resolved "https://registry.yarnpkg.com/color/-/color-4.2.3.tgz#d781ecb5e57224ee43ea9627560107c0e0c6463a"
   integrity sha512-1rXeuUUiGGrykh+CeBdu5Ie7OJwinCgQY0bc7GCRxy5xVHy+moaqkpL/jqQq0MtQOeYcrqEz4abc5f0KtU7W4A==
   dependencies:
     color-convert "^2.0.1"
     color-string "^1.9.0"
-
-color@^5.0.0:
-  version "5.0.0"
-  resolved "https://registry.yarnpkg.com/color/-/color-5.0.0.tgz#3583bf8f6a77cec41b329ea228dd05d2f5270218"
-  integrity sha512-16BlyiuyLq3MLxpRWyOTiWsO3ii/eLQLJUQXBSNcxMBBSnyt1ee9YUdaozQp03ifwm5woztEZGDbk9RGVuCsdw==
-  dependencies:
-    color-convert "^3.0.1"
-    color-string "^2.0.0"
 
 compare-versions@^6.1.1:
   version "6.1.1"
